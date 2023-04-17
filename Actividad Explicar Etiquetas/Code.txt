@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="Styles.css">
+    <title>Etiquetas Display:Flex y Hover</title>
+
+</head>
+
+<body>
+
+     <!-- Introducción -->
+
+   <h1 class="title"><strong>Etiquetas</strong></h1>
+   <br>
+   <p class="introduction">Hola compañer@s, el dia de hoy les explicare que son las etiquetas <strong>Display:Flex</strong> y <strong>Hover</strong> y para que se usan a la hora de diseñar una pagina web :D.</p>
+   <br>
+
+      <!-- Display:flex -->
+
+   <h2 class="Subtitle1"><strong>Display:Flex</strong></h2>
+   <br>
+   <p class="DisplayFlex">Display:flex es una <strong>propiedad</strong> que indica la capacidad de un elemento para <strong>alterar sus dimensiones</strong> y llenar espacios.</p>
+   <br>
+   <p class="DisplayFlex">Flex tiene algunas propiedades como las que se ven a continuación:</p>
+   <br>
+   
+   <div>
+     <img class="Imgflexbox" src="Imagen1.jpg" alt="Flexboximg">
+   </div>
+
+   <br>
+
+   <p class="DisplayFlex">A continuación un ejemplo de como se usa <strong>Display:Flex</strong>:</p>
+   <hr>
+   
+      <!-- Ejemplo interactivo Display:flex -->
+
+      <div class="Ejemploflex1">
+        <p id="ej1">Texto de ejemplo 1</p>
+        <p id="ej2">Texto de ejemplo 2</p>
+      </div>
+
+      <hr>
+
+      <div class="Ejemploflex2">
+        <p id="ej3">Texto de ejemplo 3</p>
+        <p id="ej4">Texto de ejemplo 4</p>
+      </div>
+
+     <hr>
+      <!-- Hover -->
+
+   <br>
+
+   <p class="Linkgameflex">Finalmente, adjuntaré un link el cual los llevará a <a href="https://flexboxfroggy.com/#es">FLEXBOX FROGGY</a> ,un juego en donde podran aprender a usar mas a fondo <strong>Display:Flex</strong></p>
+
+   <br>
+
+   <h2 class="Subtitle2">Hover</h2>
+   <br>
+   <p class="Hover">Hover es una <strong>pseudo-clase</strong> la cual permite que, al hacer interacción con un objeto, este pase a un <strong>segundo estado</strong>, diferente al inicial.</p>
+   <br>
+
+   <div>
+     <img class="ImgHover" src="Imagen2.jpg" alt="Hoverimg">
+   </div>
+
+   <br>
+
+   <p class="Hover">A continuación un ejemplo de como se usa <strong>Hover</strong>:</p>
+   <br>
+   <hr>
+      <!-- Ejemplo Hover -->
+
+   <div class="ButtonHover">
+      <button id="Button1">Ejemplo 1</button>
+      <button id="Button2">Ejemplo 2</button>
+      <button id="Button3">Ejemplo 3</button>
+      <button id="Button4">Ejemplo 4</button>
+   </div>
+   
+   <hr>
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+
+
+html {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    background: linear-gradient(0deg, rgba(129,0,0,1) 18%, rgba(206,18,18,1) 53%, rgba(217,19,59,1) 81%, rgba(224,20,76,1) 97%);   
+}
+
+.title {
+    font-size: 50px;
+    margin-top: 60px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.introduction {
+    font-size: 22px;
+    text-align: center;
+}
+
+.Subtitle1 {
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.DisplayFlex {
+    font-size: 22px;
+    text-align: center;
+}
+
+.Imgflexbox {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 400px;
+}
+
+.Ejemploflex1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 22px;
+}
+
+#ej1 {
+    background-color: #ff3636;
+    width: 214px;
+    height: 140px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ej2 {
+    background-color: #ff3636;
+    width: 214px;
+    height: 140px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ej3 {
+    background-color: #ff3636;
+    width: 214px;
+    height: 140px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ej4 {
+    background-color: #ff3636;
+    width: 214px;
+    height: 140px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Ejemploflex2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px;
+    font-size: 22px;
+}
+
+.Linkgameflex {
+
+    text-align: center;
+
+}
+
+.Subtitle2 {
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.Hover {
+    text-align: center;
+    font-size: 22px;
+}
+
+.ImgHover {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.ButtonHover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin: 5px;
+    font-size: 22px;
+}
+
+#Button1 {
+    color: white;
+    background-color: #ff3636;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+    height: 60px;
+    width: 150px;
+    font-size: 22px;
+    border: solid 1px white;
+}
+
+#Button1:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgba(224,20,76,1)
+}
+
+#Button2 {
+    color: white;
+    background-color: #ff3636;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+    height: 60px;
+    width: 150px;
+    font-size: 22px;
+    border: solid 1px white;
+}
+
+#Button2:hover {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    }
+
+#Button3 {
+    color: white;
+    background-color: #ff3636;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+    height: 60px;
+    width: 150px; 
+    font-size: 22px;
+    border: solid 1px white;
+}
+
+#Button3:hover {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+#Button4 {
+    color: white;
+    background-color: #ff3636;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+    height: 60px;
+    width: 150px;
+    font-size: 22px;
+    border: solid 1px white;
+}
+
+#Button4:hover {
+    color: rgb(255, 255, 255);
+    text-decoration:underline;
+}

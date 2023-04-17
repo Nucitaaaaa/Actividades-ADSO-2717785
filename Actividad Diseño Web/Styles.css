@@ -1,0 +1,17 @@
+
+html{
+    background-color: violet;
+}
+#Actividad {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
