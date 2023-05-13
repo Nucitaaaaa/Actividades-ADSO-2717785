@@ -23,13 +23,13 @@ def get_info_items(item):
     info_items["Item name"] = item.find('a', class_='title').text
     info_items["Caterogy"] = item.find('div', class_='category').text
     info_items["Price"] = item.find('div', class_='price').text
-    info_items["Price before"] = item.find('del', class_='d-inline-block').text
+    info_items["Price before"] = item.find('del', class_='d-inline-block')
     info_items["Price before"] = info_items["Price before"].text if info_items["Price before"] else ""
 
     return info_items
 
 if __name__  == "__main__":
-    BASE_URL = 'https://todotintasysuministros.com/celulares-y-tablets'
+    BASE_URL = 'https://todotintasysuministros.com/celulares-y-tablets?'
     page_site = 4
     items = get_html_info(BASE_URL,page_site)
 
@@ -38,7 +38,7 @@ if __name__  == "__main__":
         info_items = get_info_items(item)
         list_info_items.append(info_items)
 
-    data_json = r"C:\Users\SENA\Documents\GitHub\Actividades-ADSO-22717785\Conferencias Aprendices Globant\Proyecto PostgreSQL"
+    data_json = r"C:\Users\SENA\Documents\ADSO2717785MariaPaula\items_tintas.json"
 
     with open(data_json, "w") as outfile:
         json.dump(list_info_items,outfile,indent=4)
