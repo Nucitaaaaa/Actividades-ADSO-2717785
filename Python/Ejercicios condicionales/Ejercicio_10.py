@@ -3,8 +3,8 @@
 Mostrar la suma de dos números enteros, si el resultado supera a 10
 """
 
-num1 = int(input("Enter your first num: "))
-num2 = int(input("Enter your second num: "))
+num1 = int(input("Enter your first number: "))
+num2 = int(input("Enter your second number: "))
 
 sum = num1 + num2
 
