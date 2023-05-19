@@ -38,7 +38,7 @@ if __name__  == "__main__":
         info_items = get_info_items(item)
         list_info_items.append(info_items)
 
-    data_json = r"C:\Users\SENA\Documents\ADSO2717785MariaPaula\items_tintas.json"
+    data_json = r"C:\Users\maria\OneDrive\Documentos\GitHub\Actividades-ADSO-22717785\Conferencias Aprendices Globant\Proyecto PostgreSQL"
 
     with open(data_json, "w") as outfile:
         json.dump(list_info_items,outfile,indent=4)
