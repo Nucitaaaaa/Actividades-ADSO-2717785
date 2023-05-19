@@ -1,6 +1,6 @@
 
 name = str(input("Enter your name: "))
-salary = int(input("Enter your basic salary: "))
+salary = float(input("Enter your basic salary: "))
 hours = float(input("Enter your hours worked: "))
 
 salaryAmount = 1030000
