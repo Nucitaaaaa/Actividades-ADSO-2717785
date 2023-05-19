@@ -9,6 +9,10 @@ hours = float(input("Enter the hours you have worked this week: "))
 
 if hours < 20:
     print("the hourly rate of pay will be $10000")
+    pay = hours * 10000
+    print(f"Your salary will be {pay}")
 else:
     print("the hourly rate of pay will be $35000")
+    pay = hours * 35000
+    print(f"Your salary will be {pay}")
 
