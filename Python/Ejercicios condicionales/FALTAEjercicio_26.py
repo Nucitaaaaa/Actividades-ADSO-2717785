@@ -6,5 +6,5 @@ b. Entrada: persona1=piedra; persona2=papel
 c. Salida: Gana persona2: El papel envuelve a la piedra
 """
 
-print("Piedra, Papel o Tijeras")
-
+print("rock, paper and scissors")
+print("Enter 1 for \"rock\", 2 for \"paper\", and 3 for \"scissors\"")
