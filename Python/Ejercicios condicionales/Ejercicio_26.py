@@ -23,7 +23,7 @@ while menu == 0:
         print("\n¡Player 2 is the winner!")
     elif p1 == p2 or p2 == p1:
         print("\n¡is a tie!")
-    elif p1 and p2 != 1 and p1 and p2 != 2 and p1 and p2 != 3:
+    elif p1 and p2 != 1 or p1 and p2 != 2 or p1 and p2 != 3:
         print("\nEnter a valid choice")
     else:
         print("\n¡Player 1 is the winner!")
