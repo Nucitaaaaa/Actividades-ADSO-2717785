@@ -12,27 +12,27 @@ number = int(input("Enter how many smock you are going to buy: "))
 
 if price > 40000:
     smock = str(input("Enter the color of the smoke: "))
-    if smock == "red" or smock == "RED":
+    if smock.upper() == "RED":
         discount = price * .10
         discountNum = discount * number
         price = (price * number) - discountNum
         print(f"The price will be ${price} with a discount of ${discountNum}")
-    elif smock == "white" or smock == "WHITE":
+    elif smock.upper() == "WHITE":
         discount = price * .15
         discountNum = discount * number
         price = (price * number) - discountNum
         print(f"The price will be ${price} with a discount of ${discountNum}")
-    elif smock == "black" or smock == "BLACK":
+    elif smock.upper() == "BLACK":
         discount = price * .20
         discountNum = discount * number
         price = (price * number) - discountNum
         print(f"The price will be ${price} with a discount of ${discountNum}")
-    elif smock == "yellow" or smock == "YELLOW":
+    elif smock.upper() == "YELLOW":
         discount = price * .20
         discountNum = discount * number
         price = (price * number) - discountNum
         print(f"The price will be ${price} with a discount of ${discountNum}")
-    elif smock == "green" or smock == "GREEN":
+    elif smock.upper() == "GREEN":
         discount = price * .30
         discountNum = discount * number
         price = (price * number) - discountNum
