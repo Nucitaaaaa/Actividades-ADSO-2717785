@@ -14,11 +14,11 @@ q1 = str(input("can he fly?: "))
 q2 = str(input("is he human?: "))
 q3 = str(input("has a mask ?: "))
 
-if q1 == "YES" or q1 == "yes" and q2 == "YES" or q2 == "yes" and q3 == "YES" or q3 == "yes":
+if q1.upper() == "YES" and q2.upper() == "YES" and q3.upper() == "YES":
     print("¡Your superhero is Iroman!")
-elif q1 == "YES" or q1 == "yes" and q2 == "YES" or q2 == "yes" and q3 == "NO" or q3 == "NO":
+elif q1.upper() == "YES" and q2.upper() == "YES" and q3.upper() == "NO":
     print("¡Your superhero is Captain Marvel!")
-elif q1 == "YES" or q1 == "yes" and q2 == "NO" or q2 == "no" and q3 == "NO" or q1 == "no":
+elif q1.upper() == "YES" and q2.upper() == "NO" and q3.upper() == "NO":
     print("¡Your superhero is Thor!")
 else:
     print("Oh, I dont know who is he/she :c")
