@@ -22,7 +22,7 @@ app.get("/", (req, res) => { //Se crea la ruta principal de la API
 //ruta2
 
 app.get("/api/estudiantes", (req, res) => { //Se crea la ruta a la constante estudiantes de la API
-    res.send(estudiantes) //cuando se haga la solicitud GET a la ruta principal, lo cual es el req, res (Respuesta) mostrará en pantalla todos los datos que contenga la constante
+    res.send(estudiantes) //cuando se haga la solicitud GET a la ruta, lo cual es el req, res (Respuesta) mostrará en pantalla todos los datos que contenga la constante
 });
 
 //ruta3
