@@ -6,7 +6,7 @@ app.use(express.json()); //se agrega el middleware con use (intermediario entre 
 
 //Lista estudiantes 
 
-const estudiantes = [ //Se crea la constante de estudiantes, la cual es un array que contiene una lista con los datos de cada estudiante
+const estudiantes = [ //Se crea la constante de estudiantes, la cual es un array que contiene dos objetos, con los datos de cada estudiante
 {id: 1, nombre: "Miguel", apellido: "Perdomo", edad: 19, semestre: 2, estudia: true}, 
 {id: 2, nombre: "Juan", apellido: "Figueroa", edad: 29, semestre: 10, estudia: false}
 ];
@@ -40,12 +40,12 @@ app.get("/api/estudiantes/:id", (req, res) => { //Se crea la ruta a la constante
 
 app.post("/api/estudiantes" , (req, res) => { //Se crea la ruta a la constante para crear un alumno de la API (Se inicia un proceso de CRUD)
     const alum = { //Se crea la constante alumno, la cual al llamarla, crea un objeto llamado alumno al cual se le tiene que especificar la información de cada una de las variables en la lista, a traves de las solicitudes HTTP, para su posterior adicion a la base de datos 
-        id: estudiantes.length + 1, //asigna un id al estudiante
-        nombre: req.body.nombre, //nombre del estudiante
-        apellido: req.body.apellido, //apellido del estudiante
-        edad: parseInt(req.body.edad), //edad del estudiante
-        semestre: parseInt(req.body.semestre), //semestre del estudiante
-        estudia: req.body.estudia === true, //el estudiante estudia?
+        id: estudiantes.length + 1, // se utiliza para asignar un valor único a la propiedad "id" al momento de crear un nuevo objeto estudiante.
+        nombre: req.body.nombre, //se utiliza para acceder al valor de la propiedad "nombre" del objeto body contenido en la solicitud req.
+        apellido: req.body.apellido, //se utiliza para acceder al valor de la propiedad "apellido" del objeto body contenido en la solicitud req.
+        edad: parseInt(req.body.edad), //se utiliza para acceder al valor de la propiedad "edad" del objeto body contenido en la solicitud req.
+        semestre: parseInt(req.body.semestre), //se utiliza para acceder al valor de la propiedad "semestre" del objeto body contenido en la solicitud req.
+        estudia: req.body.estudia === true, //se utiliza para verificar si el valor de la propiedad "estudia" en el objeto body de la solicitud req es igual a true.
     };
     estudiantes.push(alum); //Este agrega el objeto alum, al final del array de estudiantes
     res.send(alum); //Este muestra en la pantalla los datos del estudiante que se ha creado
