@@ -45,7 +45,8 @@ app.post("/api/estudiantes", (req, res) => {
         semestre: parseInt(req.body.edad),
         estudia: req.body.estudia === true,
     };  //; falto xd
-    estudiantes.push(alum); //; falto
+    estudiantes.push(alum); //; 
+    falto
     res.send(alum);
 })
 
