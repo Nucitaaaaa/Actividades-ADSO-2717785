@@ -37,6 +37,12 @@ app.get("/api/tareas/estado/:estado", (req, res) => {
     else res.send(tarea)
 })
 
+app.get("/api/tareas/titulo/:titulo", (req, res) => {
+    const tarea = tareas.find((t) => t.titulo === req.params.titulo)
+    if (!tarea) return res.status(404).send("Tarea No Encontrada")
+    else res.send(tarea)
+})
+
 app.post("/api/tareas", (req, res) => {
     const nuevaTarea = {
         id: tareas.length + 1,
