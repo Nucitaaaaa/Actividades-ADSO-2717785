@@ -32,7 +32,7 @@ app.get("/api/tareas/:id", (req, res) => {
 })
 
 app.get("/api/tareas/estado/:estado", (req, res) => {
-    const tarea = tareas.find((p) => p.estado === req.params.estado)
+    const tarea = tareas.filter((p) => p.estado === req.params.estado)
     if (!tarea) return res.status(404).send("Tarea No Encontrada")
     else res.send(tarea)
 })
