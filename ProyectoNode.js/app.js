@@ -1,4 +1,4 @@
-
+//creacion de la API
 const express = require("express"); //Se importa el framework Express
 const app = express(); //Se llama al framework Express
 const port = process.env.port || 3030; //Se define el puerto donde se ejecutará la API
