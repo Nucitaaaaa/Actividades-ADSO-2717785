@@ -36,7 +36,7 @@ app.post("/api/estudiantes", (req, res) => {
     res.send(alum);
 });
 
-//ruta no hecha en la conferencia
+//ruta no hecha en la conferencia (ruta put)
 
 app.put("/api/estudiantes/:id", (req, res) => {
     const alumno = estudiantes.find((c) => c.id === parseInt(req.params.id));
