@@ -1,9 +1,11 @@
 
 const express = require("express");
+const cors = require("cors");
 const app = express();
+const callCors = cors();
 const port = process.env.port || 3030;
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(__dirname));
 
 const estudiantes = [
     { id: 1, nombre: "Miguel", apellido: "Perdomo", edad: 19, semestre: 2, estudia: true },
@@ -15,108 +17,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/estudiantes", (req, res) => {
-    const estudiantesHTML = estudiantes.map(estudiante => `
-        <tr>
-            <td>${estudiante.id}</td>
-            <td>${estudiante.nombre}</td>
-            <td>${estudiante.apellido}</td>
-            <td>${estudiante.edad}</td>
-            <td>${estudiante.semestre}</td>
-            <td>${estudiante.estudia ? 'Sí' : 'No'}</td>
-        </tr>
-    `).join('');
-
-    const html = `
-        <html>
-        <head>
-            <title>Tabla de Estudiantes</title>
-            <style>
-                table {
-                    border-collapse: collapse;
-                    width: 100%;
-                }
-        
-                th, td {
-                    border: 1px solid black;
-                    padding: 8px;
-                    text-align: left;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Tabla de Estudiantes</h1>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Edad</th>
-                    <th>Semestre</th>
-                    <th>Estudia</th>
-                </tr>
-                ${estudiantesHTML}
-            </table>
-        </body>
-        </html>
-    `;
-
-    res.send(html);
+    res.send(estudiantes)
+    //res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/api/estudiantes/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-    const estudiante = estudiantes.find(est => est.id === id);
-
-    if (estudiante) {
-        const estudianteHTML = `
-            <tr>
-                <td>${estudiante.id}</td>
-                <td>${estudiante.nombre}</td>
-                <td>${estudiante.apellido}</td>
-                <td>${estudiante.edad}</td>
-                <td>${estudiante.semestre}</td>
-                <td>${estudiante.estudia ? 'Sí' : 'No'}</td>
-            </tr>
-        `;
-
-        const html = `
-            <html>
-            <head>
-                <title>Tabla de Estudiantes</title>
-                <style>
-                    table {
-                        border-collapse: collapse;
-                        width: 100%;
-                    }
-
-                    th, td {
-                        border: 1px solid black;
-                        padding: 8px;
-                        text-align: left;
-                    }
-                </style>
-            </head>
-            <body>
-                <h1>Detalles del estudiante</h1>
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Edad</th>
-                        <th>Semestre</th>
-                        <th>Estudia</th>
-                    </tr>
-                    ${estudianteHTML}
-                </table>
-            </body>
-            </html>
-        `;
-
-        res.send(html);
-    } else {
-        res.status(404).send("Estudiante no encontrado");
-    }
+    const alumno = estudiantes.find((e) => e.id === parseInt(req.params.id))
+    if (!alumno) return res.status(404).send("Estudiante no encontrado")
+    else res.send(alumno)
+    //res.sendFile(__dirname + "/index.html");
 });
 
 
