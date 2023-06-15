@@ -1,8 +1,8 @@
 
 const express = require("express");
-const cors = require("cors");
+const cors = require("cors"); //se importa la libreria cors
 const app = express();
-const callCors = cors();
+const callCors = cors(); //se llama a la libreria cors
 const port = process.env.port || 3030;
 app.use(express.json());
 app.use(express.static(__dirname));
