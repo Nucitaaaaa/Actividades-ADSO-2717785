@@ -1,10 +1,10 @@
 
 const express = require("express");
-const cors = require("cors"); //se importa la libreria cors
+const cors = require("cors"); //*se importa la libreria cors
 const app = express(); 
 const port = process.env.port || 3030;
 app.use(express.json());
-app.use(cors())//se llama a la libreria cors
+app.use(cors()) //*se llama a la libreria cors
 
 const estudiantes = [
     { id: 1, nombre: "Miguel", apellido: "Perdomo", edad: 19, semestre: 2, estudia: true },
@@ -17,14 +17,12 @@ app.get("/", (req, res) => {
 
 app.get("/api/estudiantes", (req, res) => {
     res.send(estudiantes)
-    //res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/api/estudiantes/:id", (req, res) => {
     const alumno = estudiantes.find((e) => e.id === parseInt(req.params.id))
     if (!alumno) return res.status(404).send("Estudiante no encontrado")
     else res.send(alumno)
-    //res.sendFile(__dirname + "/index.html");
 });
 
 
@@ -41,7 +39,7 @@ app.post("/api/estudiantes", (req, res) => {
     res.send(alum);
 });
 
-//!ruta no hecha en la conferencia (ruta put)
+//*ruta no hecha en la conferencia (ruta put)
 
 app.put("/api/estudiantes/:id", (req, res) => {
     const alumno = estudiantes.find((c) => c.id === parseInt(req.params.id));
