@@ -12,7 +12,6 @@ if num > 10:
     print(f"El resultado de la multiplicación de los primeros 10 numeros de {num} es: {acum}")
 else:
     acum = 0
-    for i in range(0, num):
-        op = i + num
-        acum += op
+    for j in range(0, num):
+        acum += j
     print(f"El resultado es: {acum}")       
