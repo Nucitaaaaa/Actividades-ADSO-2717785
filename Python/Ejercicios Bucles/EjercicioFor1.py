@@ -6,11 +6,7 @@
 suma = int(input("Digite la cantidad de numeros que quiere sumar: "))
 acum = 0
 
-for i in range(0, suma):
-    print(f"Numero: {i}")
-    op = i + suma
-    print(f"Operacion: {op}")
-    acum += op
-    print(f"Suma: {acum}")
+for i in range(0, suma + 1):
+    acum += i
 
 print(acum)
