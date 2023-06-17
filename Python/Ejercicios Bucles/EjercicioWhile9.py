@@ -17,8 +17,8 @@ while not end:
         menor = min(temps)
         prom /= len(temps)
 
-        print(f"La nota mayor es {mayor}")
-        print(f"La nota menor es {menor}")
-        print(f"El promedio de las notas es {prom}")
+        print(f"La temperatura mayor es {mayor}")
+        print(f"La temperatura menor es {menor}")
+        print(f"El promedio de las temperaturas es {prom}")
         break
 
