@@ -3,12 +3,12 @@
 
 n1 = int(input("Ingrese el primer numero: "))
 n2 = int(input("Ingrese el segundo numero: "))
-count = n1
+count = n1 - 1
 num = 0
 
 if n1 < n2:
-    print(f"Los numeros que estan entre {n1} y {n2} son:")
-    while count != n2 - 1:
+    print(f"Los numeros van desde {n1} hasta {n2} son:")
+    while count != n2:
         num += count
         count += 1
         print(count)
