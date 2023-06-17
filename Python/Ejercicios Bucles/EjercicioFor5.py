@@ -8,8 +8,7 @@ def odd():
 
     for i in range(0, n + 1):
         if i % 2 != 0:
-            op = i + acum
-            suma = op
+            suma = i + acum
             acum += 1
     
     print(f"La suma de todos los numeros impares que hay desde 0 hasta {n} es: {suma}")
