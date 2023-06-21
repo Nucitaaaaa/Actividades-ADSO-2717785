@@ -65,6 +65,7 @@ while True:
 #6
 #Validar que el numero es positivo, pedir que digite un numero, sumar estos numeros (acum), mostrar la suma, contar los pares y los impares
 
+"""
 num = int(input("Digite un numero: "))
 
 while num < 0:
@@ -86,3 +87,16 @@ while i <= num:
     i += 1
 
 print(f"La suma total es: {suma}\n Hay {countEven} pares y {countOdd} impares")
+"""
+
+#7
+"""
+num = []
+
+while True:
+    n = int(input("Ingrese cualquier numero: "))
+    if n == 11 or num > 20:
+        break
+    num.append(n)
+print(f"Los numeros que ha ingresado son: \n {num}")
+"""
