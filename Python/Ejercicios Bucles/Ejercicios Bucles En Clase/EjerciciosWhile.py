@@ -50,7 +50,7 @@ while count <= 10:
 """
 
 #5
-
+"""
 num = 1
 
 while True:
@@ -60,3 +60,29 @@ while True:
     if num == 16:
         break
     print(num)
+"""
+
+#6
+#Validar que el numero es positivo, pedir que digite un numero, sumar estos numeros (acum), mostrar la suma, contar los pares y los impares
+
+num = int(input("Digite un numero: "))
+
+while num < 0:
+    print("Ingrese un numero positivo nuevamente: ", end=" ")
+    num = int(input())
+
+#Variables
+suma = 0
+countEven = 0
+countOdd = 0
+i = 1
+
+while i <= num:
+    suma += i
+    if i % 2 == 0:
+        countEven += 1
+    else:
+        countOdd += 1
+    i += 1
+
+print(f"La suma total es: {suma}\n Hay {countEven} pares y {countOdd} impares")
