@@ -38,7 +38,7 @@ print(f"Usted ha introducido {count - 1} nombres! estos son: \n {names}")
 """
 
 #4
-
+"""
 count = 0
 
 while count <= 10:
@@ -47,4 +47,16 @@ while count <= 10:
 
     if count == 8:
         break
+"""
 
+#5
+
+num = 1
+
+while True:
+    num += 1
+    if num % 5 == 0:
+        continue
+    if num == 16:
+        break
+    print(num)
