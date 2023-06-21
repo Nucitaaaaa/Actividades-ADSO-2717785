@@ -27,7 +27,7 @@ countImpar = 0
 
 for i in range(1,11):
     acum += i
-    if i % 2 != 0:
+    if i % 2 == 0:
         countPar += 1
     else:
         countImpar += 1
