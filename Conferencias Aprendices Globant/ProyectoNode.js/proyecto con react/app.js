@@ -1,10 +1,8 @@
 
 const express = require("express");
-const cors = require("cors"); //*se importa la libreria cors
 const app = express(); 
 const port = process.env.port || 3030;
 app.use(express.json());
-app.use(cors()) //*se llama a la libreria cors
 
 const estudiantes = [
     { id: 1, nombre: "Miguel", apellido: "Perdomo", edad: 19, semestre: 2, estudia: true },
