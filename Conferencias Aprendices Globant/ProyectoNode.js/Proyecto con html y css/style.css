@@ -12,12 +12,14 @@ table {
     border-collapse: collapse;
     border: double 2px rgba(0,48,110,255);
     width: 100%;
+    border: 10px;
 }
 
 th, td {
     padding: 8px;
     text-align: left;
     border: double 2px rgba(0,48,110,255);
+    padding: 10px;
 }
 
 th {
@@ -25,6 +27,7 @@ th {
     text-align: center;
     text-decoration: underline;
     color: rgb(1, 1, 43);
+    padding: 10px;
 }
 
 td {
