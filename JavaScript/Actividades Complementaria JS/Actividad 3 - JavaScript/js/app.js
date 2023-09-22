@@ -1,10 +1,11 @@
 
-function calculadora() {
+function calculadora() { //Se crea la función para ser utilizada cada vez que se pulse el botón ubicado en el HTML.
 
-    var opciones = parseInt(prompt("Bienvenido, digite una opción para continuar:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Numero mayor\n 9. Salir"))
 
-    switch (opciones) {
-        case 1:
+    var opciones = parseInt(prompt("Bienvenido, digite una opción para continuar:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Numero mayor\n 9. Salir")) //Se crea la variable menu, para guardar la elección del usuario y en base a esta ejecutar el switch. 
+
+    switch (opciones) { //Se establece la condicion o variable sobre la que va a actuar el switch y se describe que se hará en cada caso segun la decisión del usuario.
+        case 1: //el bloque de codigo que se ejecutará en caso de que el usuario digite 1 en la variable opciones.
             var num1 = parseFloat(prompt("Escriba el primer numero: "))
             var num2 = parseFloat(prompt("Escriba el segundo numero: "))
 
@@ -14,7 +15,7 @@ function calculadora() {
 
             break;
 
-        case 2:
+        case 2: //el bloque de codigo que se ejecutará en caso de que el usuario digite 2 en la variable opciones.
             var num1 = parseFloat(prompt("Escriba el primer numero: "))
             var num2 = parseFloat(prompt("Escriba el segundo numero: "))
 
@@ -24,7 +25,7 @@ function calculadora() {
         
             break;
 
-        case 3:
+        case 3: //el bloque de codigo que se ejecutará en caso de que el usuario digite 3 en la variable opciones.
             var num1 = parseFloat(prompt("Escriba el primer numero: "))
             var num2 = parseFloat(prompt("Escriba el segundo numero: "))
 
@@ -34,7 +35,7 @@ function calculadora() {
 
             break;
 
-        case 4:
+        case 4: //el bloque de codigo que se ejecutará en caso de que el usuario digite 4 en la variable opciones.
             var num1 = parseFloat(prompt("Escriba el primer numero: "))
             var num2 = parseFloat(prompt("Escriba el segundo numero: "))
 
@@ -44,7 +45,7 @@ function calculadora() {
 
             break;
 
-        case 5:
+        case 5: //el bloque de codigo que se ejecutará en caso de que el usuario digite 5 en la variable opciones.
             var num1 = parseFloat(prompt("Escriba el primer numero: "))
             var num2 = parseFloat(prompt("Escriba el segundo numero: "))
 
@@ -58,10 +59,10 @@ function calculadora() {
 
             break;
 
-        case 9:
+        case 9: //el bloque de codigo que se ejecutará en caso de que el usuario digite 9 en la variable opciones.
             break;
 
-        default:
+        default: //el bloque de codigo que se ejecutará si no se cumple ninguna de las condiciones anteriores.
             alert("esta opción no existe")
             break
         }
