@@ -1,0 +1,39 @@
+
+body {
+background-color: rgb(204, 151, 214);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+
+div#respuesta {
+    display: none;
+}
+
+#contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input, select, #boton {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    background-color: rgba(181, 137, 223, 0.651);
+    border: white;
+}
+
