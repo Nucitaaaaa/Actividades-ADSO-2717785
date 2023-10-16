@@ -10,14 +10,12 @@ function calcularPrecio() {
 
     var precioTotal = document.getElementById("pedidoCalculado")
 
-    event.preventDefault()
-
     var total = (precioComida * cantidadComida) + (precioBebida * cantidadBebida) + (precioPostre * cantidadPostre);
     var totalComida = precioComida * cantidadComida;
     var totalBebida = precioBebida * cantidadBebida;
     var totalPostre = precioPostre * cantidadPostre;
 
-    precioTotal.innerHTML = `El precio de sus platos es: $${totalComida} \n El precio de sus bebidas es es: $${totalBebida} \n El precio de sus postres es: $${totalPostre} \n El precio total de su pedido es: $${total}`
+    precioTotal.innerHTML = `El precio de sus platos es: $${totalComida} <br> El precio de sus bebidas es: $${totalBebida} <br> El precio de sus postres es: $${totalPostre} <br> El precio total de su pedido es: $${total}`
 
     
 }
