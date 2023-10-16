@@ -3,3 +3,19 @@
 
 
 /**Estilos Generales*/
+
+#contenedorP {
+    display: flex;
+}
+
+#comida {
+    display: flex;
+    flex-direction: column;
+}
+
+#pedidoCalculado {
+}
+
+#menu {
+    
+}
