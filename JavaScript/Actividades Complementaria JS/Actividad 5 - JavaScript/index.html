@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/">
+    <title>Actividad 5 - JS</title>
+</head>
+<body>
+    <header>
+        <h1>Kimono Kitchen</h1>
+    </header>
+    <main id="contenedorP">
+        <section id="eleccionComida">
+            <form>
+                <label for="selectPlato">Plato</label>
+                <select name="Plato" id="selectPlato">
+                    <option value="1" class="opcionPlato">Dragon Roll</option>
+                    <option value="2" class="opcionPlato">Tofu Katsu Curry</option>
+                    <option value="3" class="opcionPlato">Ramen de Mariscos Picante</option>
+                    <option value="4" class="opcionPlato">Donburi de Pollo Teriyaki</option>
+                    <option value="5" class="opcionPlato">Sashimi Variado</option>
+                </select>
+                    
+                <label for="cantidadPLato">Cantidad de platos</label>
+                <input type="number" id="cantidadPLato" placeholder="Cantidad Ej:5">
+
+                <label for="selectBebida">Bebida</label>
+                <select name="Bebida" id="selectBebida">
+                    <option value="1" class="opcionBebida">Té Matcha Frappé</option>
+                    <option value="2" class="opcionBebida">Sakura Blossom Martini</option>
+                    <option value="3" class="opcionBebida">Yuzu Ginger Fizz</option>
+                    <option value="4" class="opcionBebida">Calpis Sake Spritz</option>
+                    <option value="5" class="opcionBebida">Plum Wine on the Rocks</option>
+                </select>
+
+                <label for="cantidadBebida">Cantidad de bebidas</label>
+                <input type="number" id="cantidadBbebida" placeholder="Cantidad Ej:5">
+
+                <label for="selectPostre">Postre</label>
+                <select name="Postre" id="selectPostre">
+                    <option value="1" class="opcionPostre">Mochi de Té Verde</option>
+                    <option value="2" class="opcionPostre">Dorayaki con Relleno de Frijol Azuki</option>
+                    <option value="3" class="opcionPostre">Taiyaki de Helado</option>
+                    <option value="4" class="opcionPostre">Sésamo Negro Tiramisú</option>
+                    <option value="5" class="opcionPostre">Castella Cake con Frutas Frescas</option>
+                </select>
+                <button onclick="calcularPrecio()">Enviar Pedido</button>
+            </form>
+        </section>
+        <section id="menuComida">
+            <div id="menu">
+                <h2>Menu</h2>
+                <h3>Platos</h3>
+                <ul>
+                    <li>Dragon Roll: $45.000</li>
+                    <li>Ramen de Mariscos Picante: $35.000 </li>
+                    <li>Donburi de Pollo Teriyaki: $35.000</li>
+                    <li>Tofu Katsu Curry: $40.000</li>
+                    <li>Sashimi Variado: $60.000</li>
+                </ul>
+                <h3>Bebidas</h3>
+                <ul>
+                    <li>Té Matcha Frappé: $15.000</li>
+                    <li>Sakura Blossom Martini: $20.000 </li>
+                    <li>Yuzu Ginger Fizz: $18.000</li>
+                    <li>Calpis Sake Spritz: $25.000</li>
+                    <li>Plum Wine on the Rocks: $30.000</li>
+                </ul>
+                <h3>Postres</h3>
+                <ul>
+                    <li>Mochi de Té Verde: $10.000</li>
+                    <li>Dorayaki con Relleno de Frijol Azuki: $15.000 </li>
+                    <li>Taiyaki de Helado: $12.000</li>
+                    <li>Sésamo Negro Tiramisú: $18.000</li>
+                    <li>Castella Cake con Frutas Frescas: $15.000</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
