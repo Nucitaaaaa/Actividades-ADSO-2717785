@@ -1,21 +1,143 @@
 
 /**Variables*/
 
+:root {
+    /*?Colores*/
+    --blanco: #ffffff;
+    --negro: #000000;
+    --naranja: #c95009f3;
+    --verde: #8EAC50;
+
+    /*?Fuente*/
+    --fuente: 'Rock Salt', cursive;
+}
 
 /**Estilos Generales*/
 
-#contenedorP {
+html {
+    font-family: var(--fuente);
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+    color: var(--blanco);
+    font-size: 4.1rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+li {
+    list-style: url(../img/Kimono.png);
+}
+
+form {
+    margin: 0 3rem 3rem 3rem;
+}
+
+button, input, select, option {
+    border: none;
+    font-weight: bold;
+    padding: .3rem;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    font-family: 'Rock Salt', cursive;
+    font-size:1.5rem;
+    margin: 1rem;
+    border-radius: .5rem;
+}
+
+button {
+    width: 20rem;
+    padding: 1.5rem;
+}
+
+label {
+    border-radius: .5rem;
+    text-align: center;
+    color: var(--blanco);
+    margin: 0;
+}
+
+/**Estilos Especificos*/
+
+#main {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 1rem;
+}
+
+#menuComidaSec {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ocultar {
+    position: absolute;
+    display: none;
+    bottom: 90%;
+    left: 20%;
+    top:3rem;
+    background: none;
 }
 
 #comida {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    width: 40rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boton2 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #pedidoCalculado {
+    display: none;
+    padding: 1rem;
+    background: var(--naranja);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: .5rem;
 }
 
-#menu {
-    
+#menuComida {
+    text-align: left;
+    font-size: 1.6rem;
+    padding: 1.3rem;
+    display: none;
+    position: absolute;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    border-radius: .5rem;
 }
+
+
+

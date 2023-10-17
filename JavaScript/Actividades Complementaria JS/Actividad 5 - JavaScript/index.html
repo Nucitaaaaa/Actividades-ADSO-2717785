@@ -3,26 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <title>Actividad 5 - JS</title>
 </head>
 <body>
-    <header>
-        <h1>Kimono Kitchen</h1>
-    </header>
-    <main id="contenedorP">
-        <section id="eleccionComida">
+    <div id="contenedor">
+        <main id="main">
+            <section id="menuComidaSec">
+                    <div class="botones" id="boton1">
+                        <section id="menuComida">
+                            <div id="menu">
+                                <h2>Menu</h2>
+                                <h3>🍜Platos🍜</h3>
+                                <ul>
+                                    <li><strong>Dragon Roll:</strong> $45.000</li>
+                                    <li><strong>Ramen de Mariscos Picante:</strong> $35.000 </li>
+                                    <li><strong> Donburi de Pollo Teriyaki:</strong> $35.000</li>
+                                    <li><strong>Sashimi Variado:</strong> $60.000</li>
+                                </ul>
+                                <h3>🍵Bebidas🍵</h3>
+                                <ul>
+                                    <li><strong>Té Matcha Frappé:</strong> $15.000</li>
+                                    <li><strong>Sakura Blossom Martini:</strong> $20.000</li>
+                                    <li><strong>Yuzu Ginger Fizz:</strong> $18.000</li>
+                                    <li><strong>Plum Wine on the Rocks:</strong> $30.000</li>
+                                </ul>
+                                <h3>🍡Postres🍡</h3>
+                                <ul>
+                                    <li><strong>Mochi de Té Verde:</strong> $10.000</li>
+                                    <li><strong>Taiyaki de Helado:</strong> $12.000</li>
+                                    <li><strong>Sésamo Negro Tiramisú:</strong> $18.000</li>
+                                    <li><strong>Castella Cake con Frutas Frescas:</strong> $15.000</li>
+                                </ul>
+                            </div>
+                        </section>
+                        <button id="mostrar" onclick="mostrarMenu()">Mostrar Menu</button>
+                        <button id="ocultar" onclick="ocultarMenu()">Ocultar Menu</button>
+                    </div>
+            </section>
+
+            <section id="eleccionComida">
+                <h1>🀄Kimono Kitchen🀄</h1>
                 <form>
                     <div id="comida">
                         <label for="selectPlato">Plato</label>
                         <select name="Plato" id="selectPlato">
                             <option value="45000" class="opcionPlato">Dragon Roll</option>
-                            <option value="35000" class="opcionPlato">Tofu Katsu Curry</option>
                             <option value="35000" class="opcionPlato">Ramen de Mariscos Picante</option>
-                            <option value="40000" class="opcionPlato">Donburi de Pollo Teriyaki</option>
+                            <option value="35000" class="opcionPlato">Donburi de Pollo Teriyaki</option>
                             <option value="60000" class="opcionPlato">Sashimi Variado</option>
                         </select>
-                            
+                                
                         <label for="cantidadPLato">Cantidad de platos</label>
                         <input type="number" id="cantidadPLato" placeholder="Cantidad Ej:5">
 
@@ -31,7 +65,6 @@
                             <option value="15000" class="opcionBebida">Té Matcha Frappé</option>
                             <option value="20000" class="opcionBebida">Sakura Blossom Martini</option>
                             <option value="18000" class="opcionBebida">Yuzu Ginger Fizz</option>
-                            <option value="25000" class="opcionBebida">Calpis Sake Spritz</option>
                             <option value="30000" class="opcionBebida">Plum Wine on the Rocks</option>
                         </select>
 
@@ -41,7 +74,6 @@
                         <label for="selectPostre">Postre</label>
                         <select name="Postre" id="selectPostre">
                             <option value="10000" class="opcionPostre">Mochi de Té Verde</option>
-                            <option value="15000" class="opcionPostre">Dorayaki con Relleno de Frijol Azuki</option>
                             <option value="12000" class="opcionPostre">Taiyaki de Helado</option>
                             <option value="18000" class="opcionPostre">Sésamo Negro Tiramisú</option>
                             <option value="15000" class="opcionPostre">Castella Cake con Frutas Frescas</option>
@@ -51,41 +83,13 @@
                         <input type="number" id="cantidadPostre" placeholder="Cantidad Ej:5">
                     </div>
                 </form>
-            <button onclick="calcularPrecio()">Enviar Pedido</button>
-            <div id="pedidoCalculado">
+            </section>
+            <div class="botones" id="boton2">
+                <button onclick="calcularPrecio()">Enviar Pedido</button>
+                <div id="pedidoCalculado"></div>
             </div>
-        </section>
-        <section id="menuComida">
-            <div id="menu">
-                <h2>Menu</h2>
-                <h3>Platos</h3>
-                <ul>
-                    <li>Dragon Roll: $45.000</li>
-                    <li>Ramen de Mariscos Picante: $35.000 </li>
-                    <li>Donburi de Pollo Teriyaki: $35.000</li>
-                    <li>Tofu Katsu Curry: $40.000</li>
-                    <li>Sashimi Variado: $60.000</li>
-                </ul>
-                <h3>Bebidas</h3>
-                <ul>
-                    <li>Té Matcha Frappé: $15.000</li>
-                    <li>Sakura Blossom Martini: $20.000</li>
-                    <li>Yuzu Ginger Fizz: $18.000</li>
-                    <li>Calpis Sake Spritz: $25.000</li>
-                    <li>Plum Wine on the Rocks: $30.000</li>
-                </ul>
-                <h3>Postres</h3>
-                <ul>
-                    <li>Mochi de Té Verde: $10.000</li>
-                    <li>Dorayaki con Relleno de Frijol Azuki: $15.000</li>
-                    <li>Taiyaki de Helado: $12.000</li>
-                    <li>Sésamo Negro Tiramisú: $18.000</li>
-                    <li>Castella Cake con Frutas Frescas: $15.000</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
+        </main>
+    </div>
     <script src="js/app.js"></script>
 </body>
 </html>
