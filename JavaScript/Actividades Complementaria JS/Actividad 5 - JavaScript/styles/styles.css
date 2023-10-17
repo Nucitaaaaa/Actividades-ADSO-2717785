@@ -30,7 +30,8 @@ body {
 h1 {
     text-align: center;
     color: var(--blanco);
-    font-size: 4.1rem;
+    font-size: 4rem;
+    padding: .3rem;
 }
 
 h2 {
@@ -56,14 +57,14 @@ button, input, select, option {
     background-color: var(--naranja);
     color: var(--blanco);
     font-family: 'Rock Salt', cursive;
-    font-size:1.5rem;
+    font-size:1.3rem;
     margin: 1rem;
     border-radius: .5rem;
 }
 
 button {
-    width: 20rem;
-    padding: 1.5rem;
+    width: 15rem;
+    padding: 1rem;
 }
 
 label {
@@ -90,8 +91,8 @@ label {
 #ocultar {
     position: absolute;
     display: none;
-    bottom: 90%;
-    left: 20%;
+    bottom: 75%;
+    left: 1%;
     top:3rem;
     background: none;
 }
@@ -124,14 +125,14 @@ label {
     background: var(--naranja);
     color: var(--blanco);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border-radius: .5rem;
 }
 
 #menuComida {
     text-align: left;
-    font-size: 1.6rem;
-    padding: 1.3rem;
+    font-size: 1.3rem;
+    padding: 1rem;
     display: none;
     position: absolute;
     background-color: var(--naranja);
@@ -139,5 +140,13 @@ label {
     border-radius: .5rem;
 }
 
+#divGif {
+    display: flex;
+    position: absolute;
+    left: 88%;
+    bottom: -22rem;
+}
 
-
+#gif {
+    width: 19rem;
+}
