@@ -23,7 +23,7 @@ function calcularPrecio() {
     var totalPostre = precioPostre * cantidadPostre;
 
     precioTotal.style.display = "block"
-    precioTotal.innerHTML = `El precio <strong>total</strong> de su pedido es: $${total} <br> <strong>Plato:</strong> ${comidaS}(x${cantidadComida}) <strong>Precio:</strong> $${totalComida} <br> <strong>Bebida:</strong> ${bebidaS}(x${cantidadBebida}) <strong>Precio:</strong> $${totalBebida} <br> <strong>Postre:</strong> ${postreS}(x${cantidadPostre}) <strong>Precio:</strong> $${totalPostre}`
+    precioTotal.innerHTML = `El precio <strong>total</strong> de su pedido es: $${total} <br> <strong>Plato:</strong> ${comidaS} (${cantidadComida})  <strong>Precio:</strong> $${totalComida} <br> <strong>Bebida:</strong> ${bebidaS} (${cantidadBebida})  <strong>Precio:</strong> $${totalBebida} <br> <strong>Postre:</strong> ${postreS} (${cantidadPostre})  <strong>Precio:</strong> $${totalPostre}`
 }
 
 function mostrarMenu() {
