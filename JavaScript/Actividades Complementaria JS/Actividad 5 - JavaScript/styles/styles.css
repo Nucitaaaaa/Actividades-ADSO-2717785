@@ -92,7 +92,7 @@ label {
     position: absolute;
     display: none;
     bottom: 75%;
-    left: 1%;
+    left: 0.5%;
     top:3rem;
     background: none;
 }
@@ -126,7 +126,7 @@ label {
     color: var(--blanco);
     text-align: center;
     font-size: 1.3rem;
-    border-radius: .5rem;
+    border-radius: .6rem;
 }
 
 #menuComida {
@@ -137,13 +137,13 @@ label {
     position: absolute;
     background-color: var(--naranja);
     color: var(--blanco);
-    border-radius: .5rem;
+    border-radius: .6rem;
 }
 
 #divGif {
     display: flex;
     position: absolute;
-    left: 88%;
+    left: 87%;
     bottom: -22rem;
 }
 
