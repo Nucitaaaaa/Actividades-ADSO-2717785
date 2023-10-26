@@ -96,5 +96,5 @@ print(f"Las edades de los 10 ultimos apredices son: {edadesAprendices[20:30]}\n"
 
 
 #11
-print(f"Los aprendices del 10 al 20 en la lista son: {aprendices[10:21]}\n") #se selecciona el indice del 10 al 21
-print(f"Las edades de los aprendices del 10 al 20 son: {edadesAprendices[10:21]}\n")
+print(f"Los aprendices del 10 al 20 en la lista son: {aprendices[10:20]}\n") #se selecciona el indice del 10 al 21
+print(f"Las edades de los aprendices del 10 al 20 son: {edadesAprendices[10:20]}\n")
