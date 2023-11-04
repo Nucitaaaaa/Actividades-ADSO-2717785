@@ -1,0 +1,32 @@
+Novedades
+
+Ambiente A
+
+MS003: Problemas de conectividad Wi-Fi - 10/11/23
+MS007: Pantalla rota o dañada - 11/11/23
+MS010: Teclado defectuoso o con teclas sueltas - 12/11/23
+
+Ambiente B
+
+MS021: Cargador o batería defectuosa - 13/11/23
+MS028: Sobrecalentamiento del dispositivo - 14/11/23
+
+Ambiente C
+
+MS030: Lentitud del sistema y programas - 15/11/23
+MS033: Actualización de software o sistema operativo - 16/11/23
+MS039: Virus o malware - 17/11/23
+MS041: Problemas de sonido o altavoces - 18/11/23
+
+Ambiente D
+
+MS046: Problemas con puertos USB u otros conectores - 19/11/23
+MS053: Pérdida o robo del equipo (Fue Mafe)(Si) - 20/11/23
+
+Ambiente E
+
+MS057: Problemas con la webcam o cámara - 21/11/23
+MS065: Disco duro lleno o problemas de almacenamiento - 22/11/23
+MS069: Necesidad de mantenimiento preventivo o limpieza - 23/11/23
+
+
