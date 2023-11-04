@@ -31,7 +31,7 @@ print(f"Edades de los aprendices: {edadesAprendices}\n")
 #Se selecciona el aprendiz con mayor edad
 edadMayor = max(edadesAprendices)
 #Se selecciona el indice de ese aprendiz
-iAprendizMayor = edadesAprendices.index(edadMayor)
+iAprendizMayor = aprendices.index(edadMayor) #;D
 #Se selecciona el nombre en base al indice de la edad
 aprendizMayor = aprendices[iAprendizMayor]
 
@@ -62,8 +62,8 @@ print(f"Edades de los aprendices: {edadesAprendices}\n")
 
 
 #7. Borre el nombre de la instructora de la lista
-aprendices.remove(aprendices[0])
-edadesAprendices.remove(edadesAprendices[0])
+aprendices.remove(aprendices[1]) #;D
+edadesAprendices.remove(edadesAprendices[1])
 
 print(f"Aprendices: {aprendices}\n")
 print(f"Edades de los aprendices: {edadesAprendices}\n")
@@ -77,8 +77,8 @@ for aprendiz in aprendices: #se hace un bucle donde se valida si el nombre del a
     if nombreAprendiz == aprendiz:
         print(f"\nEl estudiante {nombreAprendiz} si se encuentra en la lista de estudiantes\n") #si si se encuentra
         coincidencias = 1
-    else:
-        continue #si no se encuentra (continue para evitar error)
+
+#;D 
 
 if coincidencias == 0: #si el contador no subió
     print(f"\nEl estudiante {nombreAprendiz} no se encuentra en la lista de estudiantes\n")
