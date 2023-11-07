@@ -70,13 +70,20 @@ def reportes(opcR):
     else:
         # Mensaje para informar que la opción que eligio el usuario no es una valida
         print('\nOpción no valida, Seleccione (1 o 2)')
-        
+
+def eliminar(desktopId):
+    #Funcion para eliminar un equipo del diccionario
+    if desktopId in laps: #en caso de que se encuentre
+        laps.pop(desktopId)   
+        print(f'\nEl equipo {desktopId} ha sido eliminado del sistema')
+    else: #si no se encuentra el equipo
+        print(f"\nNo se encontró un equipo con el ID {desktopId}")
 
 #Ejecución del programa
 
 while True: 
     # Menu Inicial
-    print('\nBienvenido al sistema de control de quipos de la nave 4 del SENA, seleccione:\n- 1 para agregar un equipo\n- 2 para agregar una novedad\n- 3 para buscar un equipo\n- 4 para mostrar el reporte\n- 0 para salir\n\nRecuerde que para que funcionen las opciones 2, 3 y 4 debe agregar un equipo previamente')
+    print('\nBienvenido al sistema de control de quipos de la nave 4 del SENA, seleccione:\n- 1 para agregar un equipo\n- 2 para agregar una novedad\n- 3 para buscar un equipo\n- 4 para mostrar el reporte\n- 5 para eliminar un equipo\n- 0 para salir \n\nRecuerde que para que funcionen las opciones 2, 3, 4 y 5 debe agregar un equipo previamente')
 
     opc = int(input('\nDigite la opción: '))
 
@@ -95,6 +102,8 @@ while True:
     elif opc == 4:
         # Llamado a la funcion para Mostrar el reporte solicitado
         reportes(int(input('\nIngrese 1 para ver el reporte de los equipos por ambiente, ingrese 2 para ver el reporte de todos los equipos: ')))
+    elif opc == 5:
+        eliminar(str(input('\nIngrese el id del equipo a eliminar: ')))
     else:
         # Mensaje si la opción seleccionada no es valida
-        print('\nDigite una opcion valida (1, 2, 3, 4 y 0)')
+        print('\nDigite una opcion valida (1, 2, 3, 4, 5 y 0)')
