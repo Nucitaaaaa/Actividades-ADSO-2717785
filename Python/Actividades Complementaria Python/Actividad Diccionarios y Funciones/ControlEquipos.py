@@ -22,7 +22,7 @@ def novedad(desktopId, date, descripcion):
     if desktopId in laps:
         # Si existe agrega una nueva novedad con la fecha y su descripción
         laps[desktopId]['novedades'].append({'fecha': date, 'descripcion': descripcion})
-        print(f"\nLa novedad sobre el equipo \"{desktopId}\" fue agregada exitosamente\n")
+        print(f"\nLa novedad sobre el equipo {desktopId} fue agregada exitosamente\n")
         # De lo contrario muestra un mensaje de que no existe ningun equipo con esa ID
     else:
         print(f"\nNo se encontró un equipo con el ID {desktopId}")
@@ -80,15 +80,15 @@ def eliminar(desktopId):
         print(f"\nNo se encontró un equipo con el ID {desktopId}")
 
 def modificar(desktopId, perifericos, hall):
-        if desktopId in laps:
+    #funcion para modificar un equipo del diccionario 
+        if desktopId in laps: #si se encuentra, se reemplazan la info anterior con la info de los argumentod
             laps[desktopId] = {
                 'ambiente': hall,
                 'perifericos': perifericos,
             }
             print(f"\nEl equipo {desktopId} fue modificado exitosamente\n")
-        else:
+        else: #si no se encuentra el equipo
             print(f"\nEl equipo {desktopId} no existe\n")
-            print(laps)
 #Ejecución del programa
 
 while True: 
