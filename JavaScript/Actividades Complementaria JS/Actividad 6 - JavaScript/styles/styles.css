@@ -1,0 +1,35 @@
+
+html {
+    font-size: 62.5%;
+    margin: 0 auto;
+    background-image: url(../img/bg.bmp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+.contenedor {
+    text-align: center;    
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton, .refresh, .contador { 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    padding: 1.5rem;
+}
+
+.contador p {
+    font-size: 2rem;
+}
+
