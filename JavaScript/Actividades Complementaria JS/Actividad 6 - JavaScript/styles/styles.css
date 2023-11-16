@@ -1,7 +1,16 @@
 
 html {
     font-size: 62.5%;
-    margin: 0 auto;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(../img/bg.bmp);
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,8 +18,23 @@ html {
 }
 
 h1 {
-    color: white;
-    font-size: 3rem;
+    color: rgb(221 220 252);
+    font-size: 5rem;
+    text-decoration: underline;
+}
+
+button {
+    color: rgb(221 220 252); 
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.103);
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.486);
+    border-radius: 1rem;
+}
+
+
+button:hover{
+    background-color: rgba(90, 79, 241, 0.548);
 }
 
 .contenedor {
@@ -23,13 +47,19 @@ h1 {
     justify-content: center;
 }
 
-.boton, .refresh, .contador { 
+.boton { 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 2rem;
+    color: rgb(221 220 252);
+    font-size: 2.5rem;
     padding: 1.5rem;
 }
 
-.contador p {
+#contador {
     font-size: 2rem;
+    margin: 2rem;
+    padding: 1rem 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.288);
+    border: 1px solid rgba(255, 255, 255, 0.486);
+    border-radius: 1rem;
 }
-
