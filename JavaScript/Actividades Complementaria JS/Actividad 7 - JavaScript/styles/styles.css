@@ -1,4 +1,59 @@
 
 img {
-    width: 100px;
+    width: 300px;
+    height: 200px;
+}
+
+html {
+    font-size: 62.5%;
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.libros {
+    display: flex;
+    gap: 10rem;
+}
+
+.libro {
+    padding: 2rem;
+    padding-bottom: 10rem;
+}
+
+.libro__content {
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.py {
+    background-color: rgb(47 156 252);
+    border: 1.5rem solid rgb(37 47 74);
+}
+
+.js {
+    background-color: rgb(247 223 23);
+    border: 1.5rem solid rgb(4 40 6 / 79%);
+}
+
+.js p {
+    color: black;
+}
+
+.libro__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -4,54 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Carrito libros</title>
 </head>
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador Me gustas</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
     <div class="contenedor">
-        <div>
-            <img src="img/python.jpg" alt="libro python">
-            <div>
-                <p>Libro: "Programación con python"</p>
-                <p>Precio: $70.000</p>
-                <div>
-                    <p>cantidad</p>
-                    <p id="contador">0</p>
-                    <button onclick="aumento()"> + </button>
-                    <button onclick="decremento()"> - </button>
+        <div class="libros">
+            <div class="libro py">
+                <img src="img/python.jpg" alt="libro python">
+                <div class="libro__div">
+                    <p class="libro__content"><span>Libro:</span> "Programación con python"</p>
+                    <p class="libro__content"><span>Precio:</span> $70.000</p>
+                    <div>
+                        <p class="libro__content" id="contador1">Cantidad: 1</p>
+                        <button onclick="aumento1()"> + </button>
+                        <button onclick="decremento1()"> - </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <img src="img/What-Is-JavaScript-Used-For.avif" alt="libro python">
-            <div>
-                <p>Libro: "Programación con JavaScript"</p>
-                <p>Precio: $85.000</p>
-                <div>
-                    <p>cantidad</p>
-                    <p id="contador">0</p>
-                    <button onclick="aumento()"> + </button>
-                    <button onclick="decremento()"> - </button>
+            <div class="libro js">
+                <img src="img/js.avif" alt="libro python">
+                <div class="libro__div">
+                    <p class="libro__content">Libro: "Programación con JavaScript"</p>
+                    <p class="libro__content">Precio: $85.000</p>
+                    <div>
+                        <p class="libro__content" id="contador2">Cantidad: 1</p>
+                        <button onclick="aumento2()"> + </button>
+                        <button onclick="decremento2()"> - </button>
+                    </div>
                 </div>
             </div>
         </div>
         <div>
             <button onclick="comprar()">Comprar</button>
             <div>
-                <p>Total: 0</p>
+                <p id="total"></p>
             </div>
         </div>
     </div>
     <script src="js/app.js"></script>
-</body>
-</html>
 </body>
 </html>
