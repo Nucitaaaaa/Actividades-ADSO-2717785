@@ -17,9 +17,9 @@
                 <img src="img/python.jpg" alt="libro python">
                 <div class="libro__div">
                     <p class="libro__content"><span>Libro:</span> "Programación con python"</p>
-                    <p class="libro__content"><span>Precio:</span> $70.000</p>
-                    <div>
-                        <p class="libro__content" id="contador1">Cantidad: 1</p>
+                    <p class="libro__content"><span>Precio:</span> $70.000</p>    
+                    <p class="libro__content" id="contador1"><span>Cantidad:</span> 1</p>
+                    <div class="libro__buttons">
                         <button onclick="aumento1()"> + </button>
                         <button onclick="decremento1()"> - </button>
                     </div>
@@ -28,19 +28,19 @@
             <div class="libro js">
                 <img src="img/js.avif" alt="libro python">
                 <div class="libro__div">
-                    <p class="libro__content">Libro: "Programación con JavaScript"</p>
-                    <p class="libro__content">Precio: $85.000</p>
-                    <div>
-                        <p class="libro__content" id="contador2">Cantidad: 1</p>
+                    <p class="libro__content"><span>Libro:</span> "Programación con JavaScript"</p>
+                    <p class="libro__content"><span>Precio:</span> $85.000</p>
+                    <p class="libro__content" id="contador2"><span>Cantidad:</span> 1</p>
+                    <div class="libro__buttons">
                         <button onclick="aumento2()"> + </button>
                         <button onclick="decremento2()"> - </button>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-            <button onclick="comprar()">Comprar</button>
-            <div>
+        <div class="comprar">
+            <button class="comprar__boton" onclick="comprar()">Comprar</button>
+            <div id="comprar__total">
                 <p id="total"></p>
             </div>
         </div>
