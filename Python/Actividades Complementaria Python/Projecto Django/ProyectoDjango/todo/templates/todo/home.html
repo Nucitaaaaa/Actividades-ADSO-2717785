@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Django</title>
+</head>
+<body>
+    <h1>TODO LIST</h1>
+    <ul>
+        {% for tarea in tareas %}
+        <li> {{ tarea }} </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
