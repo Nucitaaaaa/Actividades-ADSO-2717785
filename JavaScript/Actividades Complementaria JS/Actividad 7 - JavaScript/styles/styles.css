@@ -27,6 +27,10 @@ button {
     font-family: 'Roboto Condensed', sans-seri
 }
 
+p {
+    font-size: 1.5rem;
+}
+
 .libros {
     display: flex;
     gap: 10rem;
@@ -50,6 +54,10 @@ button {
 .py {
     background-color: rgba(47, 156, 252, 0.774);
     border: 1.5rem solid rgba(37, 47, 74, 0.774);
+}
+
+#precioIndividual {
+    color: white;
 }
 
 .js {

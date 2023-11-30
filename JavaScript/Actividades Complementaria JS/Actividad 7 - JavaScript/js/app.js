@@ -4,6 +4,8 @@ var divTotal = document.getElementById('comprar__total')
 const total = document.getElementById('total')
 const contador1 = document.getElementById("contador1");
 const contador2 = document.getElementById("contador2");
+const precioIndividual1 = document.getElementById("precioIndividual")
+const precioIndividual2 = document.getElementById("precioIndividual2")
 
 //Variables de js (contadores)
 var count1 = 1;
@@ -43,4 +45,6 @@ function comprar(){
     
     divTotal.style.display = "block" //cambia la vista del div de none a block 
     total.innerHTML = `El total es de: $${precioTotal}` //Texto que muestra el total del "Pedido"
+    precioIndividual1.innerHTML = `Total: $${precioLPy * count1}` 
+    precioIndividual2.innerHTML = `Total: $${precioLJs * count2}` 
 }
