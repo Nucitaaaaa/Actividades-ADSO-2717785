@@ -1,0 +1,96 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, Arial, Helvetica;
+    text-decoration: none;
+}
+
+body {
+    background-color: #739072;
+}
+
+header {
+    width: 1212px;
+    height: 140px;
+    background-color: #3A4D39;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 35%;
+    height: 130px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.logo h1 {
+    display: block;
+    letter-spacing: 2px;
+    margin: 20px 35px 20px 0;
+    /* text-transform: uppercase; */
+    /* font-weight: lighter; */
+    color: #ECE3CE; 
+} 
+
+.logo img {
+    display: block;
+    width: 80px;
+    float: left;
+    margin: 20px 15px 0 20px;
+    /* margin-top: 20px;
+    margin-left: 35px; */
+}
+
+.nav{
+    width: 1250px;
+    height: 40px;
+    background-color: #3A4D39;
+    border: 1px solid #4e684c;
+    margin: 0 auto;
+    box-shadow: 0px 22px 22px #4e684c;
+}
+
+.nav a{
+    display: block;
+    padding: 0 20px 0 20px;
+    line-height: 40px;
+    float: left;
+    color: #ECE3CE;
+}
+
+.nav a:hover{
+    background-color: #2ba977;
+    box-shadow: 0px 0px 5px #4e684c inset;
+    color: #ECE3CE;
+    transition: all 400ms;
+}
+
+.barra {
+    width: 1250px;
+    margin: 0 auto;
+    margin-bottom: 140px;
+}
+
+.barra .esquinaIzquierda{
+    display: block;
+    border-top: 10px solid #3A4D39;
+    border-left: 20px solid transparent;
+    float: left;
+}
+
+.barra .rellenoBarra {
+    display: block;
+    width: 1210px;
+    height: 10px;
+    background: #3A4D39;
+    float: left;
+}
+
+.barra .esquinaDerecha{
+    display: block;
+    border-top: 10px solid #3A4D39;
+    border-right: 20px solid transparent;
+    float: right;
+}
+

@@ -6,19 +6,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Document</title>
 </head>
 <body>
-        <h1>Sitio Web Con Django | Maria Buenaventura</h1>
-
         <header>
-            <nav class="nav">
-                <a href="/holaMundo">Hola Mundo</a>
-                <a href="/saludo">Saludo</a>
-                <a href="/contacto">Contacto</a>
-            </nav>
+            <div class="logo">
+                <img src="{% static 'img/logo.webp' %}" alt="Logo Django"> 
+                <h1>Sitio Web Con Django | Maria Buenaventura</h1>
+            </div>
         </header>
+
+        <nav class="nav">
+            <a href="/holaMundo">Hola Mundo</a>
+            <a href="/saludo">Saludo</a>
+            <a href="/contacto">Contacto</a>
+        </nav>
+
+        <div class="barra">
+            <span class="esquinaIzquierda"></span>
+            <span class="rellenoBarra"></span>
+            <span class="esquinaDerecha"></span>
+        </div>
 
         <section id="content">
             {%block content%}
