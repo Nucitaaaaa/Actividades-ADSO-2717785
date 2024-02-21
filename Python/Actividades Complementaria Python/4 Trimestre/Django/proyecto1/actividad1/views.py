@@ -1,42 +1,12 @@
 
 from django.shortcuts import render, HttpResponse, redirect
 
-layout="""
-        <h1>Sitio Web con Django | Maria Buenaventura</h1>
-        </hr>
-        <ul>
-            <li>
-                <a href="/holaMundo">Hola Mundo</a>
-            </li>
-            <li>
-                <a href="/saludo">Saludo</a>
-            </li>
-
-            <li>
-                <a href="/index">Index</a>
-            </li>
-
-            
-            <li>
-                <a href="/contacto">Contacto</a>
-            </li>
-
-        </ul>
-        """
-
-
 def holaMundo (request):
-    return HttpResponse(layout+"Hola Mundo desde Django")
+    return render(request, 'holamundo.html')
+
 
 def saludo(request, redirigir = 0):
-
-    if redirigir == 1:
-        return redirect('contacto', name="a", lastName="aa")
-
-    return HttpResponse(layout + """
-                        <h1>Saludo de Bienvenida<h1/>
-                        <h2>Bienvenidos al SENA Tolima<h2/>
-                        """)
+    return render(request, 'saludo.html')
 
 def contacto(request, name='', lastName=''):
     aprendiz = ""
@@ -59,29 +29,9 @@ def contacto(request, name='', lastName=''):
     else:
         aprendiz += 'Sin información'
 
-    return HttpResponse(layout + f"<h2>Contacto: </h2>" + aprendiz)
+    return render(request, 'contacto.html')
 
 
 def index (request):
-    template = """
-                    <h1>Inicio</h1>
-                    <p>Años desde el 2024 hasta el 2050</p>
-                    <ul>
-                        """
-
-    year=2024
-    while year <= 2050:
-        template += f"<li> {str(year)} "
-        if year % 2 == 0:
-            template += "(Año par)"
-
-        if  year % 4 == 0:
-            template += "(Año bisiesto)"
-
-        template+="</li>"
-        year += 1
-
-    template += "</ul>"
-
-    return HttpResponse(layout+template)
+    return render(request, 'layout.html')
 

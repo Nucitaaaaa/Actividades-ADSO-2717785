@@ -21,8 +21,7 @@ import actividad1.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('holaMundo/', actividad1.views.holaMundo, name="holaMundo"),
-    path('saludo/<int:redirigir>', actividad1.views.saludo, name="saludo"),
-    path('index/', actividad1.views.index, name="saludo"),
+    path('saludo/', actividad1.views.saludo, name="saludo"),
     path('', actividad1.views.index, name="index"),
     
     path('contacto/', actividad1.views.contacto, name="contacto"),
