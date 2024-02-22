@@ -7,9 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <title>Document</title>
+    <link rel="icon" href="{%static 'img/DjangoLogo.png'%}">
+    <title>Pagina con Django</title>
 </head>
 <body>
+        {% comment 'Pagina' %}  
+            Pagina de prueba
+        {% endcomment %}
+
         <header>
             <div class="logo">
                 <img src="{% static 'img/DjangoLogo.png' %}" alt="Logo Django"> 
@@ -18,6 +23,7 @@
         </header>
 
         <nav class="nav">
+            <a href="/">Inicio</a>
             <a href="/holaMundo">Hola Mundo</a>
             <a href="/saludo">Saludo</a>
             <a href="/contacto">Contacto</a>

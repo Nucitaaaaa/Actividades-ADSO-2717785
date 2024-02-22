@@ -2,5 +2,13 @@
 {%extends 'layout.html'%}
 
 {%block content%}
-    <h2>Contactos</h2>
+    <h2>Contactos:</h2>
+    <br>
+    <div>
+        {% for contacto in contactos %}
+            <ul>
+                <li>{{contacto}}</li>
+            </ul>
+        {% endfor %}
+    </div>
 {%endblock%}
