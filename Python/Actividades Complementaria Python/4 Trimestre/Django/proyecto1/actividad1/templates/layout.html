@@ -12,7 +12,7 @@
 <body>
         <header>
             <div class="logo">
-                <img src="{% static 'img/logo.webp' %}" alt="Logo Django"> 
+                <img src="{% static 'img/DjangoLogo.png' %}" alt="Logo Django"> 
                 <h1>Sitio Web Con Django | Maria Buenaventura</h1>
             </div>
         </header>
@@ -30,9 +30,11 @@
         </div>
 
         <section id="content">
-            {%block content%}
+            <div class="box">
+                {%block content%}
 
-            {%endblock%}
+                {%endblock%}
+            </div>
         </section>
 
         <footer>

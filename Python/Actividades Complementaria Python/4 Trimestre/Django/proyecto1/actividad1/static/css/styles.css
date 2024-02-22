@@ -17,8 +17,12 @@ header {
     margin: 0 auto;
 }
 
+h1 {
+    width: 600px;
+}
+
 .logo {
-    width: 35%;
+    width: 45%;
     height: 130px;
     margin: 0 auto;
     padding-top: 10px;
@@ -27,17 +31,17 @@ header {
 .logo h1 {
     display: block;
     letter-spacing: 2px;
-    margin: 20px 35px 20px 0;
+    margin: 23px 35px 20px 5px;
     /* text-transform: uppercase; */
     /* font-weight: lighter; */
-    color: #ECE3CE; 
+    color: #ECE3CE;
 } 
 
 .logo img {
     display: block;
-    width: 80px;
+    width: 120px;
     float: left;
-    margin: 20px 15px 0 20px;
+    margin: 20px 15px 0 0;
     /* margin-top: 20px;
     margin-left: 35px; */
 }
@@ -46,7 +50,7 @@ header {
     width: 1250px;
     height: 40px;
     background-color: #3A4D39;
-    border: 1px solid #4e684c;
+    border: 1px solid #092d1f;
     margin: 0 auto;
     box-shadow: 0px 22px 22px #4e684c;
 }
@@ -57,11 +61,12 @@ header {
     line-height: 40px;
     float: left;
     color: #ECE3CE;
+    font-weight: bold;
 }
 
 .nav a:hover{
-    background-color: #2ba977;
-    box-shadow: 0px 0px 5px #4e684c inset;
+    background-color: #092d1f;
+    box-shadow: 0px 0px 5px rgb(11, 53, 37) inset;
     color: #ECE3CE;
     transition: all 400ms;
 }
@@ -69,7 +74,6 @@ header {
 .barra {
     width: 1250px;
     margin: 0 auto;
-    margin-bottom: 140px;
 }
 
 .barra .esquinaIzquierda{
@@ -94,3 +98,28 @@ header {
     float: right;
 }
 
+#content {
+    width: 1212px;
+    min-height: 930px;
+    margin: 40px auto 30px auto;
+}
+
+#content .box {
+    background-color: #ECE3CE;
+    width: 95%;
+    min-height: 930px;
+    padding: 20px;
+    border: 1px solid #3A4D39;
+    margin: 0 auto;
+}
+
+footer {
+    width: 1250px;
+    background-color: #3A4D39;
+    border: 1px solid #092d1f;
+    color: #ECE3CE;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    box-shadow: 0 0 20px #3A4D39;
+    margin: 0 auto;
+}
