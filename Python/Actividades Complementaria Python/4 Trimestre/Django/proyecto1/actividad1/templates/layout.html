@@ -1,5 +1,5 @@
 
-{%load static%}
+{%load static%} <!-- Carga la carpeta static y su contenido -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,43 +7,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <link rel="icon" href="{%static 'img/DjangoLogo.png'%}">
+    <link rel="icon" href="{%static 'img/DjangoLogo.png'%}"> <!-- manera de importar iconos en Django -->
     <title>Pagina con Django</title>
 </head>
 <body>
-        {% comment 'Pagina' %}  
+        {% comment 'Pagina' %}  <!-- Comentarios con extensión de Django -->
             Pagina de prueba
         {% endcomment %}
 
-        <header>
+        <header> <!-- Header de la pagina -->
             <div class="logo">
-                <img src="{% static 'img/DjangoLogo.png' %}" alt="Logo Django"> 
+                <img src="{% static 'img/DjangoLogo.png' %}" alt="Logo Django"> <!-- manera de importar imagenes en Django -->
                 <h1>Sitio Web Con Django | Maria Buenaventura</h1>
             </div>
         </header>
 
         <nav class="nav">
-            <a href="/">Inicio</a>
+            <a href="/">Inicio</a> <!-- Nav de la pagina -->
             <a href="/holaMundo">Hola Mundo</a>
             <a href="/saludo">Saludo</a>
             <a href="/contacto">Contacto</a>
         </nav>
 
-        <div class="barra">
+        <div class="barra">  <!-- div para efecto 3D del nav de la pagina -->
             <span class="esquinaIzquierda"></span>
             <span class="rellenoBarra"></span>
             <span class="esquinaDerecha"></span>
         </div>
 
-        <section id="content">
-            <div class="box">
-                {%block content%}
+        <section id="content">  <!-- Section donde se renderizan los templates -->
+            <div class="box"> 
+                {%block content%}  <!-- bloque para renderizar los templates -->
 
                 {%endblock%}
             </div>
         </section>
 
-        <footer>
+        <footer>  <!-- Footer de la pagina -->
             <p>&copy; All Rights Reserved | Maria Buenaventura</p>
         </footer>
 

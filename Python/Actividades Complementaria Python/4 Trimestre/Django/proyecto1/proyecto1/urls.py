@@ -13,18 +13,22 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    
 """
+
+
 from django.contrib import admin
 from django.urls import path
-import actividad1.views
+import actividad1.views #Se importan las vistas de el documento 'views.py'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('holaMundo/', actividad1.views.holaMundo, name="holaMundo"),
-    path('saludo/', actividad1.views.saludo, name="saludo"),
-    path('', actividad1.views.index, name="index"),
-    
-    path('contacto/', actividad1.views.contacto, name="contacto"),
-    path('contacto/<str:name>', actividad1.views.contacto, name="contacto"),
-    path('contacto/<str:name>/<str:lastName>', actividad1.views.contacto, name="contacto"),
+    path('admin/', admin.site.urls), 
+
+    path('holaMundo/', actividad1.views.holaMundo, name="holaMundo"), #URL que lleva a la vista de 'Hola mundo'
+    path('saludo/', actividad1.views.saludo, name="saludo"), #URL que lleva a la vista de 'Saludo'
+    path('', actividad1.views.inicio, name="inicio"), #URL que lleva a la vista de 'Inicio'
+    path('contacto/', actividad1.views.contacto, name="contacto"), #URL que lleva a la vista de 'Contacto'
 ]
+
+# path('contacto/<str:name>', actividad1.views.contacto, name="contacto"),
+# path('contacto/<str:name>/<str:lastName>', actividad1.views.contacto, name="contacto"),

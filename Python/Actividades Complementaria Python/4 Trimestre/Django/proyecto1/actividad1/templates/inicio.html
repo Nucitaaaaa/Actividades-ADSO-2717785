@@ -1,0 +1,19 @@
+
+{%extends 'layout.html'%} <!-- Esta template se extiende hacia el template padre 'layout.html' -->
+
+{% block content %} <!-- contenido que se va a renderizar -->
+
+<h1>Inicio</h1>
+
+{{mi_variable}}
+
+{%if name == 'Maria Buenaventura'%} <!-- Manera de realizar condicionales en las templates-->
+    <p>{{name}}</p>
+{%else%}
+    <br>
+    <strong>nombre no existe o no coincide</strong>
+{%endif%}
+
+<p class="inicio2">Bienvenidos a un mini proyecto de Django</p>
+
+{% endblock %}

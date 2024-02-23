@@ -1,13 +1,13 @@
 
-{%extends 'layout.html'%}
+{%extends 'layout.html'%}  <!-- Esta template se extiende hacia el template padre 'layout.html' -->
 
-{%block content%}
+{%block content%}  <!-- contenido que se va a renderizar -->
     <h2>Contactos:</h2>
     <br>
     <div>
-        {% for contacto in contactos %}
+        {% for contacto in contactos %}  <!-- manera de hacer ciclos for en las templates -->
             <ul>
-                <li>{{contacto}}</li>
+                <li>{{contacto}}</li>  <!-- se renderiza el array de contactos -->
             </ul>
         {% endfor %}
     </div>

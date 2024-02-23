@@ -1,14 +1,16 @@
 
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render 
 
-def holaMundo (request):
+#?vistas para renderizar en los templates y layout
+
+def holaMundo (request): #Vista para retemplate 'Hola Mundo'
     return render(request, 'holamundo.html')
 
 
-def saludo(request, redirigir = 0):
+def saludo(request, redirigir = 0): #Vista para template 'saludo'
     return render(request, 'saludo.html')
 
-def contacto(request, name='', lastName=''):
+def contacto(request, name='', lastName=''): #Vista para template 'contacto'
     
     # aprendiz = ""
 
@@ -30,7 +32,7 @@ def contacto(request, name='', lastName=''):
     # else:
     #     aprendiz += 'Sin información'
 
-    contactos = {
+    contactos = { #Array para renderizar con el for 
     '555-1234',
     '555-5678',
     '555-9012',
@@ -44,11 +46,11 @@ def contacto(request, name='', lastName=''):
 }
 
     return render(request, 'contacto.html', {
-        'contactos' : contactos
+        'contactos' : contactos #se asigna a la variable contactos el array para manejarlo en el template
     })
 
 
-def index (request):
+def inicio (request):  #Vista para template 'inicio'
 
     # year = 2024
     # while year <= 2050:
@@ -65,9 +67,9 @@ def index (request):
 
     nombre = 'Maria Buenaventura'
 
-    return render(request,'index.html',{
+    return render(request,'inicio.html',{
         'mi_variable': 'soy un dato que esta en la vista',
-        'titulo':'Pagina de Inicio SENA',
+        # 'titulo':'Pagina de Inicio SENA',
         'name':nombre
     })
 
