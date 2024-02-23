@@ -6,17 +6,24 @@
     <h2 class="h2">Contactos</h2>
     <br>
     <div>
+        <!--!Crear formulario-->
+        <p>{{"creado por Juan Guillermo Zuluaga"| cut:' '}}</p>
+        <p>{{texto|default:"No hay texto"}}</p>
+        <p>{{nombres|first}}</p>
+        <p>{{nombres|last}}</p>
+        <p>{{nombres|join:", "}}</p>
+        <p>{{nombres|length}}</p>
+        <p>{{'colombia'|upper}}</p>
+        <p>{{'colombia'|lower}}</p>
+        <p>{{nombres|random}}</p>
+        <p>{{'<h1>Hola</h1>'|striptags}}</p>
+        <p>{{'<h1>Hola</h1>'|wordcount}}</p>
+
         {% for contacto in contactos %}  <!-- manera de hacer ciclos for en las templates -->
             <ul>
                 <li>{{contacto}}</li>  <!-- se renderiza el array de contactos -->
             </ul>
         {% endfor %}
-
-        <!-- {% for i in framewoks %}  
-            <ul>
-                <li>{{i}}</li>  
-            </ul>
-        {% endfor %}   -->
     </div>
 {%endblock%}
 

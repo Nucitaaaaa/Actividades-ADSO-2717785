@@ -14,7 +14,8 @@
     <br>
     <strong>nombre no existe o no coincide</strong>
 {%endif%}
-
 <p class="inicio2">Bienvenidos a un mini proyecto de Django</p>
+
+{%include 'fechaActual.html' with saludo='Hola desde la Plantilla'%}
 
 {% endblock %}

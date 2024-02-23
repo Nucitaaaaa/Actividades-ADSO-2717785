@@ -24,10 +24,10 @@
         </header>
 
         <nav class="nav">
-            <a href="/">Inicio</a> <!-- Nav de la pagina -->
-            <a href="/holaMundo">Hola Mundo</a>
-            <a href="/saludo">Saludo</a>
-            <a href="/contacto">Contacto</a>
+            <a href={%url 'inicio'%}>Inicio</a> <!-- Nav de la pagina -->
+            <a href={%url 'holaMundo'%}>Hola Mundo</a>
+            <a href={%url 'saludo'%}>Saludo</a>
+            <a href={%url 'contacto'%}>Contacto</a>
         </nav>
 
         <div class="barra">  <!-- div para efecto 3D del nav de la pagina -->
@@ -45,7 +45,7 @@
         </section>
 
         <footer>  <!-- Footer de la pagina -->
-            <p>&copy; All Rights Reserved | Maria Buenaventura</p>
+            <p>&copy; All Rights Reserved | Maria Buenaventura - {% now 'd/m/Y h:i:s'%}</p>
         </footer>
 
 </body>

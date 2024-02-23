@@ -8,7 +8,10 @@ def holaMundo (request): #Vista para retemplate 'Hola Mundo'
 
 
 def saludo(request, redirigir = 0): #Vista para template 'saludo'
-    return render(request, 'saludo.html')
+    return render(request, 'contacto.html', {
+        'texto':'xd',
+        'nombres': ['maria','pedro','juan']
+    })
 
 def contacto(request, name='', lastName=''): #Vista para template 'contacto'
     
@@ -77,6 +80,7 @@ def inicio (request):  #Vista para template 'inicio'
     return render(request,'inicio.html',{
         'mi_variable': 'soy un dato que esta en la vista',
         # 'titulo':'Pagina de Inicio SENA',
-        'name':nombre
+        'name':nombre,
     })
+
 
