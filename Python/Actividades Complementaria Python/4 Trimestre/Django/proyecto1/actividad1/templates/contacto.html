@@ -1,8 +1,9 @@
 
 {%extends 'layout.html'%}  <!-- Esta template se extiende hacia el template padre 'layout.html' -->
+{%load static%} 
 
 {%block content%}  <!-- contenido que se va a renderizar -->
-    <h2>Contactos:</h2>
+    <h2 class="h2">Contactos</h2>
     <br>
     <div>
         {% for contacto in contactos %}  <!-- manera de hacer ciclos for en las templates -->
@@ -10,5 +11,20 @@
                 <li>{{contacto}}</li>  <!-- se renderiza el array de contactos -->
             </ul>
         {% endfor %}
+
+        <!-- {% for i in framewoks %}  
+            <ul>
+                <li>{{i}}</li>  
+            </ul>
+        {% endfor %}   -->
     </div>
 {%endblock%}
+
+<!-- 
+    {empty} 
+    {forloop.first}
+    {forloop.counter}
+    {forloop.revcounter}
+    {|divisibleby:num|}
+-->
+

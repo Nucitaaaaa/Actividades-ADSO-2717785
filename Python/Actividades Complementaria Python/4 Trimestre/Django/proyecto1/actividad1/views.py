@@ -32,7 +32,7 @@ def contacto(request, name='', lastName=''): #Vista para template 'contacto'
     # else:
     #     aprendiz += 'Sin información'
 
-    contactos = { #Array para renderizar con el for 
+    contactos = [ #Array para renderizar con el for 
     '555-1234',
     '555-5678',
     '555-9012',
@@ -43,10 +43,17 @@ def contacto(request, name='', lastName=''): #Vista para template 'contacto'
     '555-0123',
     '555-4567',
     '555-8901'
-}
+    ]
+
+    frameworks = {
+        'react' : 'js',
+        'django' : 'python',
+        'laravel': 'php'
+    }
 
     return render(request, 'contacto.html', {
-        'contactos' : contactos #se asigna a la variable contactos el array para manejarlo en el template
+        'contactos' : contactos, #se asigna a la variable contactos el array para manejarlo en el template
+        'frameworks' : frameworks
     })
 
 
