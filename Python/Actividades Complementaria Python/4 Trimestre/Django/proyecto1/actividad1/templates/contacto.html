@@ -18,6 +18,17 @@
         <p>{{nombres|random}}</p>
         <p>{{'<h1>Hola</h1>'|striptags}}</p>
         <p>{{'<h1>Hola</h1>'|wordcount}}</p>
+        <br>
+
+        <h2>Ejemplos Propios</h2>
+
+        <p>Es true?: {{true|yesno:"si,no,talvez"}}</p> 
+        <p>Es true?: {{false|yesno:"si,no,talvez"}}</p> 
+        <p> Es true?:{{none|yesno:"si,no,talvez"}}</p> 
+        <br>
+        <p>{{titulo|title}}</p> <!--'titulo' : 'MI PrImeRa ChamBa'-->
+        <br>
+        <p>{{hacerLista|make_list}}</p>
 
         {% for contacto in contactos %}  <!-- manera de hacer ciclos for en las templates -->
             <ul>

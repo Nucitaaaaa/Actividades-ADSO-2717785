@@ -10,7 +10,12 @@ def holaMundo (request): #Vista para retemplate 'Hola Mundo'
 def saludo(request, redirigir = 0): #Vista para template 'saludo'
     return render(request, 'contacto.html', {
         'texto':'xd',
-        'nombres': ['maria','pedro','juan']
+        'nombres': ['maria','pedro','juan'],
+        'true' : True,
+        'false' : False,
+        'none' : None,
+        'titulo' : 'MI PrImeRa ChamBa',
+        'hacerLista' : 'Django es facil' 
     })
 
 def contacto(request, name='', lastName=''): #Vista para template 'contacto'
