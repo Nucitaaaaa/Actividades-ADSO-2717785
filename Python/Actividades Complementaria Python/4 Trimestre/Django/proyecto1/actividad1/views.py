@@ -7,7 +7,7 @@ def holaMundo (request): #Vista para retemplate 'Hola Mundo'
     return render(request, 'holamundo.html')
 
 
-def saludo(request, redirigir = 0): #Vista para template 'saludo'
+def saludo(request): #Vista para template 'saludo'
     return render(request, 'contacto.html', {
         'texto':'xd',
         'nombres': ['maria','pedro','juan'],

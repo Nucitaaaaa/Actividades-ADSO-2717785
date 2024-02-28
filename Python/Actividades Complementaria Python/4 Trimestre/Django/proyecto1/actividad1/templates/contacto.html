@@ -1,6 +1,7 @@
 
 {%extends 'layout.html'%}  <!-- Esta template se extiende hacia el template padre 'layout.html' -->
-{%load static%} 
+{%load static%}
+{%load filters%}
 
 {%block content%}  <!-- contenido que se va a renderizar -->
     <h2 class="h2">Contactos</h2>
@@ -15,7 +16,7 @@
         <p>{{nombres|length}}</p>
         <p>{{'colombia'|upper}}</p>
         <p>{{'colombia'|lower}}</p>
-        <p>{{nombres|random}}</p>
+        {% comment %} <p>{{nombres|random}}</p> {% endcomment %}
         <p>{{'<h1>Hola</h1>'|striptags}}</p>
         <p>{{'<h1>Hola</h1>'|wordcount}}</p>
         <br>
@@ -29,6 +30,9 @@
         <p>{{titulo|title}}</p> <!--'titulo' : 'MI PrImeRa ChamBa'-->
         <br>
         <p>{{hacerLista|make_list}}</p>
+
+        <h2>Ejemplo filtro personalizado</h2>
+        {{"Maria Paula Buenaventura"|saludo|safe}}
 
         {% for contacto in contactos %}  <!-- manera de hacer ciclos for en las templates -->
             <ul>
