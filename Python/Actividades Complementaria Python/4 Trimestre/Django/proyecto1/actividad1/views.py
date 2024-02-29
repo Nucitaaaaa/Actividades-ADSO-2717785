@@ -100,7 +100,7 @@ def crear_articulo(request, title, content, public):
 
     return HttpResponse(f"Articulo Creado: {articulo.title} {articulo.content}")
 
-def buscar_articulo(request):
+def mostrar_articulo(request):
     try:
         articulo = Article.objects.get(id=3)
         response = f"Articulo Consultado: Titulo: {articulo.title} Contenido: {articulo.content} Estado: {articulo.public}"
@@ -109,10 +109,25 @@ def buscar_articulo(request):
 
     return HttpResponse(response)
 
-def modificar_articulo(request):
-    articulo = Article.objects.get(id=3)
-    articulo.title = "no se xd"
-    articulo.public = True
-    articulo.save()
 
-    return HttpResponse(f"El articulo {articulo.id} ({articulo.title}) ha sido actualizado, su estado es {articulo.public}")
+def mostrar_articulos(request):
+    articulos = Article.objects.all()
+
+    return render(request, 'articulos.html', {
+        'articulos':articulos,
+    })
+
+
+def modificar_articulo(request, id):
+    try:
+        articulo = Article.objects.get(id=id)
+        articulo.title = "no se xdddd"
+        articulo.public = True
+        articulo.save()
+
+        response = f"El articulo {articulo.id} ({articulo.title}) ha sido actualizado, su estado es {articulo.public}"
+    except:
+        response = "<strong>Articulo no encontrado</strong>"
+    
+
+    return HttpResponse(response)

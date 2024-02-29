@@ -1,0 +1,22 @@
+
+{%extends 'layout.html'%} <!-- Esta template se extiende hacia el template padre 'layout.html' -->
+{%load static%} 
+
+{% block content %} <!-- contenido que se va a renderizar -->
+    <h2>Listado de articulos</h2>
+    <ul>
+        {% for article in articulos%}
+        <li>
+            {{article.id}} 
+            <br>
+            {{article.title}}  
+            <br>
+            {{article.content}}
+            <br>
+            {{article.public}}
+            <br>
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
