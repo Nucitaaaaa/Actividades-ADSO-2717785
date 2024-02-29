@@ -1,5 +1,6 @@
 
-from django.shortcuts import render 
+from django.shortcuts import render, HttpResponse 
+from actividad1.models import Article 
 
 #?vistas para renderizar en los templates y layout
 
@@ -88,4 +89,22 @@ def inicio (request):  #Vista para template 'inicio'
         'name':nombre,
     })
 
+def crear_articulo(request, title, content, public):
+    articulo = Article(
+        title = title,
+        content = content,
+        public = public,
+    )
 
+    articulo.save()
+
+    return HttpResponse(f"Articulo Creado: {articulo.title} {articulo.content}")
+
+def buscar_articulo(request):
+    try:
+        articulo = Article.objects.get(id=7)
+        response = f"Articulo Consultado: Titulo: {articulo.title} Contenido: {articulo.content} Estado: {articulo.public}"
+    except:
+        response = "<strong>Articulo no encontrado</strong>"
+
+    return HttpResponse(response)
