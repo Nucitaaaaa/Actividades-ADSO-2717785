@@ -102,9 +102,17 @@ def crear_articulo(request, title, content, public):
 
 def buscar_articulo(request):
     try:
-        articulo = Article.objects.get(id=7)
+        articulo = Article.objects.get(id=3)
         response = f"Articulo Consultado: Titulo: {articulo.title} Contenido: {articulo.content} Estado: {articulo.public}"
     except:
         response = "<strong>Articulo no encontrado</strong>"
 
     return HttpResponse(response)
+
+def modificar_articulo(request):
+    articulo = Article.objects.get(id=3)
+    articulo.title = "no se xd"
+    articulo.public = True
+    articulo.save()
+
+    return HttpResponse(f"El articulo {articulo.id} ({articulo.title}) ha sido actualizado, su estado es {articulo.public}")

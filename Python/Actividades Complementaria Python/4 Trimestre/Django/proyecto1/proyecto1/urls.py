@@ -29,7 +29,8 @@ urlpatterns = [
     path('', actividad1.views.inicio, name="inicio"), #URL que lleva a la vista de 'Inicio'
     path('contacto/', actividad1.views.contacto, name="contacto"), #URL que lleva a la vista de 'Contacto'
     path('crear_articulo/<str:title>/<str:content>/<str:public>', actividad1.views.crear_articulo, name="crearArticulo"),
-    path('buscar_articulo/', actividad1.views.buscar_articulo, name="bsucarArticulo"),
+    path('buscar_articulo/', actividad1.views.buscar_articulo, name="buscarArticulo"),
+    path('modificar_articulo/', actividad1.views.modificar_articulo, name="modificarArticulo"),
 
 ]
 
