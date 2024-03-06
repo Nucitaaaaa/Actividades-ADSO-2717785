@@ -4,20 +4,21 @@
 
 {% block content %} <!-- contenido que se va a renderizar -->
     <h2>Listado de articulos</h2>
-    <ul>
-        {% for article in articulos%}
-        <li>
-            {{article.id}} 
-            <br>
-            {{article.title}}  
-            <br>
-            {{article.content}}
-            <br>
-            {{article.public}}
-            <br>
+    <br>
+    <hr>
+    <div class="articulos">
+        <ul>
+            {% for article in articulos%}
+            <li>
+                <p><strong>Id:</strong> {{article.id}} </p> 
+                <p><strong>Title:</strong> {{article.title}} </p> 
+                <p><strong>Content:</strong> {{article.content}} </p>
+                <p><strong>Public:</strong> {{article.public}} </p>
+                <br>
+                <a href={% url "eliminarArticulo" article.id%}>Borrar</a>
+            </li>
             <hr>
-        </li>
-        <a href={% url "eliminarArticulo" article.id%}>Borrar</a>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

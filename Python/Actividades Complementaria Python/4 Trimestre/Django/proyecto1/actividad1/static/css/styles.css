@@ -21,6 +21,15 @@ h1 {
     width: 600px;
 }
 
+ul li {
+    list-style: none;
+    list-style-type: none;
+}
+
+hr {
+    border: 1px solid #4e684c;
+}
+
 .logo {
     width: 45%;
     height: 130px;
@@ -127,6 +136,24 @@ footer {
     box-shadow: 0 0 20px #3A4D39;
     margin: 0 auto;
 }
+
 #contactos{
     text-align: center;
+}
+
+.articulos li{
+    margin: 15px 10px;
+}
+
+.articulos li p {
+    padding: 3px;
+}
+
+.articulos li a{
+    border: 1px solid darkgreen;
+    padding: 5px;
+    background-color: green;
+    color: rgb(1, 71, 1);
+    border-radius: 5px;
+    font-weight: bold;
 }

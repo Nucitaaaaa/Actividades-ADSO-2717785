@@ -1,5 +1,7 @@
 
 from django.shortcuts import render, HttpResponse,redirect
+from django.db import connection
+from django.core.exceptions import ObjectDoesNotExist
 from actividad1.models import Article 
 
 #?vistas para renderizar en los templates y layout
@@ -19,27 +21,7 @@ def saludo(request): #Vista para template 'saludo'
         'hacerLista' : 'Django es facil' 
     })
 
-def contacto(request, name='', lastName=''): #Vista para template 'contacto'
-    
-    # aprendiz = ""
-
-    # if name and lastName:
-    #     aprendiz += f"""<h2>Nombre Completo: </h2>
-    #                     <h3>{name} {lastName}</h3>
-    #     """
-
-    # elif name:
-    #     aprendiz += f"""<h2>Nombre: </h2>
-    #                     <h3>{name} </h3>
-    #     """
-
-    # elif name == '' and lastName:
-    #     aprendiz += f"""<h2>Apellido: </h2>
-    #                     <h3>{lastName}</h3>
-    #     """    
-
-    # else:
-    #     aprendiz += 'Sin información'
+def contacto(request, name='', lastName=''): 
 
     contactos = [ #Array para renderizar con el for 
     '555-1234',
@@ -68,19 +50,6 @@ def contacto(request, name='', lastName=''): #Vista para template 'contacto'
 
 def inicio (request):  #Vista para template 'inicio'
 
-    # year = 2024
-    # while year <= 2050:
-    #     template += f"<li>{str(year)}"
-    #     if year %2==0:
-    #         template += " (año par)"
-        
-    #     if year % 400 == 0 or (year % 100 != 0 and year % 4 == 0):
-    #         template += " (año bisiesto)"
-    #     template+="""</li>"""
-    #     year += 1
-
-    # template += """</ul><hr>"""
-
     nombre = 'Maria Buenaventura'
 
     return render(request,'inicio.html',{
@@ -93,25 +62,33 @@ def crear_articulo(request, title, content, public):
     articulo = Article(
         title = title,
         content = content,
-        public = public,
+        public = True,
     )
 
     articulo.save()
 
-    return HttpResponse(f"Articulo Creado: {articulo.title} {articulo.content}")
+    return redirect('mostrarArticulos')
 
-def mostrar_articulo(request):
-    try:
-        articulo = Article.objects.get(id=3)
-        response = f"Articulo Consultado: Titulo: {articulo.title} Contenido: {articulo.content} Estado: {articulo.public}"
-    except:
-        response = "<strong>Articulo no encontrado</strong>"
+# def crear_articulo(request, title, content, public):
+    
+#     with connection.cursor() as cursor:
+#         cursor.execute("INSERT INTO actividad1_article(title, content, public) VALUES(%s, %s, %s)", [title, content, public])
 
-    return HttpResponse(response)
+#     return redirect('mostrarArticulos')
+
+
+# def mostrar_articulo(request):
+#     try:
+#         articulo = Article.objects.get(id=3)
+#         response = f"Articulo Consultado: Titulo: {articulo.title} Contenido: {articulo.content} Estado: {articulo.public}"
+#     except:
+#         response = "<strong>Articulo no encontrado</strong>"
+
+#     return HttpResponse(response)
 
 
 def mostrar_articulos(request):
-    articulos = Article.objects.raw("SELECT * FROM actividad1_article WHERE content LIKE 'L%'")
+    articulos = Article.objects.raw("SELECT * FROM actividad1_article")
     return render(request, 'articulos.html', {
         'articulos':articulos,
     })
@@ -131,19 +108,18 @@ def mostrar_articulos(request):
 
 #     return HttpResponse(response)
 
-def modificar_articulo(request, id):
+def modificar_articulo(request, title, content, id):
     try:
-        articulo = Article.objects.get(id=id)
-        articulo.title = "no se xdddd"
-        articulo.public = True
-        articulo.save()
-
-        response = f"El articulo {articulo.id} ({articulo.title}) ha sido actualizado, su estado es {articulo.public}"
-    except:
-        response = "<strong>Articulo no encontrado</strong>"
+        # Ejecutar la consulta SQL para eliminar el artículo
+        with connection.cursor() as cursor:
+            cursor.execute("UPDATE actividad1_article SET title = %s, content = %s WHERE id = %s", [title, content, id])
+        
+        # Redirigir a la página de visualización de artículos
+        return redirect('mostrarArticulos')
     
-
-    return HttpResponse(response)
+    except ObjectDoesNotExist:
+        
+        return HttpResponse ("<strong>Articulo no encontrado</strong>")
 
 
 # def eliminar_articulo(request, id):
@@ -159,11 +135,20 @@ def modificar_articulo(request, id):
 
 def eliminar_articulo(request, id):
     try:
-        Article.objects.raw(f"DELETE FROM actividad1_article WHERE id = {id}")
+        # Ejecutar la consulta SQL para eliminar el artículo
+        with connection.cursor() as cursor:
+            cursor.execute("DELETE FROM actividad1_article WHERE id = %s", [id])
+        
+        # Redirigir a la página de visualización de artículos
         return redirect('mostrarArticulos')
-    except:
-        response = "<strong>Articulo no encontrado</strong>"
     
-    return HttpResponse(response)
+    except ObjectDoesNotExist:
+
+        return HttpResponse ("<strong>Articulo no encontrado</strong>")
+
+    
+
+    
+
 
 
