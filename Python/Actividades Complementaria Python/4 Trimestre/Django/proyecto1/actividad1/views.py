@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, HttpResponse 
+from django.shortcuts import render, HttpResponse,redirect
 from actividad1.models import Article 
 
 #?vistas para renderizar en los templates y layout
@@ -111,12 +111,25 @@ def mostrar_articulo(request):
 
 
 def mostrar_articulos(request):
-    articulos = Article.objects.all()
-
+    articulos = Article.objects.raw("SELECT * FROM actividad1_article WHERE content LIKE 'L%'")
     return render(request, 'articulos.html', {
         'articulos':articulos,
     })
 
+
+# def modificar_articulo(request, id):
+#     try:
+#         articulo = Article.objects.get(id=id)
+#         articulo.title = "no se xdddd"
+#         articulo.public = True
+#         articulo.save()
+
+#         response = f"El articulo {articulo.id} ({articulo.title}) ha sido actualizado, su estado es {articulo.public}"
+#     except:
+#         response = "<strong>Articulo no encontrado</strong>"
+    
+
+#     return HttpResponse(response)
 
 def modificar_articulo(request, id):
     try:
@@ -133,13 +146,24 @@ def modificar_articulo(request, id):
     return HttpResponse(response)
 
 
+# def eliminar_articulo(request, id):
+#     try:
+#         articulo = Article.objects.get(id=id)
+#         articulo.delete()
+#         return redirect('mostrarArticulos')
+#     except:
+#         response = "<strong>Articulo no encontrado</strong>"
+    
+#     return HttpResponse(response)
+
+
 def eliminar_articulo(request, id):
     try:
-        articulo = Article.objects.delete(id=id)
-        response = f"El articulo ha sido eliminado"
+        Article.objects.raw(f"DELETE FROM actividad1_article WHERE id = {id}")
+        return redirect('mostrarArticulos')
     except:
         response = "<strong>Articulo no encontrado</strong>"
     
-
     return HttpResponse(response)
+
 
