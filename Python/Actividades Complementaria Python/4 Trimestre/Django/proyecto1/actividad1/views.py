@@ -131,3 +131,15 @@ def modificar_articulo(request, id):
     
 
     return HttpResponse(response)
+
+
+def eliminar_articulo(request, id):
+    try:
+        articulo = Article.objects.delete(id=id)
+        response = f"El articulo ha sido eliminado"
+    except:
+        response = "<strong>Articulo no encontrado</strong>"
+    
+
+    return HttpResponse(response)
+
