@@ -2,7 +2,8 @@
 from django.shortcuts import render, HttpResponse,redirect
 from django.db import connection
 from django.core.exceptions import ObjectDoesNotExist
-from actividad1.models import Article 
+from actividad1.models import Article
+from django.db.models import Q #para que funcione or
 
 #?vistas para renderizar en los templates y layout
 
@@ -58,7 +59,18 @@ def inicio (request):  #Vista para template 'inicio'
         'name':nombre,
     })
 
-def crear_articulo(request, title, content, public):
+# def crear_articulo(request, title, content, public):
+#     articulo = Article(
+#         title = title,
+#         content = content,
+#         public = True,
+#     )
+
+#     articulo.save()
+
+#     return redirect('mostrarArticulos')
+
+def crear_articulo(request):
     articulo = Article(
         title = title,
         content = content,
@@ -67,24 +79,11 @@ def crear_articulo(request, title, content, public):
 
     articulo.save()
 
-    return redirect('mostrarArticulos')
-
-# def crear_articulo(request, title, content, public):
-    
-#     with connection.cursor() as cursor:
-#         cursor.execute("INSERT INTO actividad1_article(title, content, public) VALUES(%s, %s, %s)", [title, content, public])
-
-#     return redirect('mostrarArticulos')
+    return HttpResponse(f"Articulo creado: title:{title}, content:{content}")
 
 
-# def mostrar_articulo(request):
-#     try:
-#         articulo = Article.objects.get(id=3)
-#         response = f"Articulo Consultado: Titulo: {articulo.title} Contenido: {articulo.content} Estado: {articulo.public}"
-#     except:
-#         response = "<strong>Articulo no encontrado</strong>"
-
-#     return HttpResponse(response)
+def articulo_creado(request):
+    return render(request, 'crearArticulo.html')
 
 
 def mostrar_articulos(request):

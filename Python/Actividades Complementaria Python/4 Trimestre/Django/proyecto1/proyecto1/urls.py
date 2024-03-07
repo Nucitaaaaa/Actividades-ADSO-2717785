@@ -33,6 +33,8 @@ urlpatterns = [
     path('mostrar_articulos/', actividad1.views.mostrar_articulos, name="mostrarArticulos"),
     path('modificar_articulo/<int:id>/<str:title>/<str:content>/', actividad1.views.modificar_articulo, name="modificarArticulo"),
     path('eliminar_articulo/<int:id>/', actividad1.views.eliminar_articulo, name="eliminarArticulo"),
+    path('articulo_creado', actividad1.views.articulo_creado, name="articuloCreado"),
+
 
 ]
 
