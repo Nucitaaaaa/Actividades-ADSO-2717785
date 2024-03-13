@@ -4,6 +4,8 @@ from django.db import connection
 from django.core.exceptions import ObjectDoesNotExist
 from actividad1.models import Article
 from django.db.models import Q #para que funcione or
+from actividad1.forms import FormArticulo
+from django.contrib import messages
 
 #?vistas para renderizar en los templates y layout
 
@@ -49,7 +51,7 @@ def contacto(request, name='', lastName=''):
     })
 
 
-def inicio (request):  #Vista para template 'inicio'
+def inicio(request):  #Vista para template 'inicio'
 
     nombre = 'Maria Buenaventura'
 
@@ -59,7 +61,7 @@ def inicio (request):  #Vista para template 'inicio'
         'name':nombre,
     })
 
-# def crear_articulo(request, title, content, public):
+# def crear_articulo(request, title, content, public): #sin form
 #     articulo = Article(
 #         title = title,
 #         content = content,
@@ -70,16 +72,82 @@ def inicio (request):  #Vista para template 'inicio'
 
 #     return redirect('mostrarArticulos')
 
-def crear_articulo(request):
-    articulo = Article(
-        title = title,
-        content = content,
-        public = True,
-    )
 
-    articulo.save()
+# def guardar_articulo(request): #con form (GET)
 
-    return HttpResponse(f"Articulo creado: title:{title}, content:{content}")
+#     if request.method == 'GET': 
+#         title = request.GET['title']
+#         content = request.GET['content']
+#         public = request.GET['public']
+        
+#         articulo = Article( #objeto para acceder despues
+#             title = title,
+#             content = content,
+#             public = public,
+#         )
+
+#         articulo.save()
+
+#         return redirect('mostrarArticulos')
+    
+#     else:
+#         return HttpResponse(f"Articulo no encontrado")
+
+# def guardar_articulo(request): #con form (POST) //sin clase form
+
+#     if request.method == 'POST': 
+#         title = request.POST['title']
+#         content = request.POST['content']
+#         public = request.POST['public']
+        
+#         articulo = Article( #objeto para acceder despues
+#             title = title,
+#             content = content,
+#             public = public,
+#         )
+
+#         articulo.save()
+
+#         return redirect('mostrarArticulos')
+    
+#     else:
+#         return HttpResponse(f"Articulo no encontrado")
+
+
+
+def guardar_articulo(request): #con form (POST)
+    if request.method == 'POST': 
+
+        formulario = FormArticulo(request.POST) #se importa el fichero
+
+        if formulario.is_valid():
+            data_form = formulario.cleaned_data
+            title = data_form.get('title')
+            content = data_form.get('content')
+            public = data_form.get('public')
+            
+            articulo = Article( #objeto para acceder despues
+                title = title,
+                content = content,
+                public = public,
+            )
+
+            articulo.save()
+
+            messages.success(request, f'El articulo {articulo.id} se ha guardado con exito')
+            return redirect('mostrarArticulos')
+            
+        
+        else:
+            return render(request, 'createFullArticle.html', {
+                'form': formulario
+            })
+        
+    else:
+            return render(request, 'createFullArticle.html', {
+                'form': formulario
+            })
+
 
 
 def articulo_creado(request):
@@ -146,7 +214,11 @@ def eliminar_articulo(request, id):
         return HttpResponse ("<strong>Articulo no encontrado</strong>")
 
     
-
+def create_full_article(request):
+    formulario = FormArticulo()
+    return render(request, 'createFullArticle.html', {
+        'form':formulario
+    })
     
 
 

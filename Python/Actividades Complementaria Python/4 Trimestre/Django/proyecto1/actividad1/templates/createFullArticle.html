@@ -1,0 +1,21 @@
+
+{%extends 'layout.html'%} <!-- Esta template se extiende hacia el template padre 'layout.html' -->
+{%load static%} 
+
+{% block content %} <!-- contenido que se va a renderizar -->
+    <h2>Crear articulo</h2>
+    <br>
+    <hr>
+    
+    {% if form.errors %}
+        <strong style:"color:red;">Ha ocurrido un error:
+        {{form.errors}}
+        </strong>
+    {% endif %}
+    
+    <form action="{%url 'guardarArticulo'%}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Guardar"/>
+    </form>
+{% endblock %}
