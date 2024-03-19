@@ -1,0 +1,38 @@
+
+{%load static%} <!-- Carga la carpeta static y su contenido -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Proyecto UCT</title>
+</head>
+<body>
+    <header> 
+        <div class="logo"> 
+            <h1>UCT Academic Manager</h1>
+        </div>
+    </header>
+    
+    <nav class="nav">
+        <a href={%url 'mostrarEstudiantes'%}>Estudiantes</a>
+        <a href={%url 'mostrarProfesores'%}>Profesores</a>
+        <a href={%url 'mostrarCarreras'%}>Carreras</a>
+        <a href={%url 'mostrarMaterias'%}>Materias</a>
+    </nav>
+
+    <section id="content">  
+        <div class="box"> 
+            {%block content%}  
+            {%endblock%}
+        </div>
+    </section>
+    
+    <footer>  
+        <p>&copy; All Rights Reserved | Maria Paula Buenaventura - {% now 'd/m/Y h:i:s'%}</p>
+    </footer>
+
+</body>
+</html>

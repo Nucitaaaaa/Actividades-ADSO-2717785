@@ -1,0 +1,25 @@
+
+{% extends "layout.html" %}
+{% comment %} {%load filters%} {% endcomment %}
+
+{%block content%} 
+    <h2 class="h2">Carrera</h2>
+    <br>
+    <div class="carrera">
+        <ul>
+            {% for carrera in carreras %}
+                <li>
+                    <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
+                    <br>
+                    {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
+                    <a>Mas información</a>
+                    <a>Borrar</a>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    </div>
+{%endblock%}
+
+
+{% load static %}

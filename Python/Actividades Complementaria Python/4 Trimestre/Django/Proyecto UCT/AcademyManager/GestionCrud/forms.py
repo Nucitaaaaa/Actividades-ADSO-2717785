@@ -75,7 +75,7 @@ class formEstudiante(forms.Form):
 
     foto = forms.ImageField(
         label="Foto",
-        required=True,
+        required=False,
     )
 
     carrera = forms.CharField(
@@ -164,7 +164,7 @@ class formProfesor(forms.Form):
 
     foto = forms.ImageField(
         label="Foto",
-        required=True,
+        required=False,
         widget=forms.FileInput( #por ahora xd
             attrs={
                 'class':'formProfFoto'

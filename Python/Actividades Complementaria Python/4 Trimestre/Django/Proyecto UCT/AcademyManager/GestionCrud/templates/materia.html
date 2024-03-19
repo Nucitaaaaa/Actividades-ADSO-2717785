@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+{% comment %} {%load filters%} {% endcomment %}
+
+{%block content%} 
+    <h2 class="h2">Materias</h2>
+    <br>
+    <div class="materias">
+        {% for materia in materias %}
+                <li>
+                    <p><strong>Nombre:</strong> {{materia.matNombre}}</p> 
+                    <br>
+                    {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
+                    <a>Mas información</a>
+                    <a>Borrar</a>
+                </li>
+                <hr>
+            {% endfor %}
+    </div>
+{%endblock%}
+
+
+{% load static %}
