@@ -14,6 +14,8 @@
     <form action="{%url 'añadirMateria'%}" method="POST">
         {% csrf_token %}
         {{ formulario.as_p }}
-        <input type="submit" value="Guardar"/>
+        <div class="divEnviar">
+            <input class='enviar' type="submit" value="Guardar"/>
+        </div>
     </form>
 {% endblock %}

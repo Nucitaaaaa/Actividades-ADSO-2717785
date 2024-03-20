@@ -5,7 +5,6 @@
 {% block content %} 
     <h2>Añadir Estudiante</h2>
     <br>
-    <hr>
     {% comment %} {% if form.errors %}
         <strong style:"color: red;">Ha ocurrido un error:
         {{form.errors}}
@@ -14,6 +13,8 @@
     <form action="{%url 'añadirEstudiante'%}" method="POST">
         {% csrf_token %}
         {{ formulario.as_p }}
-        <input class='enviar' type="submit" value="Guardar"/>
+        <div class="divEnviar">
+            <input class='enviar' type="submit" value="Guardar"/>
+        </div>
     </form>
 {% endblock %}

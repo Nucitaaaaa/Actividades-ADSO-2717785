@@ -25,8 +25,9 @@ def mostrarEstudiante(request, id):
     })
 
 def añadirEstudiante(request):
-    if request.method == 'POST': 
+    formulario = FormEstudiante(request.POST)
 
+    if request.method == 'POST': 
         formulario = FormEstudiante(request.POST, request.FILES) 
 
         if formulario.is_valid():
@@ -55,22 +56,12 @@ def añadirEstudiante(request):
             return redirect('mostrarEstudiantes')
             
         else:
-            return render(request, 'estudianteAñadir.html', {
-                'formulario': formulario
-            })
+            formulario = FormEstudiante()
         
     else:
-        return render(request, 'estudianteAñadir.html', {
-                'formulario': formulario
-            })
+        return render(request, 'estudianteAñadir.html', {'formulario': formulario})
 
-def añadirEstudianteForm(request):
-    formulario = FormEstudiante()
-
-    return render(request, 'estudianteAñadir.html', {
-        'formulario': formulario
-    })
-
+    return render(request, 'estudianteAñadir.html', {'formulario': formulario})
 
 def eliminarEstudiante(request, id):
     try:
@@ -93,7 +84,7 @@ def modificarEstudiante(request, id):
         if formulario.is_valid():
             data_form = formulario.cleaned_data
             estudiante.estNombre = data_form.get('nombre')
-            estudiante.estApellido =data_form.get('apellido')
+            estudiante.estApellido = data_form.get('apellido')
             estudiante.estEmail = data_form.get('email')
             estudiante.estTelefono = data_form.get('telefono')
             estudiante.estFechaNacimiento = data_form.get('fechaNacimiento')
@@ -111,26 +102,8 @@ def modificarEstudiante(request, id):
         formulario = FormActualizarEstudiante()
         return render(request, 'estudianteModificar.html', {'formulario': formulario})
 
-
     return render(request, 'estudianteModificar.html', {'formulario': formulario})
 
-
-# def modificarEstudianteForm(request, id):
-
-#     if request.method == 'POST':
-        
-#         formulario = FormActualizarEstudiante()
-
-#         # return render(request, 'estudianteModificar.html', {
-#         #     'formulario': formulario
-#         # })
-    
-#     else:
-#         formulario = FormActualizarEstudiante()
-        
-#         return render(request, 'estudianteModificar.html', {
-#             'formulario': formulario
-#         })
 
 #?Vistas clase Profesor
 
@@ -148,7 +121,7 @@ def mostrarProfesor(request, id):
         'profesores' : profesores,
     })
 
-def añadirProfesor(request):
+def añadirProfesor(request): #!modificar
     if request.method == 'POST': 
 
         formulario = FormProfesor(request.POST) 
@@ -188,7 +161,7 @@ def añadirProfesor(request):
                 'formulario': formulario
             })
 
-def añadirProfesorForm(request):
+def añadirProfesorForm(request): #!quitar
     formulario = FormProfesor()
 
     return render(request, 'profesorAñadir.html', {
@@ -204,9 +177,34 @@ def eliminarProfesor(request, id):
     return redirect('mostrarProfesores')
 
 
-def modificarProfesor(request):
-    pass
+def modificarProfesor(request, id):
+    profesor = Profesor.objects.get(pk=id)
 
+    if request.method == 'POST':
+        formulario = FormActualizarProfesor(request.POST)
+        
+        if formulario.is_valid():
+            data_form = formulario.cleaned_data
+            profesor.profApellido = data_form.get('apellido')
+            profesor.profEmail = data_form.get('email')
+            profesor.profTelefono = data_form.get('telefono')
+            profesor.profNombre = data_form.get('nombre')
+            profesor.profFechaNacimiento = data_form.get('fechaNacimiento')
+            profesor.profFoto = data_form.get('foto')
+            profesor.profMateria = data_form.get('materias')
+
+            profesor.save()
+
+            return redirect('mostrarProfesores')
+        
+        else:
+            formulario = FormActualizarProfesor()
+
+    else:
+        formulario = FormActualizarProfesor()
+        return render(request, 'profesorModificar.html', {'formulario': formulario})
+
+    return render(request, 'profesorModificar.html', {'formulario': formulario})
 
 
 #?Vistas clase Carrera
@@ -220,14 +218,14 @@ def mostrarCarreras(request):
 
 
 def mostrarCarrera(request, id):
-    carreras = Carrera.objects.raw("SELECT * FROM GestionCrud_profesor WHERE id = %s", [id])
+    carreras = Carrera.objects.raw("SELECT * FROM GestionCrud_carrera WHERE id = %s", [id])
 
     return render(request, "carreraDetalles.html", {
         'carreras' : carreras,
     })
 
 
-def añadirCarrera(request):
+def añadirCarrera(request): #!modificar
     if request.method == 'POST': 
 
         formulario = FormCarrera(request.POST) 
@@ -259,7 +257,7 @@ def añadirCarrera(request):
                 'formulario': formulario
             })
 
-def añadirCarreraForm(request):
+def añadirCarreraForm(request): #!eliminar
     formulario = FormCarrera()
 
     return render(request, 'carreraAñadir.html', {
@@ -275,9 +273,30 @@ def eliminarCarrera(request, id):
     return redirect('mostrarCarreras')
 
 
-def modificarCarrera(request):
-    pass
+def modificarCarrera(request, id):
+    carrera = Carrera.objects.get(pk=id)
 
+    if request.method == 'POST':
+        formulario = FormActualizarCarrera(request.POST)
+        
+        if formulario.is_valid():
+            data_form = formulario.cleaned_data
+            carrera.carNombre = data_form.get('nombre')
+            carrera.carDuracion = data_form.get('duracion')
+            carrera.carMaterias = data_form.get('materias')
+
+            carrera.save()
+
+            return redirect('mostrarCarreras')
+        
+        else:
+            formulario = FormActualizarCarrera()
+
+    else:
+        formulario = FormActualizarCarrera()
+        return render(request, 'carreraModificar.html', {'formulario': formulario})
+
+    return render(request, 'carreraModificar.html', {'formulario': formulario})
 
 
 #?Vistas clase Materia

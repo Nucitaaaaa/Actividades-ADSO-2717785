@@ -6,6 +6,7 @@
 {%block content%} 
     <h2 class="h2">Carrera</h2>
     <br>
+    <hr>
     <div class="carreraDetalles">
         <ul>
             {% for carrera in carreras %}
@@ -15,7 +16,7 @@
                     <p><strong>Materias:</strong> {{carrera.carMaterias}}</p> 
                     <br>
                     <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
-                    <a class="boton">Actualizar</a>
+                    <a class="boton" href={%url 'modificarCarrera' carrera.id%}>Actualizar</a>
                     <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
                 </li>
                 <hr>

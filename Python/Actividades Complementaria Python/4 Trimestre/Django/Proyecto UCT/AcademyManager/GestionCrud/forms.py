@@ -66,9 +66,10 @@ class FormEstudiante(forms.Form):
     fechaNacimiento = forms.DateField(
         label="Fecha De Nacimiento",
         required=True,
-        widget=forms.DateInput(
+        widget=forms.DateTimeInput(
             attrs={
-                'class':'formEstFeNa'
+                'class':'formEstFeNa',
+                'type': 'date'
             }
         )
     )
@@ -159,7 +160,8 @@ class FormActualizarEstudiante(forms.Form):
         required=True,
         widget=forms.DateInput(
             attrs={
-                'class':'formEstFeNa'
+                'class':'formEstFeNa',
+                'type': 'date'
             }
         )
     )
@@ -247,7 +249,8 @@ class FormProfesor(forms.Form):
         required=True,
         widget=forms.DateInput(
             attrs={
-                'class':'formProfFeNa'
+                'class':'formProfFeNa',
+                'type': 'date'
             }
         )
     )
@@ -340,7 +343,8 @@ class FormActualizarProfesor(forms.Form):
         required=True,
         widget=forms.DateInput(
             attrs={
-                'class':'formProfFeNa'
+                'class':'formProfFeNa',
+                'type': 'date'
             }
         )
     )
