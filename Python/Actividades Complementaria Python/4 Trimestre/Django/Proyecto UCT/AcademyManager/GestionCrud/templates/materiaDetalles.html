@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+{% load static %}
+{% comment %} {%load filters%} {% endcomment %}
+
+{%block content%} 
+    <h2 class="h2">Materia</h2>
+    <br>
+    <hr>
+    <div class="materiaDetalles">
+        {% for materia in materias %}
+                <li>
+                    <p><strong>Nombre:</strong> {{materia.matNombre}}</p>
+                    <p><strong>Descripcion:</strong> {{materia.matDescripcion}}</p>
+                    <p><strong>Descripcion:</strong> {{materia.matCreditos}}</p>
+                    <p><strong>Carrera:</strong> {{materia.matCarrera}}</p>
+                    <p><strong>Profesor:</strong> {{materia.matProfesores}}</p>
+                    <br>
+                    <a href={%url 'mostrarMaterias'%}>Volver</a>
+                    <a>Actualizar</a>
+                    <a href={%url 'eliminarMateria' materia.id%}>Borrar</a>
+                </li>
+                <hr>
+            {% endfor %}
+    </div>
+{%endblock%}

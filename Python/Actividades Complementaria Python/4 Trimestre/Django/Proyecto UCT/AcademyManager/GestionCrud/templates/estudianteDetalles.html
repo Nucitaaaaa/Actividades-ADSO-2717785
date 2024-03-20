@@ -4,9 +4,8 @@
 {% comment %} {%load filters%} {% endcomment %}
 
 {%block content%} 
-    <h2 class="h2">Estudiantes</h2>
+    <h2 class="h2">Estudiante</h2>
     <br>
-    <a href={%url 'añadirEstudianteForm'%}>Añadir Estudiante</a>
     <div>
         {% comment %} {% if messages %}
         {% for message in messages %}
@@ -15,21 +14,26 @@
             </div>
         {% endfor %}
     {% endif %} {% endcomment %}
+    <br>
     <hr>
-    <div class="estudiante">
+    <div class="estudiantesDetalle">
         <ul>
             {% for estudiante in estudiantes %}
                 <li>
+                    <p><strong>Foto:</strong> {{estudiante.estFoto}} </p>
                     <p><strong>Nombre:</strong> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
                     <p><strong>Carrera:</strong> {{estudiante.estCarrera}} </p>
+                    <p><strong>Email:</strong> {{estudiante.estEmail}} </p>
+                    <p><strong>Telefono:</strong> {{estudiante.estTelefono}} </p>
+                    <p><strong>Fecha de nacimiento:</strong> {{estudiante.estFechaNacimiento}} </p>
                     <br>
                     {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
-                    <a href={%url 'mostrarEstudiante' estudiante.id%}>Mas información</a>
+                    <a href={%url 'mostrarEstudiantes'%}>Volver</a>
+                    <a>Actualizar</a>
+                    <a href={%url 'eliminarEstudiante' estudiante.id%}>Borrar</a>
                 </li>
                 <hr>
             {% endfor %}
         </ul>
     </div>
 {%endblock%}
-
-

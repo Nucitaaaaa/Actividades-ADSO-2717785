@@ -4,17 +4,19 @@
 {% comment %} {%load filters%} {% endcomment %}
 
 {%block content%} 
-    <h2 class="h2">Carreras</h2>
+    <h2 class="h2">Carrera</h2>
     <br>
-    <a href={%url 'añadirCarreraForm'%}>Añadir Carrera</a>
-    <hr>
-    <div class="carrera">
+    <div class="carreraDetalles">
         <ul>
             {% for carrera in carreras %}
                 <li>
                     <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
+                    <p><strong>Duración:</strong> {{carrera.carDuracion}}</p> 
+                    <p><strong>Materias:</strong> {{carrera.carMaterias}}</p> 
                     <br>
-                    <a href="{%url 'mostrarCarrera' carrera.id%}"> Mas información </a>
+                    <a href={%url 'mostrarCarreras'%}>Volver</a>
+                    <a>Actualizar</a>
+                    <a href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
                 </li>
                 <hr>
             {% endfor %}

@@ -1,23 +1,25 @@
 
 {% extends "layout.html" %}
+{% load static %}
 {% comment %} {%load filters%} {% endcomment %}
 
 {%block content%} 
     <h2 class="h2">Materias</h2>
     <br>
-    <div class="materias">
+    <a href={%url 'añadirMateriaForm'%}>Añadir Materia</a>
+    <hr>
+    <div class="materia">
         {% for materia in materias %}
                 <li>
                     <p><strong>Nombre:</strong> {{materia.matNombre}}</p> 
                     <br>
-                    {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
-                    <a>Mas información</a>
-                    <a>Borrar</a>
+                    <a href={%url 'mostrarMateria' materia.id%}>Mas información</a>
                 </li>
                 <hr>
-            {% endfor %}
+        {% endfor %}
     </div>
 {%endblock%}
 
 
-{% load static %}
+
+

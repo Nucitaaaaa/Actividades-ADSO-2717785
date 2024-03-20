@@ -2,7 +2,7 @@
 from django import forms
 from django.core import validators
 
-class formEstudiante(forms.Form):
+class FormEstudiante(forms.Form):
     nombre = forms.CharField(
         label="Nombre",
         max_length=30,
@@ -50,7 +50,6 @@ class formEstudiante(forms.Form):
 
     telefono = forms.IntegerField(
         label="Telefono",
-        max_length=10,
         required=True,
         widget=forms.NumberInput(
             attrs={
@@ -94,7 +93,7 @@ class formEstudiante(forms.Form):
     )
 
 
-class formProfesor(forms.Form):
+class FormProfesor(forms.Form):
     nombre = forms.CharField(
         label="Nombre",
         max_length=30,
@@ -139,7 +138,6 @@ class formProfesor(forms.Form):
 
     telefono = forms.IntegerField(
         label="Telefono",
-        max_length=10,
         required=True,
         widget=forms.NumberInput(
             attrs={
@@ -188,7 +186,7 @@ class formProfesor(forms.Form):
     )
 
 
-class formCarrera(forms.Form):
+class FormCarrera(forms.Form):
     nombre = forms.CharField(
         label="Nombre",
         max_length=50,
@@ -215,7 +213,7 @@ class formCarrera(forms.Form):
             }
         ),
         validators= [
-            validators.RegexValidator('^[a-zA-Z0-9]$', 'Error(Apellido): solo se permiten letras, numeros y espacios.')
+            validators.RegexValidator('^[a-zA-Z0-9 ]*$', 'Error(Duracion): solo se permiten letras, numeros y espacios.')
         ]
     )
     
@@ -236,7 +234,7 @@ class formCarrera(forms.Form):
     )
 
 
-class formMateria(forms.Form):
+class FormMateria(forms.Form):
     nombre = forms.CharField(
         label="Nombre",
         max_length=50,
@@ -247,7 +245,7 @@ class formMateria(forms.Form):
                 'placeholder':'Ingrese el nombre de la materia'
             }
         ),validators= [
-            validators.RegexValidator('^[a-zA-Z0-9]$', 'Error(Nombre): solo se permiten letras, numeros y espacios.')
+            validators.RegexValidator('^[a-zA-Z0-9 ]*$', 'Error(Nombre): solo se permiten letras, numeros y espacios.')
         ]
     )
 
@@ -267,7 +265,6 @@ class formMateria(forms.Form):
 
     creditos = forms.IntegerField(
         label="Creditos",
-        max_length=5,
         required=True,
         widget=forms.NumberInput(
             attrs={

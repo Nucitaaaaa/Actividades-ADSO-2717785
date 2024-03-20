@@ -5,15 +5,16 @@
 {%block content%} 
     <h2 class="h2">Profesores</h2>
     <br>
-    <div class"profesores">
+    <a href={%url 'añadirProfesorForm'%}>Añadir Profesor</a>
+    <hr>
+    <div class"profesor">
         {% for profesor in profesores %}
                 <li>
                     <p><strong>Nombre:</strong> {{profesor.profNombre}} {{profesor.profApellido}}</p> 
-                    <p><strong>Email:</strong> {{profesor.profEmail}} </p>
+                    <p><strong>Materia:</strong> {{profesor.profCMaterias}} </p>
                     <br>
                     {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
-                    <a>Mas información</a>
-                    <a>Borrar</a>
+                    <a href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
                 </li>
                 <hr>
         {% endfor %}
