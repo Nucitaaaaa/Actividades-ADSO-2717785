@@ -16,9 +16,9 @@ Including another URLconf
     
 """
 
-
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
 import actividad1.views #Se importan las vistas de el documento 'views.py'
 
 urlpatterns = [

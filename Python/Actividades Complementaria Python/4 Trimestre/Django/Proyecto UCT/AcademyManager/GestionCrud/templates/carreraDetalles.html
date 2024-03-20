@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+{% load static %}
+{% comment %} {%load filters%} {% endcomment %}
+
+{%block content%} 
+    <h2 class="h2">Carrera</h2>
+    <br>
+    <div class="carreraDetalles">
+        <ul>
+            {% for carrera in carreras %}
+                <li>
+                    <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
+                    <p><strong>Duración:</strong> {{carrera.carDuracion}}</p> 
+                    <p><strong>Materias:</strong> {{carrera.carMaterias}}</p> 
+                    <br>
+                    <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
+                    <a class="boton">Actualizar</a>
+                    <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    </div>
+{%endblock%}
+

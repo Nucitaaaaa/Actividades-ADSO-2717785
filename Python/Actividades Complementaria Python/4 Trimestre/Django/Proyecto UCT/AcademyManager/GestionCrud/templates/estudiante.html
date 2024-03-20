@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+{% load static %}
+{% comment %} {%load filters%} {% endcomment %}
+
+{%block content%} 
+    <h2 class="h2">Estudiantes</h2>
+    <br>
+    <div class="divAñadir">
+        <a class="boton" href={%url 'añadirEstudianteForm'%}>Añadir Estudiante</a>
+    </div>
+    <div>
+        {% comment %} {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %} {% endcomment %}
+    <hr>
+    <div class="estudiante">
+        <ul>
+            {% for estudiante in estudiantes %}
+                <li>
+                    <p><strong>Nombre:</strong> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
+                    <p><strong>Carrera:</strong> {{estudiante.estCarrera}} </p>
+                    <br>
+                    {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
+                    <a class="boton" href={%url 'mostrarEstudiante' estudiante.id%}>Mas información</a>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    </div>
+{%endblock%}
+
+

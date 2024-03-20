@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+{% load static %}
+{% comment %} {%load filters%} {% endcomment %}
+
+{%block content%} 
+    <h2 class="h2">Profesor</h2>
+    <br>
+    <div>
+        {% comment %} {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %} {% endcomment %}
+    <hr>
+    <div class="profesorDetalles">
+        <ul>
+            {% for profesor in profesores %}
+            <li>
+                <p><strong>Foto:</strong> {{profesor.profFoto}} </p>
+                <p><strong>Nombre:</strong> {{profesor.profNombre}} {{profesor.profApellido}}</p>
+                <p><strong>Materia:</strong> {{profesor.profCMaterias}} </p>
+                <p><strong>Email:</strong> {{profesor.profEmail}} </p>
+                <p><strong>Telefono:</strong> {{profesor.profTelefono}} </p>
+                <p><strong>Fecha de nacimiento:</strong> {{profesor.profFechaNacimiento}} </p>
+                <br>
+                {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
+                <a class="boton" href={%url 'mostrarProfesores'%}>Volver</a>
+                <a class="boton">Actualizar</a>
+                <a class="boton" href={%url 'eliminarProfesor' profesor.id%}>Borrar</a>
+            </li>
+            <hr>
+    {% endfor %}
+        </ul>
+    </div>
+{%endblock%}

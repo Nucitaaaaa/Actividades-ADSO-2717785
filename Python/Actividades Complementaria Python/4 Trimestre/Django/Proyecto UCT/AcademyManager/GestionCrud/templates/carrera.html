@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+{% load static %}
+{% comment %} {%load filters%} {% endcomment %}
+
+{%block content%} 
+    <h2 class="h2">Carreras</h2>
+    <br>
+    <div class="divAñadir">
+        <a class="boton" href={%url 'añadirCarreraForm'%}>Añadir Carrera</a>
+    </div>
+    <hr>
+    <div class="carrera">
+        <ul>
+            {% for carrera in carreras %}
+                <li>
+                    <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
+                    <br>
+                    <a class="boton" href="{%url 'mostrarCarrera' carrera.id%}"> Mas información </a>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    </div>
+{%endblock%}
+

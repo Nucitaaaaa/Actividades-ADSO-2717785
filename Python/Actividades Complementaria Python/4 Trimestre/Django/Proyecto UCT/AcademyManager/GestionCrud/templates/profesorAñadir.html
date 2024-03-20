@@ -1,0 +1,19 @@
+
+{%extends 'layout.html'%}
+{%load static%} 
+
+{% block content %} 
+    <h2>Añadir Profesor</h2>
+    <br>
+    <hr>
+    {% comment %} {% if form.errors %}
+        <strong style:"color: red;">Ha ocurrido un error:
+        {{form.errors}}
+        </strong>
+    {% endif %} {% endcomment %}
+    <form action="{%url 'añadirProfesor'%}" method="POST">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <input type="submit" value="Guardar"/>
+    </form>
+{% endblock %}

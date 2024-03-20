@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+{% comment %} {%load filters%} {% endcomment %}
+
+{%block content%} 
+    <h2 class="h2">Profesores</h2>
+    <br>
+    <div class="divAñadir">
+        <a class="boton" href={%url 'añadirProfesorForm'%}>Añadir Profesor</a>
+    </div>
+    <hr>
+    <div class"profesor">
+        {% for profesor in profesores %}
+                <li>
+                    <p><strong>Nombre:</strong> {{profesor.profNombre}} {{profesor.profApellido}}</p> 
+                    <p><strong>Materia:</strong> {{profesor.profCMaterias}} </p>
+                    <br>
+                    {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
+                    <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
+                </li>
+                <hr>
+        {% endfor %}
+    </div>
+{%endblock%}
+
+
+{% load static %}
