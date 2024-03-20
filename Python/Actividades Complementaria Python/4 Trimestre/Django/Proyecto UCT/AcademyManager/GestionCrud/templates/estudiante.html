@@ -6,7 +6,9 @@
 {%block content%} 
     <h2 class="h2">Estudiantes</h2>
     <br>
-    <a href={%url 'añadirEstudianteForm'%}>Añadir Estudiante</a>
+    <div class="divAñadir">
+        <a class="boton" href={%url 'añadirEstudianteForm'%}>Añadir Estudiante</a>
+    </div>
     <div>
         {% comment %} {% if messages %}
         {% for message in messages %}
@@ -24,7 +26,7 @@
                     <p><strong>Carrera:</strong> {{estudiante.estCarrera}} </p>
                     <br>
                     {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
-                    <a href={%url 'mostrarEstudiante' estudiante.id%}>Mas información</a>
+                    <a class="boton" href={%url 'mostrarEstudiante' estudiante.id%}>Mas información</a>
                 </li>
                 <hr>
             {% endfor %}

@@ -6,7 +6,9 @@
 {%block content%} 
     <h2 class="h2">Carreras</h2>
     <br>
-    <a href={%url 'añadirCarreraForm'%}>Añadir Carrera</a>
+    <div class="divAñadir">
+        <a class="boton" href={%url 'añadirCarreraForm'%}>Añadir Carrera</a>
+    </div>
     <hr>
     <div class="carrera">
         <ul>
@@ -14,7 +16,7 @@
                 <li>
                     <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
                     <br>
-                    <a href="{%url 'mostrarCarrera' carrera.id%}"> Mas información </a>
+                    <a class="boton" href="{%url 'mostrarCarrera' carrera.id%}"> Mas información </a>
                 </li>
                 <hr>
             {% endfor %}

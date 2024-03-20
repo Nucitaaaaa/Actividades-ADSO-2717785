@@ -6,12 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/proyectStyles.css' %}">
     <title>Proyecto UCT</title>
 </head>
 <body>
     <header> 
-        <div class="logo"> 
+        <div> 
             <h1>UCT Academic Manager</h1>
         </div>
     </header>
@@ -23,6 +23,12 @@
         <a href={%url 'mostrarMaterias'%}>Materias</a>
     </nav>
 
+    <div class="barra">  <!-- div para efecto 3D del nav de la pagina -->
+        <span class="esquinaIzquierda"></span>
+        <span class="rellenoBarra"></span>
+        <span class="esquinaDerecha"></span>
+    </div>
+
     <section id="content">  
         <div class="box"> 
             {%block content%}  
@@ -31,7 +37,7 @@
     </section>
     
     <footer>  
-        <p>&copy; All Rights Reserved | Maria Paula Buenaventura - {% now 'd/m/Y h:i:s'%}</p>
+        <p><strong>&copy; All Rights Reserved | Maria Paula Buenaventura - {% now 'd/m/Y h:i:s'%}</strong></p>
     </footer>
 
 </body>

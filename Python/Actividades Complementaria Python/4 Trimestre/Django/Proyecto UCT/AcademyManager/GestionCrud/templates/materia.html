@@ -6,14 +6,16 @@
 {%block content%} 
     <h2 class="h2">Materias</h2>
     <br>
-    <a href={%url 'añadirMateriaForm'%}>Añadir Materia</a>
+    <div class="divAñadir">
+        <a class="boton" href={%url 'añadirMateriaForm'%}>Añadir Materia</a>
+    </div>
     <hr>
     <div class="materia">
         {% for materia in materias %}
                 <li>
                     <p><strong>Nombre:</strong> {{materia.matNombre}}</p> 
                     <br>
-                    <a href={%url 'mostrarMateria' materia.id%}>Mas información</a>
+                    <a class="boton" href={%url 'mostrarMateria' materia.id%}>Mas información</a>
                 </li>
                 <hr>
         {% endfor %}

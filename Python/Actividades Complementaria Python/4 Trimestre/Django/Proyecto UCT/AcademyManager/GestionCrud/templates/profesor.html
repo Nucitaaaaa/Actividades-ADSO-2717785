@@ -5,7 +5,9 @@
 {%block content%} 
     <h2 class="h2">Profesores</h2>
     <br>
-    <a href={%url 'añadirProfesorForm'%}>Añadir Profesor</a>
+    <div class="divAñadir">
+        <a class="boton" href={%url 'añadirProfesorForm'%}>Añadir Profesor</a>
+    </div>
     <hr>
     <div class"profesor">
         {% for profesor in profesores %}
@@ -14,7 +16,7 @@
                     <p><strong>Materia:</strong> {{profesor.profCMaterias}} </p>
                     <br>
                     {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
-                    <a href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
+                    <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
                 </li>
                 <hr>
         {% endfor %}

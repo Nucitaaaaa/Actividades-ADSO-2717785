@@ -14,9 +14,9 @@
                     <p><strong>Duración:</strong> {{carrera.carDuracion}}</p> 
                     <p><strong>Materias:</strong> {{carrera.carMaterias}}</p> 
                     <br>
-                    <a href={%url 'mostrarCarreras'%}>Volver</a>
-                    <a>Actualizar</a>
-                    <a href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
+                    <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
+                    <a class="boton">Actualizar</a>
+                    <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
                 </li>
                 <hr>
             {% endfor %}
