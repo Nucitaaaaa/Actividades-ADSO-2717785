@@ -2,7 +2,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.db import connection
 from GestionCrud.models import Estudiante, Profesor, Materia, Carrera
-from GestionCrud.forms import FormEstudiante, FormProfesor, FormCarrera, FormMateria
+from GestionCrud.forms import FormEstudiante, FormProfesor, FormCarrera, FormMateria, FormActualizarEstudiante, FormActualizarProfesor, FormActualizarCarrera, FormActualizarMateria
 from django.core.exceptions import ObjectDoesNotExist
 
 def index(request):
@@ -27,7 +27,7 @@ def mostrarEstudiante(request, id):
 def añadirEstudiante(request):
     if request.method == 'POST': 
 
-        formulario = FormEstudiante(request.POST) 
+        formulario = FormEstudiante(request.POST, request.FILES) 
 
         if formulario.is_valid():
             data_form = formulario.cleaned_data
@@ -71,20 +71,66 @@ def añadirEstudianteForm(request):
         'formulario': formulario
     })
 
-def modificarEstudiante(request):
-    return HttpResponse('Hi')
 
 def eliminarEstudiante(request, id):
-    # try:
-    with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM GestionCrud_estudiante WHERE id = %s", [id])
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("DELETE FROM GestionCrud_estudiante WHERE id = %s", [id])
         
-    return redirect('mostrarEstudiantes')
+        return redirect('mostrarEstudiantes')
     
-    # except ObjectDoesNotExist:
+    except ObjectDoesNotExist:
 
-    #     return HttpResponse ("<strong>Articulo no encontrado</strong>", redirect())
+        return HttpResponse ("<strong>Articulo no encontrado</strong>", redirect())
+    
 
+def modificarEstudiante(request, id):
+    estudiante = Estudiante.objects.get(pk=id)
+
+    if request.method == 'POST':
+        formulario = FormActualizarEstudiante(request.POST)
+        
+        if formulario.is_valid():
+            data_form = formulario.cleaned_data
+            estudiante.estNombre = data_form.get('nombre')
+            estudiante.estApellido =data_form.get('apellido')
+            estudiante.estEmail = data_form.get('email')
+            estudiante.estTelefono = data_form.get('telefono')
+            estudiante.estFechaNacimiento = data_form.get('fechaNacimiento')
+            estudiante.estFoto = data_form.get('foto')
+            estudiante.estCarrera = data_form.get('carrera')
+            
+            estudiante.save()
+
+            return redirect('mostrarEstudiantes')
+        
+        else:
+            formulario = FormActualizarEstudiante()
+
+    else:
+        formulario = FormActualizarEstudiante()
+        return render(request, 'estudianteModificar.html', {'formulario': formulario})
+
+
+    return render(request, 'estudianteModificar.html', {'formulario': formulario})
+
+
+# def modificarEstudianteForm(request, id):
+
+#     if request.method == 'POST':
+        
+#         formulario = FormActualizarEstudiante()
+
+#         # return render(request, 'estudianteModificar.html', {
+#         #     'formulario': formulario
+#         # })
+    
+#     else:
+#         formulario = FormActualizarEstudiante()
+        
+#         return render(request, 'estudianteModificar.html', {
+#             'formulario': formulario
+#         })
 
 #?Vistas clase Profesor
 
@@ -149,8 +195,6 @@ def añadirProfesorForm(request):
         'formulario': formulario
     })
 
-def modificarProfesor(request):
-    return HttpResponse('Hi')
 
 def eliminarProfesor(request, id):
     # try:
@@ -158,6 +202,10 @@ def eliminarProfesor(request, id):
         cursor.execute("DELETE FROM GestionCrud_profesor WHERE id = %s", [id])
         
     return redirect('mostrarProfesores')
+
+
+def modificarProfesor(request):
+    pass
 
 
 
@@ -170,12 +218,14 @@ def mostrarCarreras(request):
         'carreras' : carreras,
     })
 
+
 def mostrarCarrera(request, id):
     carreras = Carrera.objects.raw("SELECT * FROM GestionCrud_profesor WHERE id = %s", [id])
 
     return render(request, "carreraDetalles.html", {
         'carreras' : carreras,
     })
+
 
 def añadirCarrera(request):
     if request.method == 'POST': 
@@ -216,8 +266,6 @@ def añadirCarreraForm(request):
         'formulario': formulario
     })
 
-def modificarCarrera(request):
-    return HttpResponse('Hi')
 
 def eliminarCarrera(request, id):
     # try:
@@ -225,6 +273,10 @@ def eliminarCarrera(request, id):
         cursor.execute("DELETE FROM GestionCrud_carrera WHERE id = %s", [id])
         
     return redirect('mostrarCarreras')
+
+
+def modificarCarrera(request):
+    pass
 
 
 
@@ -281,6 +333,7 @@ def añadirMateria(request):
                 'formulario': formulario
             })
 
+
 def añadirMateriaForm(request):
     formulario = FormMateria()
 
@@ -288,8 +341,6 @@ def añadirMateriaForm(request):
         'formulario': formulario
     })
 
-def modificarMateria(request):
-    return HttpResponse('Hi')
 
 def eliminarMateria(request, id):
     # try:
@@ -297,3 +348,7 @@ def eliminarMateria(request, id):
         cursor.execute("DELETE FROM GestionCrud_materia WHERE id = %s", [id])
         
     return redirect('mostrarMaterias')
+
+
+def modificarMateria(request):
+    pass

@@ -28,8 +28,9 @@ urlpatterns = [
     path('estudiantes/<int:id>/', GestionCrud.views.mostrarEstudiante, name='mostrarEstudiante'),
     path('estudiantes/añadir/', GestionCrud.views.añadirEstudiante, name='añadirEstudiante'),
     path('estudiantes/añadirForm/', GestionCrud.views.añadirEstudianteForm, name='añadirEstudianteForm'),
-    path('estudiantes/<int:id>/modificar/', GestionCrud.views.modificarEstudiante, name='modificarEstudiante'),
-    path('estudiantes/<int:id>/eliminar/', GestionCrud.views.eliminarEstudiante, name='eliminarEstudiante'),
+    path('estudiantes/modificarEstudiante/<int:id>/', GestionCrud.views.modificarEstudiante, name='modificarEstudiante'),
+    # path('estudiantes/modificarForm/<int:id>/', GestionCrud.views.modificarEstudianteForm, name='modificarEstudianteForm'),
+    path('estudiantes/eliminar/<int:id>/', GestionCrud.views.eliminarEstudiante, name='eliminarEstudiante'),
 
     #?Rutas clase Profesor
     path('profesores/', GestionCrud.views.mostrarProfesores, name='mostrarProfesores'),

@@ -29,7 +29,7 @@
                     <br>
                     {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
                     <a class="boton" href={%url 'mostrarEstudiantes'%}>Volver</a>
-                    <a class="boton" >Actualizar</a>
+                    <a class="boton" href={%url 'modificarEstudiante' estudiante.id%}>Actualizar</a>
                     <a class="boton" href={%url 'eliminarEstudiante' estudiante.id%}>Borrar</a>
                 </li>
                 <hr>

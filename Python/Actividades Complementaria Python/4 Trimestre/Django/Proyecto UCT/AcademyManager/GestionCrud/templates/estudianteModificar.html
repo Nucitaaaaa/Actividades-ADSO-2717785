@@ -3,7 +3,7 @@
 {%load static%} 
 
 {% block content %} 
-    <h2>Añadir Estudiante</h2>
+    <h2>Modificar Datos</h2>
     <br>
     <hr>
     {% comment %} {% if form.errors %}
@@ -11,7 +11,7 @@
         {{form.errors}}
         </strong>
     {% endif %} {% endcomment %}
-    <form action="{%url 'añadirEstudiante'%}" method="POST">
+    <form action="" method="POST">
         {% csrf_token %}
         {{ formulario.as_p }}
         <input class='enviar' type="submit" value="Guardar"/>
