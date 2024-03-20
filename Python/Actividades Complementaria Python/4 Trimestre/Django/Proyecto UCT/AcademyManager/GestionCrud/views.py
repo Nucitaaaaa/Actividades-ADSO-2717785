@@ -25,7 +25,7 @@ def mostrarEstudiante(request, id):
     })
 
 def añadirEstudiante(request):
-    formulario = FormEstudiante(request.POST)
+    formulario = FormEstudiante()
 
     if request.method == 'POST': 
         formulario = FormEstudiante(request.POST, request.FILES) 
@@ -59,6 +59,7 @@ def añadirEstudiante(request):
             formulario = FormEstudiante()
         
     else:
+        formulario = FormEstudiante()
         return render(request, 'estudianteAñadir.html', {'formulario': formulario})
 
     return render(request, 'estudianteAñadir.html', {'formulario': formulario})
@@ -79,7 +80,7 @@ def modificarEstudiante(request, id):
     estudiante = Estudiante.objects.get(pk=id)
 
     if request.method == 'POST':
-        formulario = FormActualizarEstudiante(request.POST)
+        formulario = FormActualizarEstudiante(request.POST, request.FILES)
         
         if formulario.is_valid():
             data_form = formulario.cleaned_data
@@ -121,10 +122,12 @@ def mostrarProfesor(request, id):
         'profesores' : profesores,
     })
 
-def añadirProfesor(request): #!modificar
+def añadirProfesor(request):
+    formulario = FormProfesor() 
+
     if request.method == 'POST': 
 
-        formulario = FormProfesor(request.POST) 
+        formulario = FormProfesor(request.POST, request.FILES) 
 
         if formulario.is_valid():
             data_form = formulario.cleaned_data
@@ -152,21 +155,13 @@ def añadirProfesor(request): #!modificar
             return redirect('mostrarProfesores')
             
         else:
-            return render(request, 'profesorAñadir.html', {
-                'formulario': formulario
-            })
+            formulario = FormProfesor() 
         
     else:
-        return render(request, 'profesorAñadir.html', {
-                'formulario': formulario
-            })
-
-def añadirProfesorForm(request): #!quitar
-    formulario = FormProfesor()
-
-    return render(request, 'profesorAñadir.html', {
-        'formulario': formulario
-    })
+        formulario = FormProfesor() 
+        return render(request, 'profesorAñadir.html', {'formulario': formulario})
+    
+    return render(request, 'profesorAñadir.html', {'formulario': formulario})
 
 
 def eliminarProfesor(request, id):
@@ -181,7 +176,7 @@ def modificarProfesor(request, id):
     profesor = Profesor.objects.get(pk=id)
 
     if request.method == 'POST':
-        formulario = FormActualizarProfesor(request.POST)
+        formulario = FormActualizarProfesor(request.POST, request.FILES)
         
         if formulario.is_valid():
             data_form = formulario.cleaned_data
@@ -225,7 +220,9 @@ def mostrarCarrera(request, id):
     })
 
 
-def añadirCarrera(request): #!modificar
+def añadirCarrera(request):
+    formulario = FormCarrera() 
+
     if request.method == 'POST': 
 
         formulario = FormCarrera(request.POST) 
@@ -248,21 +245,13 @@ def añadirCarrera(request): #!modificar
             return redirect('mostrarCarreras')
             
         else:
-            return render(request, 'carreraAñadir.html', {
-                'formulario': formulario
-            })
+            formulario = FormCarrera() 
         
-    else:
-        return render(request, 'carreraAñadir.html', {
-                'formulario': formulario
-            })
-
-def añadirCarreraForm(request): #!eliminar
-    formulario = FormCarrera()
-
-    return render(request, 'carreraAñadir.html', {
-        'formulario': formulario
-    })
+    else: 
+        formulario = FormCarrera() 
+        return render(request, 'carreraAñadir.html', {'formulario': formulario})
+    
+    return render(request, 'carreraAñadir.html', {'formulario': formulario})
 
 
 def eliminarCarrera(request, id):
@@ -309,13 +298,15 @@ def mostrarMaterias(request):
     })
 
 def mostrarMateria(request, id):
-    materias = Materia.objects.raw("SELECT * FROM GestionCrud_profesor WHERE id = %s", [id])
+    materias = Materia.objects.raw("SELECT * FROM GestionCrud_materia WHERE id = %s", [id])
 
     return render(request, "materiaDetalles.html", {
         'materias' : materias,
     })
 
 def añadirMateria(request):
+    formulario = FormMateria()
+
     if request.method == 'POST': 
 
         formulario = FormMateria(request.POST) 
@@ -343,22 +334,13 @@ def añadirMateria(request):
             return redirect('mostrarMaterias')
             
         else:
-            return render(request, 'materiaAñadir.html', {
-                'formulario': formulario
-            })
+            formulario = FormMateria()
         
     else:
-        return render(request, 'materiaAñadir.html', {
-                'formulario': formulario
-            })
-
-
-def añadirMateriaForm(request):
-    formulario = FormMateria()
-
-    return render(request, 'materiaAñadir.html', {
-        'formulario': formulario
-    })
+        formulario = FormMateria()
+        return render(request, 'materiaAñadir.html', {'formulario': formulario})
+    
+    return render(request, 'materiaAñadir.html', {'formulario': formulario})
 
 
 def eliminarMateria(request, id):
@@ -369,5 +351,29 @@ def eliminarMateria(request, id):
     return redirect('mostrarMaterias')
 
 
-def modificarMateria(request):
-    pass
+def modificarMateria(request, id):
+    materia = Materia.objects.get(pk=id)
+
+    if request.method == 'POST':
+        formulario = FormActualizarMateria(request.POST)
+        
+        if formulario.is_valid():
+            data_form = formulario.cleaned_data
+            materia.matNombre = data_form.get('nombre')
+            materia.matDescripcion = data_form.get('descripcion')
+            materia.matCreditos = data_form.get('creditos')
+            materia.matProfesores = data_form.get('profesor')
+            materia.matCarrera = data_form.get('carrera')
+
+            materia.save()
+
+            return redirect('mostrarMaterias')
+        
+        else:
+            formulario = FormActualizarMateria()
+
+    else:
+        formulario = FormActualizarMateria()
+        return render(request, 'materiaModificar.html', {'formulario': formulario})
+
+    return render(request, 'materiaModificar.html', {'formulario': formulario})

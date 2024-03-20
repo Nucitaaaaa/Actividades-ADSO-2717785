@@ -27,35 +27,32 @@ urlpatterns = [
     path('estudiantes/', GestionCrud.views.mostrarEstudiantes, name='mostrarEstudiantes'),
     path('estudiantes/<int:id>/', GestionCrud.views.mostrarEstudiante, name='mostrarEstudiante'),
     path('estudiantes/añadir/', GestionCrud.views.añadirEstudiante, name='añadirEstudiante'),
-    path('estudiantes/modificarEstudiante/<int:id>/', GestionCrud.views.modificarEstudiante, name='modificarEstudiante'),
+    path('estudiantes/modificar/<int:id>/', GestionCrud.views.modificarEstudiante, name='modificarEstudiante'),
     path('estudiantes/eliminar/<int:id>/', GestionCrud.views.eliminarEstudiante, name='eliminarEstudiante'),
 
     #?Rutas clase Profesor
     path('profesores/', GestionCrud.views.mostrarProfesores, name='mostrarProfesores'),
     path('profesores/<int:id>/', GestionCrud.views.mostrarProfesor, name='mostrarProfesor'),
     path('profesores/añadir/', GestionCrud.views.añadirProfesor, name='añadirProfesor'),
-    path('profesores/añadirForm/', GestionCrud.views.añadirProfesorForm, name='añadirProfesorForm'),
-    path('profesores/<int:id>/modificar/', GestionCrud.views.modificarProfesor, name='modificarProfesor'),
-    path('profesores/<int:id>/eliminar/', GestionCrud.views.eliminarProfesor, name='eliminarProfesor'),
+    path('profesores/modificar/<int:id>/', GestionCrud.views.modificarProfesor, name='modificarProfesor'),
+    path('profesores/eliminar/<int:id>/', GestionCrud.views.eliminarProfesor, name='eliminarProfesor'),
 
     #?Rutas clase Carrera
     path('carreras/', GestionCrud.views.mostrarCarreras, name='mostrarCarreras'),
     path('carreras/<int:id>/', GestionCrud.views.mostrarCarrera, name='mostrarCarrera'),
     path('carreras/añadir/', GestionCrud.views.añadirCarrera, name='añadirCarrera'),
-    path('carreras/añadirForm/', GestionCrud.views.añadirCarreraForm, name='añadirCarreraForm'),
-    path('carreras/<int:id>/modificar/', GestionCrud.views.modificarCarrera, name='modificarCarrera'),
-    path('carreras/<int:id>/eliminar/', GestionCrud.views.eliminarCarrera, name='eliminarCarrera'),
+    path('carreras/modificar/<int:id>/', GestionCrud.views.modificarCarrera, name='modificarCarrera'),
+    path('carreras/eliminar/<int:id>/', GestionCrud.views.eliminarCarrera, name='eliminarCarrera'),
 
     #?Rutas clase Materia
     path('materias/', GestionCrud.views.mostrarMaterias, name='mostrarMaterias'),
     path('materias/<int:id>/', GestionCrud.views.mostrarMateria, name='mostrarMateria'),
     path('materias/añadir/', GestionCrud.views.añadirMateria, name='añadirMateria'),
-    path('materias/añadirForm/', GestionCrud.views.añadirMateriaForm, name='añadirMateriaForm'),
-    path('materias/<int:id>/modificar/', GestionCrud.views.modificarMateria, name='modificarMateria'),
-    path('materias/<int:id>/eliminar/', GestionCrud.views.eliminarMateria, name='eliminarMateria'),
+    path('materias/modificar/<int:id>/', GestionCrud.views.modificarMateria, name='modificarMateria'),
+    path('materias/eliminar/<int:id>/', GestionCrud.views.eliminarMateria, name='eliminarMateria'),
 ]
 
 if settings.DEBUG:
     from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     

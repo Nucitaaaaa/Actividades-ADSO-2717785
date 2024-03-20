@@ -496,7 +496,7 @@ class FormMateria(forms.Form):
             }
         ),
         validators= [
-            validators.RegexValidator('^[a-zA-Z\s]+$', 'Error(Descripcion): solo se permiten letras y espacios.')
+            validators.RegexValidator('^[\w\sáéíóúÁÉÍÓÚüÜ,.-]*$', 'Error(Descripcion): solo se permiten letras y espacios.')
         ]
     )
 
@@ -570,7 +570,7 @@ class FormActualizarMateria(forms.Form):
             }
         ),
         validators= [
-            validators.RegexValidator('^[a-zA-Z\s]+$', 'Error(Descripcion): solo se permiten letras y espacios.')
+            validators.RegexValidator('^[\w\sáéíóúÁÉÍÓÚüÜ,.-]*$', 'Error(Descripcion): solo se permiten letras y espacios.')
         ]
     )
 
