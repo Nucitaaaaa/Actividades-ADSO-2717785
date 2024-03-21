@@ -6,7 +6,13 @@ from GestionCrud.forms import FormEstudiante, FormProfesor, FormCarrera, FormMat
 from django.core.exceptions import ObjectDoesNotExist
 
 def index(request):
-    return render(request, "layout.html")
+    return render(request, "inicio.html")
+
+def quienesSomos(request):
+    return render(request, "quienesSomos.html")
+
+def contactos(request):
+    return render(request, "contactos.html")
 
 #?Vistas clase Estudiantes 
 

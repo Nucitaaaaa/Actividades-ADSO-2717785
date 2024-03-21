@@ -10,13 +10,47 @@ body {
     background-color: #3b404b;
 }
 
+img {
+    width: 300px;
+    height: 300px;
+}
+
 header {
-    width: 1212px;
-    height: 140px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #222831;
     margin: 0 auto;
     border: 1px solid #13161b;
-    border-bottom: 0px;
+    padding-bottom: 20px;
+
+}
+
+li {
+    list-style: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.logo h1 {
+    display: block;
+    letter-spacing: 2px;
+    margin: 23px 35px 20px 0;
+    color: #ECE3CE;
+} 
+
+.logo img {
+    display: block;
+    width: 190px;
+    float: left;
+    margin: 20px 0 0 0;
 }
 
 #content ul li {
@@ -30,6 +64,7 @@ hr {
 
 
 h1 {
+    font-size: 36px;
     display: block;
     letter-spacing: 2px;
     color: #EEEEEE;
@@ -48,12 +83,10 @@ h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 1250px;
-    height: 40px;
     background-color: #222831;
     border: 1px solid #13161b;
     margin: 0 auto;
-    box-shadow: 0px 16px 16px #76ABAE;
+    box-shadow: 0px 6px 14px #76ABAE;
 }
 
 .nav a{
@@ -67,40 +100,14 @@ h3 {
 
 .nav a:hover{
     background-color: #494f5c;
+    border-radius: 5px;
     box-shadow: 0px 0px 5px #31363F inset;
     color: #94d6da;
     transition: all 600ms;
 }
 
-.barra {
-    width: 1250px;
-    margin: 0 auto;
-}
-
-.barra .esquinaIzquierda{
-    display: block;
-    border-top: 10px solid #222831;
-    border-left: 20px solid transparent;
-    float: left;
-}
-
-.barra .rellenoBarra {
-    display: block;
-    width: 1210px;
-    height: 10px;
-    background: #222831;
-    float: left;
-}
-
-.barra .esquinaDerecha{
-    display: block;
-    border-top: 10px solid #222831;
-    border-right: 20px solid transparent;
-    float: right;
-}
-
 #content {
-    width: 1212px;
+    width: 1300px;
     min-height: 930px;
     margin: 40px auto 30px auto;
 }
@@ -144,18 +151,13 @@ h3 {
 }
 
 footer {
-    width: 1250px;
-    background-color: #31363F;
+    background-color: #222831;
     border: 1px solid #222831;
     color: #EEEEEE;
     text-align: center;
     padding: 10px 0 10px 0;
     box-shadow: 0 0 20px #76ABAE;
     margin: 0 auto;
-}
-
-#contactos{
-    text-align: center;
 }
 
 form {
@@ -315,4 +317,18 @@ form .enviar:hover {
     100% {
         border-color: #6a989b; 
     }
+}
+
+.detalles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+.detallesFotoBoton {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

@@ -1,10 +1,9 @@
 
 {% extends "layout.html" %}
 {% load static %}
-{% comment %} {%load filters%} {% endcomment %}
 
 {%block content%} 
-    <h2 class="h2">Estudiante</h2>
+    <h2 class="h2">Detalles</h2>
     <br>
     <div>
         {% comment %} {% if messages %}
@@ -16,24 +15,27 @@
     {% endif %} {% endcomment %}
     <br>
     <hr>
-    <div class="estudiantesDetalle">
-        <ul>
-            {% for estudiante in estudiantes %}
-                <li>
-                    <p><strong>Foto:</strong> {{estudiante.estFoto}} </p>
-                    <p><strong>Nombre:</strong> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
-                    <p><strong>Carrera:</strong> {{estudiante.estCarrera}} </p>
-                    <p><strong>Email:</strong> {{estudiante.estEmail}} </p>
-                    <p><strong>Telefono:</strong> {{estudiante.estTelefono}} </p>
-                    <p><strong>Fecha de nacimiento:</strong> {{estudiante.estFechaNacimiento}} </p>
-                    <br>
-                    {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
-                    <a class="boton" href={%url 'mostrarEstudiantes'%}>Volver</a>
-                    <a class="boton" href={%url 'modificarEstudiante' estudiante.id%}>Actualizar</a>
-                    <a class="boton" href={%url 'eliminarEstudiante' estudiante.id%}>Borrar</a>
-                </li>
-                <hr>
-            {% endfor %}
-        </ul>
-    </div>
+        {% for estudiante in estudiantes %}
+            <li>
+                <div class="detalles">
+                    <div class="detallesFotoBoton">
+                        <p>
+                            {% if estudiante.estFoto != 'null' and estudiante.estFoto.url|length >= 1%}
+                                <img src="{{estudiante.estFoto.url}}">
+                            {% endif %} 
+                        </p>
+                        <a class="boton" href={%url 'mostrarEstudiantes'%}>Volver</a>
+                        <a class="boton" href={%url 'modificarEstudiante' estudiante.id%}>Actualizar</a>
+                        <a class="boton" href={%url 'eliminarEstudiante' estudiante.id%}>Borrar</a>
+                    </div>
+                    <div class="detallesInfo">
+                        <p> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
+                        <p> {{estudiante.estCarrera}} </p>
+                        <p> {{estudiante.estEmail}} </p>
+                        <p> {{estudiante.estTelefono}} </p>
+                        <p> {{estudiante.estFechaNacimiento}} </p>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
 {%endblock%}

@@ -24,7 +24,7 @@
             {% for estudiante in estudiantes %}
                 <li>
                     <div class="datos">
-                        <p>{{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
+                        <strong>{{estudiante.estNombre}} {{estudiante.estApellido}}</strong> 
                         <p>{{estudiante.estCarrera}} </p>
                         <a class="boton" href={%url 'mostrarEstudiante' estudiante.id%}>Ver Mas</a>
                     </div>

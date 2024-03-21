@@ -22,6 +22,8 @@ import GestionCrud.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', GestionCrud.views.index, name='index'),
+    path('quienesSomos/', GestionCrud.views.quienesSomos, name='quienesSomos'),
+    path('contactos/', GestionCrud.views.contactos, name='contactos'),
 
     #?Rutas clase Estudiante
     path('estudiantes/', GestionCrud.views.mostrarEstudiantes, name='mostrarEstudiantes'),

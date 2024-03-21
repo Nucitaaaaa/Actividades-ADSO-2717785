@@ -16,7 +16,7 @@
         {% for profesor in profesores %}
                 <li>
                     <div class="datos">
-                        <p>{{profesor.profNombre}} {{profesor.profApellido}}</p> 
+                        <strong>{{profesor.profNombre}} {{profesor.profApellido}}</strong> 
                         <p>{{profesor.profCMaterias}} </p>
                         <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
                     </div>

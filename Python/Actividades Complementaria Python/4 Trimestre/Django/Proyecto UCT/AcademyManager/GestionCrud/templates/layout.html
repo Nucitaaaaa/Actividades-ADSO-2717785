@@ -11,23 +11,21 @@
 </head>
 <body>
     <header> 
-        <div> 
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Logo UCT"> 
             <h1>UCT Academic Manager</h1>
         </div>
     </header>
     
     <nav class="nav">
+        <a href={%url 'index'%}>Inicio</a>
+        <a href={%url 'quienesSomos'%}>Quienes Somos</a>
         <a href={%url 'mostrarEstudiantes'%}>Estudiantes</a>
         <a href={%url 'mostrarProfesores'%}>Profesores</a>
         <a href={%url 'mostrarCarreras'%}>Carreras</a>
         <a href={%url 'mostrarMaterias'%}>Materias</a>
+        <a href={%url 'contactos'%}>Contactanos</a>
     </nav>
-
-    <div class="barra">  <!-- div para efecto 3D del nav de la pagina -->
-        <span class="esquinaIzquierda"></span>
-        <span class="rellenoBarra"></span>
-        <span class="esquinaDerecha"></span>
-    </div>
 
     <section id="content">  
         <div class="box"> 
@@ -37,7 +35,7 @@
     </section>
     
     <footer>  
-        <p><strong>&copy; All Rights Reserved | Maria Paula Buenaventura - {% now 'd/m/Y h:i:s'%}</strong></p>
+        <p><strong>&copy; All Rights Reserved | Maria Paula Buenaventura</strong></p>
     </footer>
 
 </body>

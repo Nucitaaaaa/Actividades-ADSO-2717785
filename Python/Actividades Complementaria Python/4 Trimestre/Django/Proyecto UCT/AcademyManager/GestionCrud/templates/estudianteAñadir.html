@@ -10,7 +10,7 @@
         {{form.errors}}
         </strong>
     {% endif %} {% endcomment %}
-    <form action="{%url 'añadirEstudiante'%}" method="POST">
+    <form action="{%url 'añadirEstudiante'%}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ formulario.as_p }}
         <div class="divEnviar">
