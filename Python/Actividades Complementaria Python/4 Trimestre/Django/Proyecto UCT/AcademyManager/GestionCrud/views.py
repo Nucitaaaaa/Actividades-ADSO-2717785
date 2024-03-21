@@ -56,13 +56,12 @@ def añadirEstudiante(request):
             return redirect('mostrarEstudiantes')
             
         else:
-            formulario = FormEstudiante()
+            return render(request, 'estudianteAñadir.html', {'formulario': formulario})
         
     else:
         formulario = FormEstudiante()
         return render(request, 'estudianteAñadir.html', {'formulario': formulario})
 
-    return render(request, 'estudianteAñadir.html', {'formulario': formulario})
 
 def eliminarEstudiante(request, id):
     try:
@@ -155,14 +154,12 @@ def añadirProfesor(request):
             return redirect('mostrarProfesores')
             
         else:
-            formulario = FormProfesor() 
+            return render(request, 'profesorAñadir.html', {'formulario': formulario}) 
         
     else:
         formulario = FormProfesor() 
         return render(request, 'profesorAñadir.html', {'formulario': formulario})
     
-    return render(request, 'profesorAñadir.html', {'formulario': formulario})
-
 
 def eliminarProfesor(request, id):
     # try:
@@ -245,13 +242,11 @@ def añadirCarrera(request):
             return redirect('mostrarCarreras')
             
         else:
-            formulario = FormCarrera() 
+            return render(request, 'carreraAñadir.html', {'formulario': formulario})
         
     else: 
         formulario = FormCarrera() 
         return render(request, 'carreraAñadir.html', {'formulario': formulario})
-    
-    return render(request, 'carreraAñadir.html', {'formulario': formulario})
 
 
 def eliminarCarrera(request, id):
@@ -334,14 +329,12 @@ def añadirMateria(request):
             return redirect('mostrarMaterias')
             
         else:
-            formulario = FormMateria()
+            return render(request, 'materiaAñadir.html', {'formulario': formulario})
         
     else:
         formulario = FormMateria()
         return render(request, 'materiaAñadir.html', {'formulario': formulario})
     
-    return render(request, 'materiaAñadir.html', {'formulario': formulario})
-
 
 def eliminarMateria(request, id):
     # try:
