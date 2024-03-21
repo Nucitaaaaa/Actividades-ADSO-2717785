@@ -24,16 +24,18 @@
                                 <img src="{{estudiante.estFoto.url}}">
                             {% endif %} 
                         </p>
-                        <a class="boton" href={%url 'mostrarEstudiantes'%}>Volver</a>
-                        <a class="boton" href={%url 'modificarEstudiante' estudiante.id%}>Actualizar</a>
-                        <a class="boton" href={%url 'eliminarEstudiante' estudiante.id%}>Borrar</a>
+                        <div>
+                            <a class="boton" href={%url 'mostrarEstudiantes'%}>Volver</a>
+                            <a class="boton" href={%url 'modificarEstudiante' estudiante.id%}>Actualizar</a>
+                            <a class="boton" href={%url 'eliminarEstudiante' estudiante.id%}>Borrar</a>
+                        </div>
                     </div>
                     <div class="detallesInfo">
-                        <p> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
-                        <p> {{estudiante.estCarrera}} </p>
-                        <p> {{estudiante.estEmail}} </p>
-                        <p> {{estudiante.estTelefono}} </p>
-                        <p> {{estudiante.estFechaNacimiento}} </p>
+                        <p><strong>Nombre:</strong> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
+                        <p> <strong>Email:</strong> {{estudiante.estEmail}} </p>
+                        <p> <strong>Telefono:</strong> {{estudiante.estTelefono}} </p>
+                        <p> <strong>Fecha de nacimiento:</strong> {{estudiante.estFechaNacimiento}} </p>
+                        <p> <strong>Carrera:</strong> {{estudiante.estCarrera}} </p>
                     </div>
                 </div>
             </li>

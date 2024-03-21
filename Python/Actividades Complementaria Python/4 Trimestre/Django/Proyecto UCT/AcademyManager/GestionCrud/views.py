@@ -4,6 +4,7 @@ from django.db import connection
 from GestionCrud.models import Estudiante, Profesor, Materia, Carrera
 from GestionCrud.forms import FormEstudiante, FormProfesor, FormCarrera, FormMateria, FormActualizarEstudiante, FormActualizarProfesor, FormActualizarCarrera, FormActualizarMateria
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
 
 def index(request):
     return render(request, "inicio.html")
@@ -59,6 +60,7 @@ def añadirEstudiante(request):
 
             estudiante.save()
 
+            messages.success(request, f'El estudiante "{estudiante.estNombre} {estudiante.estApellido}" se ha añadido con exito')
             return redirect('mostrarEstudiantes')
             
         else:
@@ -99,6 +101,7 @@ def modificarEstudiante(request, id):
             
             estudiante.save()
 
+            messages.success(request, f'Los datos del estudiante "{estudiante.estNombre} {estudiante.estApellido}" se han modificado con exito')
             return redirect('mostrarEstudiantes')
         
         else:
@@ -157,6 +160,7 @@ def añadirProfesor(request):
 
             profesor.save()
 
+            messages.success(request, f'El profesor "{profesor.profNombre} {profesor.profApellido}" se ha añadido con exito')
             return redirect('mostrarProfesores')
             
         else:
@@ -193,6 +197,7 @@ def modificarProfesor(request, id):
 
             profesor.save()
 
+            messages.success(request, f'Los datos del profesor "{profesor.profNombre} {profesor.profApellido}" se han modificado con exito')
             return redirect('mostrarProfesores')
         
         else:
@@ -243,6 +248,7 @@ def añadirCarrera(request):
                 carMaterias = carMaterias,
             )
 
+            messages.success(request, f'La carrera "{carrera.carNombre}" se ha añadido con exito')
             carrera.save()
 
             return redirect('mostrarCarreras')
@@ -275,6 +281,7 @@ def modificarCarrera(request, id):
             carrera.carDuracion = data_form.get('duracion')
             carrera.carMaterias = data_form.get('materias')
 
+            messages.success(request, f'Los datos de la carrera "{carrera.carNombre}" se han modificado con exito')
             carrera.save()
 
             return redirect('mostrarCarreras')
@@ -330,6 +337,7 @@ def añadirMateria(request):
                 matProfesores = matProfesores,
             )
 
+            messages.success(request, f'La materia "{materia.matNombre}" se ha añadido con exito')
             materia.save()
 
             return redirect('mostrarMaterias')
@@ -366,6 +374,7 @@ def modificarMateria(request, id):
 
             materia.save()
 
+            messages.success(request, f'Los datos de la materia "{materia.matNombre}" se han modificado con exito')
             return redirect('mostrarMaterias')
         
         else:

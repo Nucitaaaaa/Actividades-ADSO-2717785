@@ -9,6 +9,13 @@
     <div class="divAñadir">
         <a class="boton" href={%url 'añadirMateria'%}>Añadir Materia</a>
     </div>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %} 
     <hr>
     <h3>Datos</h3>
     <hr>

@@ -10,11 +10,6 @@ body {
     background-color: #3b404b;
 }
 
-img {
-    width: 300px;
-    height: 300px;
-}
-
 header {
     height: 200px;
     display: flex;
@@ -34,7 +29,9 @@ li {
 .logo {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 700px;
+    height: 100px;
     margin: 0 auto;
     padding-top: 10px;
 }
@@ -42,9 +39,19 @@ li {
 .logo h1 {
     display: block;
     letter-spacing: 2px;
-    margin: 23px 35px 20px 0;
+    margin: 23px 35px 0 0;
     color: #ECE3CE;
 } 
+
+.logo p {
+    color: #ECE3CE;
+}
+
+.logo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .logo img {
     display: block;
@@ -112,6 +119,11 @@ h3 {
     margin: 40px auto 30px auto;
 }
 
+.formEstFeNa, .formProfFeNa{
+    color: gray;
+    font-size: 15px;
+}
+
 #content .box {
     background-color: #EEEEEE;
     width: 95%;
@@ -119,6 +131,7 @@ h3 {
     padding: 20px;
     border: 1px solid #76ABAE;
     margin: 0 auto;
+    border-radius: 5px;
 }
 
 .box h2{
@@ -304,6 +317,23 @@ form .enviar:hover {
     margin-top: 10px;
 }
 
+.datos img{
+    width: 300px;
+    height: 255px;
+}
+
+.message {
+    text-align: center;
+    background-color: #93d332;
+    padding: 10px;
+    font-weight: bold;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    color: #FFFFFFFF;
+}
+
 @keyframes cambioColor {
     0% {
         border-color: #9ee0e4; 
@@ -320,15 +350,62 @@ form .enviar:hover {
 }
 
 .detalles {
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 10px;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 50px;
+    gap: 10px;
+    border: 2px solid;
+    animation: cambioColor 3s infinite alternate;
+    border-radius: 5px; 
 }
 
 .detallesFotoBoton {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
+}
+
+.detallesFotoBoton img {
+    width: 300px;
+    height: 255px;
+}
+
+.detallesFotoBoton div{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.detallesInfo p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+
+.volver {
+    width: 50%;
+    height: 15px;
+    text-align: center;
+    border: 1px solid #222831;
+    background-color: #3b404b;
+    color: #EEEEEE;
+    padding: 10px 3px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.volver:hover {
+    background-color: rgb(25, 27, 31);;
+    box-shadow: 0px 0px 5px #94d6da inset;
+    color: #94d6da;
+    transition: all 600ms;
 }
