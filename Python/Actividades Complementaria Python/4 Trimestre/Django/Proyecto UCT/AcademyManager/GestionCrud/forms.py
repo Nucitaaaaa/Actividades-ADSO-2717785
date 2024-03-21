@@ -487,7 +487,7 @@ class FormMateria(forms.Form):
     )
 
     descripcion = forms.CharField(        
-        label="descripcion",
+        label="Descripcion",
         required=False,
         widget=forms.Textarea(
             attrs={
@@ -561,7 +561,7 @@ class FormActualizarMateria(forms.Form):
     )
 
     descripcion = forms.CharField(        
-        label="descripcion",
+        label="Descripcion",
         required=False,
         widget=forms.Textarea(
             attrs={

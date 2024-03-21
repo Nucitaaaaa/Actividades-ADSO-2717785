@@ -1,5 +1,6 @@
 
 {% extends "layout.html" %}
+{% load static %}
 {% comment %} {%load filters%} {% endcomment %}
 
 {%block content%} 
@@ -9,19 +10,19 @@
         <a class="boton" href={%url 'añadirProfesor'%}>Añadir Profesor</a>
     </div>
     <hr>
-    <div class"profesor">
+    <h3>Datos</h3>
+    <hr>
+    <div class="profesor">
         {% for profesor in profesores %}
                 <li>
-                    <p><strong>Nombre:</strong> {{profesor.profNombre}} {{profesor.profApellido}}</p> 
-                    <p><strong>Materia:</strong> {{profesor.profCMaterias}} </p>
-                    <br>
-                    {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
-                    <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
+                    <div class="datos">
+                        <p>{{profesor.profNombre}} {{profesor.profApellido}}</p> 
+                        <p>{{profesor.profCMaterias}} </p>
+                        <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
+                    </div>
                 </li>
-                <hr>
         {% endfor %}
     </div>
 {%endblock%}
 
 
-{% load static %}

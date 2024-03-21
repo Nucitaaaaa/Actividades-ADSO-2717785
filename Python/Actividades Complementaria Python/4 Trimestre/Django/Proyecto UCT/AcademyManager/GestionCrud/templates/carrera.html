@@ -10,17 +10,17 @@
         <a class="boton" href={%url 'añadirCarrera'%}>Añadir Carrera</a>
     </div>
     <hr>
+    <h3>Datos</h3>
+    <hr>
     <div class="carrera">
-        <ul>
             {% for carrera in carreras %}
                 <li>
-                    <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
-                    <br>
-                    <a class="boton" href="{%url 'mostrarCarrera' carrera.id%}"> Mas información </a>
+                    <div class="datos">
+                        <p>{{carrera.carNombre}}</p> 
+                        <a class="boton" href="{%url 'mostrarCarrera' carrera.id%}"> Ver Mas </a>
+                    </div>
                 </li>
-                <hr>
             {% endfor %}
-        </ul>
     </div>
 {%endblock%}
 

@@ -18,19 +18,18 @@
         {% endfor %}
     {% endif %} {% endcomment %}
     <hr>
+    <h3>Datos</h3>
+    <hr>
     <div class="estudiante">
-        <ul>
             {% for estudiante in estudiantes %}
                 <li>
-                    <p><strong>Nombre:</strong> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
-                    <p><strong>Carrera:</strong> {{estudiante.estCarrera}} </p>
-                    <br>
-                    {% comment %} {% url "eliminarArticulo" article.id%} {% endcomment %}
-                    <a class="boton" href={%url 'mostrarEstudiante' estudiante.id%}>Mas información</a>
+                    <div class="datos">
+                        <p>{{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
+                        <p>{{estudiante.estCarrera}} </p>
+                        <a class="boton" href={%url 'mostrarEstudiante' estudiante.id%}>Ver Mas</a>
+                    </div>
                 </li>
-                <hr>
             {% endfor %}
-        </ul>
     </div>
 {%endblock%}
 

@@ -19,14 +19,15 @@ header {
     border-bottom: 0px;
 }
 
-ul li {
+#content ul li {
     list-style: none;
     list-style-type: none;
 }
 
 hr {
-    border: 1px solid #222831;;
+    border: 2px solid #3b404b;
 }
+
 
 h1 {
     display: block;
@@ -34,6 +35,13 @@ h1 {
     color: #EEEEEE;
     text-align: center;
     padding-top: 50px;
+}
+
+h3 {
+    color: #13161b;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
 }
 
 .nav{
@@ -109,27 +117,27 @@ h1 {
 .box h2{
     margin-top: 50px;
     text-align: center;
-    color: #222831;
-    font-size: 30px;
+    color:  #13161b;
+    font-size: 40px;
 }
 
 .divAñadir {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 0px 10px 20px 10px;
+    margin: 0px 10px 60px 10px;
 }
 
 .boton { 
-    border: 1px solid #3b404b;
-    background-color: #222831;
+    border: 1px solid #222831;
+    background-color: #3b404b;
     color: #EEEEEE;
     padding: 5px;
     border-radius: 5px;
 }
 
 .boton:hover {
-    background-color: #494f5c;
+    background-color: #222831;
     box-shadow: 0px 0px 5px #31363F inset;
     color: #94d6da;
     transition: all 600ms;
@@ -169,14 +177,19 @@ form input {
     box-sizing: border-box; 
 }
 
+form input::placeholder {
+    font-size: 15px;
+}
+
 form input:focus {
     background-color: #94d6da;
-    color: #EEEEEE;
+    color: #FFFFFF;
     transition: all 600ms;
+    outline: none;
 }
 
 input:focus::placeholder {
-    color: #EEEEEE;
+    color: #FFFFFF;
     transition: all 600ms;
 }
 
@@ -205,25 +218,32 @@ input[type="file"]::-webkit-file-upload-button:hover {
     background-color: rgb(25, 27, 31);
     box-shadow: 0px 0px 5px #94d6da;
     color: #94d6da;
-    transition: all 600ms; /* Cambia el color de fondo al pasar el ratón por encima */
+    transition: all 600ms; 
 }
 
-/* Estilos básicos para el textarea */
-form input textarea {
-    width: 300px; 
+.formMatDesc {
+    font-size: 15px;
+    width: 95%; 
     height: 150px; 
-    padding: 10px; 
+    padding: 10px;
+    margin: 10px 0;
     font-size: 16px; 
     border: 1px solid #ccc; 
     border-radius: 5px; 
+    resize: none; 
 }
 
-/* Estilos cuando el textarea está enfocado */
-textarea:focus {
-    border-color: #4CAF50; /* Cambia el color del borde cuando está enfocado */
-    outline: none; /* Quita el resplandor de enfoque */
+.formMatDesc:focus {
+    border-color: #94d6da; 
+    outline: none; 
+    background-color: #94d6da;
+    transition: all 600ms;
 }
 
+.formMatDesc:focus::placeholder {
+    color: #FFFFFF;
+    transition: all 600ms;
+}
 
 form label {
     color: #EEEEEE;
@@ -248,11 +268,45 @@ form .enviar {
 
 form .enviar:hover {
     background-color: rgb(25, 27, 31);;
-    box-shadow: 0px 0px 5px #94d6da inset;
+    box-shadow: 0px 0px 5px #3b404b inset;
     color: #94d6da;
     transition: all 600ms;
 }
 
-.estudiante, .profesor, .carrera, .materia{
+.estudiante, .materia, .profesor, .carrera {
+    list-style: none;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px; 
+    padding: 10px;
+    margin: 5px;
+} 
 
+.datos {
+    border: 3px solid;
+    animation: cambioColor 3s infinite alternate; 
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 5px; 
+    margin-top: 10px;
+}
+
+@keyframes cambioColor {
+    0% {
+        border-color: #9ee0e4; 
+    }
+    25% {
+        border-color: #94d6da; 
+    }
+    50% {
+        border-color: #76ABAE; 
+    }
+    100% {
+        border-color: #6a989b; 
+    }
 }
