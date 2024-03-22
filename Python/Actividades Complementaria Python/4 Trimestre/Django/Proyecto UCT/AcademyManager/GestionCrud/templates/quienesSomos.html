@@ -3,10 +3,21 @@
 {% load static %}
 {% comment %} {%load filters%} {% endcomment %}
 
-{%block content%} 
-    <h2>Quienes somos</h2>
-    <br>
-    <p>La Universidad Ceicotol Tolima (UCT) es una institución académica de prestigio arraigada en los principios de excelencia, innovación y compromiso con la comunidad. Fundada con la visión de ser un faro de conocimiento en la región, la UCT se ha destacado por su constante búsqueda de la excelencia académica y la promoción del desarrollo integral de sus estudiantes.</p>
-    <br>
-    <p>Nuestra universidad se distingue por su enfoque en la investigación interdisciplinaria y la colaboración internacional, lo que nos permite estar a la vanguardia en la generación de conocimiento en diversas áreas del saber. Desde las ciencias sociales hasta las ingenierías y las artes, en la UCT fomentamos la curiosidad intelectual y el pensamiento crítico como herramientas fundamentales para abordar los desafíos de nuestro tiempo.</p>
+{%block content%}
+    <div class="quienesSomos">
+        <h2>Quienes somos</h2>
+        <br>
+        <p>La Universidad Ceicotol Tolima (UCT) es una institución académica de <strong>prestigio</strong> arraigada en los principios de excelencia, innovación y compromiso con la comunidad. Fundada con la visión de ser un faro de conocimiento en la región, la UCT se ha destacado por su constante búsqueda de la excelencia académica y la promoción del desarrollo integral de sus estudiantes.</p>
+        <br>
+        <div class="estudiantesDivImg">
+            <img class="estudiantesImg" src="{% static 'img/estudiantes.jpg' %}" alt="Estudiantes UCT">
+            <img class="estudiantesImg" src="{% static 'img/estudiantes2.jpg' %}" alt="Estudiantes UCT">
+            <img class="estudiantesImg" src="{% static 'img/estudiantes3.jpg' %}" alt="Estudiantes UCT">
+        </div>
+        <br>
+        <div class="estudiantesMaterias">
+            <p>Nuestra universidad se distingue por su enfoque en la investigación interdisciplinaria y la colaboración internacional, lo que nos permite estar a la vanguardia en la generación de conocimiento en diversas áreas del saber. Desde las ciencias sociales hasta las ingenierías y las artes, en la UCT fomentamos la curiosidad intelectual y el pensamiento crítico como herramientas fundamentales para abordar los desafíos de nuestro tiempo.</p>
+            <img class="estudiantesImg" src="{% static 'img/estudiantes3.jpg' %}" alt="Estudiantes UCT"> <!--!reemplazar--> 
+        </div>
+    </div>
 {%endblock%}

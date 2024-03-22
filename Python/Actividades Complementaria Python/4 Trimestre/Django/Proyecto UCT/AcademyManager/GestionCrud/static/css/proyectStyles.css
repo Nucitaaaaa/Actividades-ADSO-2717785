@@ -2,7 +2,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif, Arial, Helvetica;
+    font-family: "Inder", sans-serif;
+    font-style: normal;
     text-decoration: none;
 }
 
@@ -11,7 +12,7 @@ body {
 }
 
 header {
-    height: 200px;
+    height: 170px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +56,7 @@ li {
 
 .logo img {
     display: block;
-    width: 190px;
+    width: 200px;
     float: left;
     margin: 20px 0 0 0;
 }
@@ -76,7 +77,7 @@ h1 {
     letter-spacing: 2px;
     color: #EEEEEE;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
 h3 {
@@ -115,7 +116,6 @@ h3 {
 
 #content {
     width: 1300px;
-    min-height: 930px;
     margin: 40px auto 30px auto;
 }
 
@@ -127,8 +127,9 @@ h3 {
 #content .box {
     background-color: #EEEEEE;
     width: 95%;
-    min-height: 930px;
-    padding: 20px;
+    min-height: 600px;
+    padding: 20px ;
+    padding-bottom: 70px;
     border: 1px solid #76ABAE;
     margin: 0 auto;
     border-radius: 5px;
@@ -421,3 +422,33 @@ form .enviar:hover {
     align-items: center;
     gap: 10px;
 }
+
+.quienesSomos p{
+    text-align: center;
+}
+
+.quienesSomos .estudiantesImg{
+    width: 320px;
+    border-radius: 5px;
+}
+
+.quienesSomos .estudiantesDivImg{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px;
+}
+
+.quienesSomos .estudiantesMaterias {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    padding: 0 110px;
+}
+
+.quienesSomos .estudiantesMaterias {
+    margin: 0 auto;
+    width: fit-content;
+}
+
