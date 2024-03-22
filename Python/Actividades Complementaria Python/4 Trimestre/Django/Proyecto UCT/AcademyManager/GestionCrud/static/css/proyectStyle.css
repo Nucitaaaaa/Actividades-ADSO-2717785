@@ -423,32 +423,39 @@ form .enviar:hover {
     gap: 10px;
 }
 
-.quienesSomos p{
+.quienesSomos p {
     text-align: center;
 }
 
-.quienesSomos .estudiantesImg{
+.estudiantesImg{
     width: 320px;
     border-radius: 5px;
 }
 
-.quienesSomos .estudiantesDivImg{
+.estudiantesDivImg{
     display: flex;
     justify-content: center;
     gap: 25px;
     margin: 20px;
 }
 
-.quienesSomos .estudiantesMaterias {
+.quienesSomosMaterias {
     display: grid;
     align-items: center;
     grid-template-columns: 2fr 1fr;
     gap: 25px;
     padding: 0 110px;
+    margin: 20px
 }
 
-.quienesSomos .estudiantesMaterias {
-    margin: 0 auto;
-    width: fit-content;
+.quienesSomosProfesores {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+    padding: 0 110px;
+    margin: 20px
 }
+
+
 
