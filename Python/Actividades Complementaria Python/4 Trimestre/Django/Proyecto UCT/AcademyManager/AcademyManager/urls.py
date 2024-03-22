@@ -24,6 +24,7 @@ urlpatterns = [
     path('', GestionCrud.views.index, name='index'),
     path('quienesSomos/', GestionCrud.views.quienesSomos, name='quienesSomos'),
     path('contactos/', GestionCrud.views.contactos, name='contactos'),
+    path('academicManager/', GestionCrud.views.academicManager, name='academicManager'),
 
     #?Rutas clase Estudiante
     path('estudiantes/', GestionCrud.views.mostrarEstudiantes, name='mostrarEstudiantes'),

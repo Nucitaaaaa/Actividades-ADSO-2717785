@@ -255,6 +255,11 @@ input[type="file"]::-webkit-file-upload-button:hover {
     transition: all 600ms;
 }
 
+.categoriasP {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
 .formMatDesc:focus::placeholder {
     color: #FFFFFF;
     transition: all 600ms;
@@ -262,7 +267,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
 
 .errorlist li {
     padding: 10px 0px;
-    color: rgb(179, 58, 58);
+    color: rgb(211, 50, 50);
     font-weight: bold;
 }
 
@@ -408,4 +413,11 @@ form .enviar:hover {
     box-shadow: 0px 0px 5px #94d6da inset;
     color: #94d6da;
     transition: all 600ms;
+}
+
+.categoriasUrl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

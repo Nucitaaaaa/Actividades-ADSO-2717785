@@ -5,12 +5,7 @@
 {% block content %} 
     <h2>Modificar Datos</h2>
     <br>
-    {% comment %} {% if form.errors %}
-        <strong style:"color: red;">Ha ocurrido un error:
-        {{form.errors}}
-        </strong>
-    {% endif %} {% endcomment %}
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ formulario.as_p }}
         <div class="divEnviar">

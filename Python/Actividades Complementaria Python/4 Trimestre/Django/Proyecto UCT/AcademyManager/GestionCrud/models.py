@@ -23,7 +23,7 @@ class Profesor(models.Model):
     profEmail = models.EmailField()
     profTelefono = models.IntegerField(max_length=10)
     profFechaNacimiento = models.DateField()
-    profFoto = models.ImageField(default='null',upload_to="profFotos")
+    profFoto = models.ImageField(default='null', upload_to="profFotos")
     profFechaCreacion = models.DateTimeField(auto_now_add=True)
     profFechaActualizacion = models.DateTimeField(auto_now=True)
     profCMaterias = models.CharField(max_length=50)
