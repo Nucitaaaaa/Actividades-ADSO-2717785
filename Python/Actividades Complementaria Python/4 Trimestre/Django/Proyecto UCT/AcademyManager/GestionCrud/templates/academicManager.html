@@ -3,17 +3,19 @@
 {% load static %}
 {% comment %} {%load filters%} {% endcomment %}
 
-{%block content%} 
-    <h2>Academic Manager</h2>
-    <br>
-    <p class="categoriasP">Bienvenido al sistema de gestión de información de la UCT, para entrar al gestor de cualquiera de las categorias, de click sobre ella.</p>
-    <br>
-    <h3>Categorias:</h3>
-    <br>
-    <div class="categoriasUrl">
-        <a class="boton" href={%url 'mostrarEstudiantes'%}>Estudiantes</a>
-        <a class="boton" href={%url 'mostrarProfesores'%}>Profesores</a>
-        <a class="boton" href={%url 'mostrarCarreras'%}>Carreras</a>
-        <a class="boton" href={%url 'mostrarMaterias'%}>Materias</a>
+{%block content%}
+    <div class="academicManager">
+        <h2>Academic Manager</h2>
+        <br>
+        <p class="categoriasP">Bienvenido al sistema de gestión de información de la UCT, para entrar al gestor de cualquiera de las categorias, de click sobre ella.</p>
+        <br>
+        <h3>Categorias:</h3>
+        <br>
+        <div class="categoriasUrl">
+            <a class="boton" href={%url 'mostrarEstudiantes'%}>Estudiantes</a>
+            <a class="boton" href={%url 'mostrarProfesores'%}>Profesores</a>
+            <a class="boton" href={%url 'mostrarCarreras'%}>Carreras</a>
+            <a class="boton" href={%url 'mostrarMaterias'%}>Materias</a>
+        </div>
     </div>
 {%endblock%}

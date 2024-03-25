@@ -27,6 +27,11 @@ li {
     list-style: none;
 }
 
+p {
+    font-size: 18px;
+    text-align: center;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -46,6 +51,7 @@ li {
 
 .logo p {
     color: #ECE3CE;
+    text-align: start;
 }
 
 .logo div {
@@ -130,6 +136,7 @@ h3 {
     min-height: 600px;
     padding: 20px ;
     padding-bottom: 70px;
+    padding-top: 50px;
     border: 1px solid #76ABAE;
     margin: 0 auto;
     border-radius: 5px;
@@ -137,6 +144,7 @@ h3 {
 
 .box h2{
     margin-top: 50px;
+    margin-bottom: 20px;
     text-align: center;
     color:  #13161b;
     font-size: 40px;
@@ -420,7 +428,7 @@ form .enviar:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .quienesSomos p {
@@ -428,7 +436,8 @@ form .enviar:hover {
 }
 
 .estudiantesImg{
-    width: 320px;
+    width: 350px;
+    height: 320px;
     border-radius: 5px;
 }
 
@@ -443,7 +452,7 @@ form .enviar:hover {
     display: grid;
     align-items: center;
     grid-template-columns: 2fr 1fr;
-    gap: 25px;
+    gap: 50px;
     padding: 0 110px;
     margin: 20px
 }
@@ -454,8 +463,82 @@ form .enviar:hover {
     grid-template-columns: 1fr 2fr;
     gap: 25px;
     padding: 0 110px;
-    margin: 20px
+    margin: 20px;
 }
 
+.quienesSomosProfesores img {
+    width: 500px;
+    height: 350px;
+    border-radius: 5px;
+}
 
+.quienesSomosServicios {
+    gap: 25px;
+    padding: 0 110px;
+    margin: 70px;
+}
+
+.quienesSomosServiciosImg {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.quienesSomosServiciosImg div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quienesSomosServiciosImg img {
+    width: 300px;
+}
+
+.academicManager {
+    margin: 0 auto;
+}
+
+.contactosP {
+    text-align: center;
+    padding: 20px;
+}
+
+.contactos textarea {
+    font-size: 15px;
+    width: 95%; 
+    height: 150px; 
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    resize: none; 
+}
+
+.contactos textarea:focus {
+    border-color: #94d6da; 
+    outline: none; 
+    background-color: #94d6da;
+    transition: all 600ms;
+}
+
+.contactos textarea:focus::placeholder {
+    color: #FFFFFF;
+}
+
+.contactos .botonEnviar {
+    display: flex;
+    justify-content: center;
+}
+
+.estudiantesInicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.estudiantesInicio img{
+    width: 1200px;
+    border-radius: 5px;
+}
 

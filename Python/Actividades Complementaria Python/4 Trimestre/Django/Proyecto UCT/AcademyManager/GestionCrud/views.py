@@ -86,36 +86,6 @@ def eliminarEstudiante(request, id):
         return HttpResponse ("<strong>Articulo no encontrado</strong>", redirect())
     
 
-# def modificarEstudiante(request, id):
-#     estudiante = Estudiante.objects.get(pk=id)
-
-#     if request.method == 'POST':
-#         formulario = FormActualizarEstudiante(request.POST, request.FILES)
-        
-#         if formulario.is_valid():
-#             data_form = formulario.cleaned_data
-#             estudiante.estNombre = data_form.get('nombre')
-#             estudiante.estApellido = data_form.get('apellido')
-#             estudiante.estEmail = data_form.get('email')
-#             estudiante.estTelefono = data_form.get('telefono')
-#             estudiante.estFechaNacimiento = data_form.get('fechaNacimiento')
-#             estudiante.estFoto = data_form.get('foto')
-#             estudiante.estCarrera = data_form.get('carrera')
-            
-#             estudiante.save()
-
-#             messages.success(request, f'Los datos del estudiante "{estudiante.estNombre} {estudiante.estApellido}" se han modificado con exito')
-#             return redirect('mostrarEstudiantes')
-        
-#         else:
-#             formulario = FormActualizarEstudiante()
-
-#     else:
-#         formulario = FormActualizarEstudiante()
-#         return render(request, 'estudianteModificar.html', {'formulario': formulario})
-
-#     return render(request, 'estudianteModificar.html', {'formulario': formulario})
-
 def modificarEstudiante(request, id):
     estudiante = Estudiante.objects.get(pk=id)
 
@@ -197,36 +167,6 @@ def eliminarProfesor(request, id):
     return redirect('mostrarProfesores')
 
 
-# def modificarProfesor(request, id):
-#     profesor = Profesor.objects.get(pk=id)
-
-#     if request.method == 'POST':
-#         formulario = FormActualizarProfesor(request.POST, request.FILES)
-        
-#         if formulario.is_valid():
-#             data_form = formulario.cleaned_data
-#             profesor.profApellido = data_form.get('apellido')
-#             profesor.profEmail = data_form.get('email')
-#             profesor.profTelefono = data_form.get('telefono')
-#             profesor.profNombre = data_form.get('nombre')
-#             profesor.profFechaNacimiento = data_form.get('fechaNacimiento')
-#             profesor.profFoto = data_form.get('foto')
-#             profesor.profMateria = data_form.get('materias')
-
-#             profesor.save()
-
-#             messages.success(request, f'Los datos del profesor "{profesor.profNombre} {profesor.profApellido}" se han modificado con exito')
-#             return redirect('mostrarProfesores')
-        
-#         else:
-#             formulario = FormActualizarProfesor()
-
-#     else:
-#         formulario = FormActualizarProfesor()
-#         return render(request, 'profesorModificar.html', {'formulario': formulario})
-
-#     return render(request, 'profesorModificar.html', {'formulario': formulario})
-
 def modificarProfesor(request, id):
     profesor = Profesor.objects.get(pk=id)
 
@@ -299,33 +239,6 @@ def eliminarCarrera(request, id):
         cursor.execute("DELETE FROM GestionCrud_carrera WHERE id = %s", [id])
         
     return redirect('mostrarCarreras')
-
-
-# def modificarCarrera(request, id):
-#     carrera = Carrera.objects.get(pk=id)
-
-#     if request.method == 'POST':
-#         formulario = FormActualizarCarrera(request.POST)
-        
-#         if formulario.is_valid():
-#             data_form = formulario.cleaned_data
-#             carrera.carNombre = data_form.get('nombre')
-#             carrera.carDuracion = data_form.get('duracion')
-#             carrera.carMaterias = data_form.get('materias')
-
-#             messages.success(request, f'Los datos de la carrera "{carrera.carNombre}" se han modificado con exito')
-#             carrera.save()
-
-#             return redirect('mostrarCarreras')
-        
-#         else:
-#             formulario = FormActualizarCarrera()
-
-#     else:
-#         formulario = FormActualizarCarrera()
-#         return render(request, 'carreraModificar.html', {'formulario': formulario})
-
-#     return render(request, 'carreraModificar.html', {'formulario': formulario})
 
 
 def modificarCarrera(request, id):
@@ -405,34 +318,6 @@ def eliminarMateria(request, id):
         
     return redirect('mostrarMaterias')
 
-
-# def modificarMateria(request, id):
-#     materia = Materia.objects.get(pk=id)
-
-#     if request.method == 'POST':
-#         formulario = FormActualizarMateria(request.POST)
-        
-#         if formulario.is_valid():
-#             data_form = formulario.cleaned_data
-#             materia.matNombre = data_form.get('nombre')
-#             materia.matDescripcion = data_form.get('descripcion')
-#             materia.matCreditos = data_form.get('creditos')
-#             materia.matProfesores = data_form.get('profesor')
-#             materia.matCarrera = data_form.get('carrera')
-
-#             materia.save()
-
-#             messages.success(request, f'Los datos de la materia "{materia.matNombre}" se han modificado con exito')
-#             return redirect('mostrarMaterias')
-        
-#         else:
-#             formulario = FormActualizarMateria()
-
-#     else:
-#         formulario = FormActualizarMateria()
-#         return render(request, 'materiaModificar.html', {'formulario': formulario})
-
-#     return render(request, 'materiaModificar.html', {'formulario': formulario})
 
 def modificarMateria(request, id):
     materia = Materia.objects.get(pk=id)
