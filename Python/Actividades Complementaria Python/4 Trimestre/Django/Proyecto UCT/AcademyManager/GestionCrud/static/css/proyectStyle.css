@@ -313,7 +313,6 @@ form .enviar:hover {
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: 5px; 
     padding: 10px;
     margin: 5px;
@@ -331,9 +330,9 @@ form .enviar:hover {
     margin-top: 10px;
 }
 
-.datos img{
-    width: 300px;
-    height: 255px;
+.datos img {
+    width: 250px;
+    height: 270px;
 }
 
 .message {
@@ -491,7 +490,11 @@ form .enviar:hover {
 }
 
 .quienesSomosServiciosImg img {
-    width: 300px;
+    width: 250px;
+}
+
+.quienesSomosServiciosImg img:hover {
+    width: 270px;
 }
 
 .academicManager {

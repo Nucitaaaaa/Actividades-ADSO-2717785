@@ -6,17 +6,22 @@ from GestionCrud.forms import FormEstudiante, FormProfesor, FormCarrera, FormMat
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 
+
 def index(request):
     return render(request, "inicio.html")
+
 
 def quienesSomos(request):
     return render(request, "quienesSomos.html")
 
+
 def contactos(request):
     return render(request, "contactos.html")
 
+
 def academicManager(request):
     return render(request, "academicManager.html")
+
 
 #?Vistas clase Estudiantes 
 
@@ -27,12 +32,14 @@ def mostrarEstudiantes(request):
         'estudiantes' : estudiantes,
     })
 
+
 def mostrarEstudiante(request, id):
     estudiantes = Estudiante.objects.raw("SELECT * FROM GestionCrud_estudiante WHERE id = %s", [id])
 
     return render(request, 'estudianteDetalles.html', {
         'estudiantes' : estudiantes,
     })
+
 
 def añadirEstudiante(request):
     formulario = FormEstudiante()
@@ -72,18 +79,6 @@ def añadirEstudiante(request):
     else:
         formulario = FormEstudiante()
         return render(request, 'estudianteAñadir.html', {'formulario': formulario})
-
-
-def eliminarEstudiante(request, id):
-    try:
-        with connection.cursor() as cursor:
-            cursor.execute("DELETE FROM GestionCrud_estudiante WHERE id = %s", [id])
-        
-        return redirect('mostrarEstudiantes')
-    
-    except ObjectDoesNotExist:
-
-        return HttpResponse ("<strong>Articulo no encontrado</strong>", redirect())
     
 
 def modificarEstudiante(request, id):
@@ -100,6 +95,18 @@ def modificarEstudiante(request, id):
         formulario = FormActualizarEstudiante(instance=estudiante)
 
     return render(request, 'estudianteModificar.html', {'formulario': formulario})
+
+
+def eliminarEstudiante(request, id):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("DELETE FROM GestionCrud_estudiante WHERE id = %s", [id])
+        
+        return redirect('mostrarEstudiantes')
+    
+    except ObjectDoesNotExist:
+
+        return HttpResponse ("<strong>Articulo no encontrado</strong>", redirect())
 
 
 #?Vistas clase Profesor
@@ -159,14 +166,6 @@ def añadirProfesor(request):
         return render(request, 'profesorAñadir.html', {'formulario': formulario})
     
 
-def eliminarProfesor(request, id):
-    # try:
-    with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM GestionCrud_profesor WHERE id = %s", [id])
-        
-    return redirect('mostrarProfesores')
-
-
 def modificarProfesor(request, id):
     profesor = Profesor.objects.get(pk=id)
 
@@ -181,6 +180,15 @@ def modificarProfesor(request, id):
         formulario = FormActualizarProfesor(instance=profesor)
 
     return render(request, 'profesorModificar.html', {'formulario': formulario})
+
+
+def eliminarProfesor(request, id):
+    # try:
+    with connection.cursor() as cursor:
+        cursor.execute("DELETE FROM GestionCrud_profesor WHERE id = %s", [id])
+        
+    return redirect('mostrarProfesores')
+
 
 #?Vistas clase Carrera
 
@@ -233,14 +241,6 @@ def añadirCarrera(request):
         return render(request, 'carreraAñadir.html', {'formulario': formulario})
 
 
-def eliminarCarrera(request, id):
-    # try:
-    with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM GestionCrud_carrera WHERE id = %s", [id])
-        
-    return redirect('mostrarCarreras')
-
-
 def modificarCarrera(request, id):
     carrera = Carrera.objects.get(pk=id)
 
@@ -255,6 +255,14 @@ def modificarCarrera(request, id):
         formulario = FormActualizarCarrera(instance=carrera)
 
     return render(request, 'carreraModificar.html', {'formulario': formulario})
+
+
+def eliminarCarrera(request, id):
+    # try:
+    with connection.cursor() as cursor:
+        cursor.execute("DELETE FROM GestionCrud_carrera WHERE id = %s", [id])
+        
+    return redirect('mostrarCarreras')
 
 
 #?Vistas clase Materia
@@ -309,14 +317,6 @@ def añadirMateria(request):
     else:
         formulario = FormMateria()
         return render(request, 'materiaAñadir.html', {'formulario': formulario})
-    
-
-def eliminarMateria(request, id):
-    # try:
-    with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM GestionCrud_materia WHERE id = %s", [id])
-        
-    return redirect('mostrarMaterias')
 
 
 def modificarMateria(request, id):
@@ -333,3 +333,12 @@ def modificarMateria(request, id):
         formulario = FormActualizarMateria(instance=materia)
 
     return render(request, 'materiaModificar.html', {'formulario': formulario})
+    
+
+def eliminarMateria(request, id):
+    # try:
+    with connection.cursor() as cursor:
+        cursor.execute("DELETE FROM GestionCrud_materia WHERE id = %s", [id])
+        
+    return redirect('mostrarMaterias')
+

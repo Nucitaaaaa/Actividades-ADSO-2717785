@@ -20,6 +20,8 @@ from django.conf import settings
 import GestionCrud.views 
 
 urlpatterns = [
+
+    #?Rutas generales
     path('admin/', admin.site.urls),
     path('', GestionCrud.views.index, name='index'),
     path('quienesSomos/', GestionCrud.views.quienesSomos, name='quienesSomos'),
