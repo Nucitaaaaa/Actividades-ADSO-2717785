@@ -43,5 +43,7 @@ urlpatterns = [
     path('create_full_article/', actividad1.views.create_full_article, name="createFullArticle"),
 ]
 
-# path('contacto/<str:name>', actividad1.views.contacto, name="contacto"),
-# path('contacto/<str:name>/<str:lastName>', actividad1.views.contacto, name="contacto"),
+title = "Blog de Articulos"
+admin.site.site_header = title
+admin.site.site_title = title
+admin.site.index_title = "Panel de gestión"
