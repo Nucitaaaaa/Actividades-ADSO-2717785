@@ -16,4 +16,4 @@ class Pages(models.Model):
         verbose_name_plural = "Paginas"
 
     def __str__(self):
-        return self.title
+        return f"{self.title} - Url Amigable: {self.slug}"

@@ -31,6 +31,10 @@
             <a href={%url 'mostrarArticulos'%}>Mostrar Articulos</a>
             <a href={%url 'articuloCreado'%}>Crear Articulo</a>
             <a href={%url 'createFullArticle'%}>Crear Articulo 2</a>
+            {% comment %} <a href={%url 'page'%}>Crear Articulo 2</a> {% endcomment %}
+            {% for page in pages%}
+                <a href="{%url 'page' page.2%}">{{page.1}}</a>
+            {% endfor %}
         </nav>
 
         <div class="barra">  <!-- div para efecto 3D del nav de la pagina -->
