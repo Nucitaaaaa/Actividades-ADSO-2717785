@@ -2,59 +2,70 @@
 from django.db import models
 
 class Estudiante(models.Model):
-    estNombre = models.CharField(max_length=30)
-    estApellido = models.CharField(max_length=50)
-    estEmail = models.EmailField()
-    estTelefono = models.IntegerField(max_length=10)
-    estFechaNacimiento = models.DateField()
-    estFoto = models.ImageField(default='null', upload_to="estFotos")
-    estFechaCreacion = models.DateTimeField(auto_now_add=True)
-    estFechaActualizacion = models.DateTimeField(auto_now=True)
-    estCarrera = models.CharField(max_length=50)
+    estNombre = models.CharField(max_length=30, verbose_name='Nombre')
+    estApellido = models.CharField(max_length=50, verbose_name='Apellido')
+    estEmail = models.EmailField(verbose_name='Email')
+    estTelefono = models.IntegerField(verbose_name='Telefono')
+    estFechaNacimiento = models.DateField(verbose_name='Fecha de nacimiento')
+    estFoto = models.ImageField(default='null', verbose_name='Foto', upload_to="estFotos")
+    estFechaCreacion = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
+    estFechaActualizacion = models.DateTimeField(auto_now=True, verbose_name='Fecha de actualización')
+    estCarrera = models.CharField(max_length=50, verbose_name='Carrera')
 
     class Meta:
         verbose_name="Estudiante"
         verbose_name_plural="Estudiantes"
         ordering=['id']
 
+    def __str__(self):
+        return f"{self.estNombre} {self.estApellido}"
+
 class Profesor(models.Model):
-    profNombre = models.CharField(max_length=30)
-    profApellido = models.CharField(max_length=50)
-    profEmail = models.EmailField()
-    profTelefono = models.IntegerField(max_length=10)
-    profFechaNacimiento = models.DateField()
-    profFoto = models.ImageField(default='null', upload_to="profFotos")
-    profFechaCreacion = models.DateTimeField(auto_now_add=True)
-    profFechaActualizacion = models.DateTimeField(auto_now=True)
-    profCMaterias = models.CharField(max_length=50)
+    profNombre = models.CharField(max_length=30, verbose_name='Nombre')
+    profApellido = models.CharField(max_length=50, verbose_name='Apellido')
+    profEmail = models.EmailField(verbose_name='Email')
+    profTelefono = models.IntegerField(verbose_name='Telefono')
+    profFechaNacimiento = models.DateField(verbose_name='Fecha de nacimiento')
+    profFoto = models.ImageField(default='null', upload_to="profFotos",  verbose_name='Foto')
+    profFechaCreacion = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
+    profFechaActualizacion = models.DateTimeField(auto_now=True, verbose_name='Fecha de actualización')
+    profCMaterias = models.CharField(max_length=50, verbose_name='Materias')
 
     class Meta:
         verbose_name="Profesor"
         verbose_name_plural="Profesores"
         ordering=['id']
 
+    def __str__(self):
+        return f"{self.profNombre} {self.profApellido}"
+
 class Carrera(models.Model):
-    carNombre = models.CharField(max_length=50)
-    carDuracion = models.CharField(max_length=50)
-    carMaterias = models.CharField(max_length=50)
+    carNombre = models.CharField(max_length=50, verbose_name='Nombre')
+    carDuracion = models.CharField(max_length=50, verbose_name='Duración')
+    carMaterias = models.CharField(max_length=50, verbose_name='Materias')
 
     class Meta:
         verbose_name="Carrera"
         verbose_name_plural="Carreras"
         ordering=['id']
 
+    def __str__(self):
+        return f"{self.carNombre}"
+
 class Materia(models.Model):
-    matNombre = models.CharField(max_length=50)
-    matDescripcion = models.TextField()
-    matCreditos = models.IntegerField(max_length=5)
-    matFechaCreacion = models.DateTimeField(auto_now_add=True)
-    matFechaActualizacion = models.DateTimeField(auto_now=True)
-    matCarrera = models.CharField(max_length=50)
-    matProfesores = models.CharField(max_length=30)
+    matNombre = models.CharField(max_length=50, verbose_name='Nombre')
+    matDescripcion = models.TextField(verbose_name='Descripcion')
+    matCreditos = models.IntegerField(verbose_name='Creditos')
+    matFechaCreacion = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
+    matFechaActualizacion = models.DateTimeField(auto_now=True, verbose_name='Fecha de actualización')
+    matCarrera = models.CharField(max_length=50, verbose_name='Carrera')
+    matProfesores = models.CharField(max_length=30, verbose_name='Profesores')
 
     class Meta:
         verbose_name="Materia"
         verbose_name_plural="Materias"
         ordering=['id']
-
+    
+    def __str__(self):
+        return f"{self.matNombre}"
 
