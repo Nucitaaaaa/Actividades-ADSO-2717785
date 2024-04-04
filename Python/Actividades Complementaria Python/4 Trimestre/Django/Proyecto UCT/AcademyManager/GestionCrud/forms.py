@@ -80,20 +80,20 @@ class FormEstudiante(forms.Form):
         required=False,
     )
 
-    carrera = forms.CharField(
+    carrera = forms.ModelChoiceField(
         label="Carrera",
-        max_length=50,
+        queryset=Carrera.objects.all(),  
         required=True,
-        widget=forms.TextInput(
+        widget=forms.Select(
             attrs={
-                'class':'formEstCar',
-                'placeholder':'Ingrese el nombre de su carrera'
+                'class': 'formEstCar',
             }
-        ),
-        validators= [
-            validators.RegexValidator('^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ]*$', 'Error(Carrera): solo se permiten letras y espacios.')
-        ]
+        )
     )
+
+    class Meta:
+        model = Estudiante
+        fields = ['nombre', 'apellido', 'email', 'telefono', 'fechaNacimiento', 'foto', 'carrera']
 
 
 class FormActualizarEstudiante(forms.ModelForm):
@@ -175,20 +175,21 @@ class FormProfesor(forms.Form):
         required=False,
     )
 
-    materias = forms.CharField(
+    materias = forms.ModelMultipleChoiceField(
         label="Materias",
-        max_length=50,
-        required=True,
-        widget=forms.TextInput(
+        queryset=Materia.objects.all(),  
+        required=True, 
+        widget=forms.SelectMultiple(
             attrs={
-                'class':'formProfMat',
-                'placeholder':'Ingrese el nombre de su materia'
+                'class': 'formProfMaterias',
             }
-        ), 
-        validators= [
-            validators.RegexValidator('^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ]*$', 'Error(Materia): solo se permiten letras y espacios.')
-        ]
+        )
     )
+
+    class Meta:
+        model = Profesor
+        fields = ['nombre', 'apellido', 'email', 'telefono', 'fechaNacimiento', 'foto', 'materias']
+
 
 class FormActualizarProfesor(forms.ModelForm):
     class Meta:
@@ -226,22 +227,21 @@ class FormCarrera(forms.Form):
             validators.RegexValidator('^[a-zA-Z0-9 ]*$', 'Error(Duracion): solo se permiten letras, numeros y espacios.')
         ]
     )
-    
 
-    materias = forms.CharField(
+    materias = forms.ModelMultipleChoiceField(
         label="Materias",
-        max_length=50,
-        required=True,
-        widget=forms.TextInput(
+        queryset=Materia.objects.all(),  
+        required=True, 
+        widget=forms.SelectMultiple(
             attrs={
-                'class':'formCarMat',
-                'placeholder':'Ingrese las materias que se darán en la carrera'
+                'class': 'formCarMat',
             }
-        ), 
-        validators= [
-            validators.RegexValidator('^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ]*$', 'Error(Materia): solo se permiten letras y espacios.')
-        ]
+        )
     )
+
+    class Meta:
+        model = Carrera
+        fields = ['nombre', 'duracion', 'materias']
 
 
 class FormActualizarCarrera(forms.ModelForm):
@@ -293,36 +293,34 @@ class FormMateria(forms.Form):
         ]
     )
 
-    carrera = forms.CharField(
+    carrera = forms.ModelMultipleChoiceField(
         label="Carrera",
-        max_length=50,
+        queryset=Carrera.objects.all(),  
         required=True,
-        widget=forms.TextInput(
+        widget=forms.SelectMultiple(
             attrs={
-                'class':'formMatCar',
-                'placeholder':'Ingrese el nombre de la carrera'
+                'class': 'formMatCar',
             }
-        ),
-        validators= [
-            validators.RegexValidator('^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ]*$', 'Error(Carrera): solo se permiten letras y espacios.')
-        ]
+        )
     )
 
-    profesor = forms.CharField(
-        label="Profesor",
-        max_length=30,
-        required=True,
-        widget=forms.TextInput(
-            attrs={
-                'class':'formMatProf',
-                'placeholder':'Ingrese el nombre del profesor que dará la materia'
-            }
-        ),
-        validators= [
-            validators.RegexValidator('^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ]*$', 'Error(Profesor): solo se permiten letras y espacios.')
-        ]
-    )
+    profesor = forms.ModelChoiceField(
+            label="Profesor",
+            queryset=Profesor.objects.all(),  
+            required=True,
+            widget=forms.Select(
+                attrs={
+                    'class': 'formMatProf',
+                }
+            )
+        )
 
+    class Meta:
+        model = Materia
+        fields = ['nombre', 'descripcion', 'creditos', 'profesor', 'carrera']
+        widgets = {
+            'matCarrera': forms.Select(attrs={'class': 'form-control'}),
+        }
 
 class FormActualizarMateria(forms.ModelForm):
     class Meta:

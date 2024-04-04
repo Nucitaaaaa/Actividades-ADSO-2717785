@@ -26,7 +26,7 @@ def academicManager(request):
 #?Vistas clase Estudiantes 
 
 def mostrarEstudiantes(request):
-    estudiantes = Estudiante.objects.raw("SELECT id, estNombre, estApellido, estCarrera FROM GestionCrud_estudiante")
+    estudiantes = Estudiante.objects.raw("SELECT * FROM GestionCrud_estudiante")
 
     return render(request, 'estudiante.html', {
         'estudiantes' : estudiantes,
@@ -98,16 +98,12 @@ def modificarEstudiante(request, id):
 
 
 def eliminarEstudiante(request, id):
-    try:
-        with connection.cursor() as cursor:
-            cursor.execute("DELETE FROM GestionCrud_estudiante WHERE id = %s", [id])
-        
-        return redirect('mostrarEstudiantes')
+    estudiante = Estudiante.objects.get(pk=id)
+
+    estudiante.delete()
+    messages.success(request, f'El estudiante se ha eliminado con éxito')
     
-    except ObjectDoesNotExist:
-
-        return HttpResponse ("<strong>Articulo no encontrado</strong>", redirect())
-
+    return redirect('mostrarEstudiantes')
 
 #?Vistas clase Profesor
 
@@ -183,12 +179,14 @@ def modificarProfesor(request, id):
 
 
 def eliminarProfesor(request, id):
-    # try:
-    with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM GestionCrud_profesor WHERE id = %s", [id])
-        
-    return redirect('mostrarProfesores')
+    profesor = Profesor.objects.get(pk=id)
 
+    profesor.profMaterias.clear()
+    profesor.delete()
+
+    messages.success(request, f'El Profesor se ha eliminado con éxito')
+    
+    return redirect('mostrarProfesores')
 
 #?Vistas clase Carrera
 
@@ -258,10 +256,12 @@ def modificarCarrera(request, id):
 
 
 def eliminarCarrera(request, id):
-    # try:
-    with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM GestionCrud_carrera WHERE id = %s", [id])
-        
+    carrera = Carrera.objects.get(pk=id)
+
+    carrera.carMaterias.clear()
+    carrera.delete()
+    messages.success(request, f'La carrera "{carrera.carNombre}" se ha eliminado con éxito')
+    
     return redirect('mostrarCarreras')
 
 
@@ -275,14 +275,14 @@ def mostrarMaterias(request):
     })
 
 def mostrarMateria(request, id):
-    materias = Materia.objects.raw("SELECT * FROM GestionCrud_materia WHERE id = %s", [id])
+    materia = Materia.objects.get(pk=id)
 
     return render(request, "materiaDetalles.html", {
-        'materias' : materias,
+        'materia' : materia,
     })
 
 def añadirMateria(request):
-    formulario = FormMateria()
+    formulario = FormMateria(initial={'matCarrera': Carrera.objects.all()})
 
     if request.method == 'POST': 
 
@@ -297,14 +297,17 @@ def añadirMateria(request):
             matCarrera = data_form.get('carrera')
             matProfesores = data_form.get('profesor')
             
-
-            materia = Materia( 
-                matNombre = matNombre,
-                matDescripcion = matDescripcion,
-                matCreditos = matCreditos,
-                matCarrera = matCarrera,
-                matProfesores = matProfesores,
+            materia = Materia(
+                matNombre=matNombre,
+                matDescripcion=matDescripcion,
+                matCreditos=matCreditos,
+                matProfesores=matProfesores,
             )
+
+            materia.save()
+
+            if matCarrera:
+                materia.matCarrera.set(matCarrera)
 
             messages.success(request, f'La materia "{materia.matNombre}" se ha añadido con exito')
             materia.save()
@@ -336,9 +339,11 @@ def modificarMateria(request, id):
     
 
 def eliminarMateria(request, id):
-    # try:
-    with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM GestionCrud_materia WHERE id = %s", [id])
-        
+    materia = Materia.objects.get(pk=id)
+
+    materia.matCarrera.clear()
+    materia.delete()
+    messages.success(request, f'La Materia se ha eliminado con éxito')
+    
     return redirect('mostrarMaterias')
 
