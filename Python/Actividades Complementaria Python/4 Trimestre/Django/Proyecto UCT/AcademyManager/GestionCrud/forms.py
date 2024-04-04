@@ -193,7 +193,7 @@ class FormProfesor(forms.Form):
 class FormActualizarProfesor(forms.ModelForm):
     class Meta:
         model = Profesor
-        fields = ['profNombre', 'profApellido', 'profEmail', 'profTelefono', 'profFechaNacimiento', 'profFoto', 'profCMaterias']
+        fields = ['profNombre', 'profApellido', 'profEmail', 'profTelefono', 'profFechaNacimiento', 'profFoto', 'profMaterias']
 
 
 class FormCarrera(forms.Form):

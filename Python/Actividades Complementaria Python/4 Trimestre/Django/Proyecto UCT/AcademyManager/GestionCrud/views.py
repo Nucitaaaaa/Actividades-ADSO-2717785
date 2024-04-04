@@ -141,7 +141,7 @@ def añadirProfesor(request):
             profTelefono = data_form.get('telefono')
             profFechaNacimiento = data_form.get('fechaNacimiento')
             profFoto = data_form.get('foto')
-            profCMaterias = data_form.get('materias')
+            profMaterias = data_form.get('materias')
 
             profesor = Profesor( 
                 profNombre = profNombre,
@@ -150,7 +150,7 @@ def añadirProfesor(request):
                 profTelefono = profTelefono,
                 profFechaNacimiento = profFechaNacimiento,
                 profFoto = profFoto,
-                profCMaterias = profCMaterias
+                profMaterias = profMaterias
             )
 
             profesor.save()

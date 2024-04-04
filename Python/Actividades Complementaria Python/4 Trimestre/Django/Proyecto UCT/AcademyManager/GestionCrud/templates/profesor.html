@@ -7,6 +7,7 @@
     <br>
     <div class="divAñadir">
         <a class="boton" href={%url 'añadirProfesor'%}>Añadir Profesor</a>
+        <a class="boton" href={%url 'academicManager'%}>Volver</a>
     </div>
     {% if messages %}
         {% for message in messages %}
@@ -28,7 +29,7 @@
                             {% endif %} 
                         </p>
                         <strong>{{profesor.profNombre}} {{profesor.profApellido}}</strong> 
-                        <p>{{profesor.profCMaterias}} </p>
+                        <p>{{profesor.profMaterias}} </p>
                         <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
                     </div>
                 </li>
