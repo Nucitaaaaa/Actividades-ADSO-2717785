@@ -34,10 +34,11 @@ def mostrarEstudiantes(request):
 
 
 def mostrarEstudiante(request, id):
-    estudiantes = Estudiante.objects.raw("SELECT * FROM GestionCrud_estudiante WHERE id = %s", [id])
+    # estudiantes = Estudiante.objects.raw("SELECT * FROM GestionCrud_estudiante WHERE id = %s", [id])
+    estudiante = Estudiante.objects.get(pk = id)
 
     return render(request, 'estudianteDetalles.html', {
-        'estudiantes' : estudiantes,
+        'estudiante' : estudiante,
     })
 
 
@@ -115,10 +116,10 @@ def mostrarProfesores(request):
     })
 
 def mostrarProfesor(request, id):
-    profesores = Profesor.objects.raw("SELECT * FROM GestionCrud_profesor WHERE id = %s", [id])
+    profesor = Profesor.objects.get(pk = id)
 
     return render(request, "profesorDetalles.html", {
-        'profesores' : profesores,
+        'profesor' : profesor,
     })
 
 def añadirProfesor(request):
@@ -199,10 +200,10 @@ def mostrarCarreras(request):
 
 
 def mostrarCarrera(request, id):
-    carreras = Carrera.objects.raw("SELECT * FROM GestionCrud_carrera WHERE id = %s", [id])
+    carrera = Carrera.objects.get(pk = id)
 
     return render(request, "carreraDetalles.html", {
-        'carreras' : carreras,
+        'carrera' : carrera,
     })
 
 
@@ -275,14 +276,14 @@ def mostrarMaterias(request):
     })
 
 def mostrarMateria(request, id):
-    materia = Materia.objects.get(pk=id)
+    materia = Materia.objects.get(pk = id)
 
     return render(request, "materiaDetalles.html", {
         'materia' : materia,
     })
 
 def añadirMateria(request):
-    formulario = FormMateria(initial={'matCarrera': Carrera.objects.all()})
+    formulario = FormMateria()
 
     if request.method == 'POST': 
 

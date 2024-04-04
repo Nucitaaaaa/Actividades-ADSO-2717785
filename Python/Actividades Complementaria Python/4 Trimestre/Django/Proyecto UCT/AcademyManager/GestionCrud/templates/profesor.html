@@ -29,7 +29,11 @@
                             {% endif %} 
                         </p>
                         <strong>{{profesor.profNombre}} {{profesor.profApellido}}</strong> 
-                        <p>{{profesor.profMaterias}} </p>
+                        <p>
+                            {% for materia in profesor.profMaterias.all %}
+                                {{materia}}
+                            {% endfor %}
+                        </p>
                         <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
                     </div>
                 </li>

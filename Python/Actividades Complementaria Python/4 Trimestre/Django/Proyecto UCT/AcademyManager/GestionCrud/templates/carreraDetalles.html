@@ -9,17 +9,19 @@
     <hr>
     <div class="detalles">
         <ul>
-            {% for carrera in carreras %}
-                <li>
-                    <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
-                    <p><strong>Duración:</strong> {{carrera.carDuracion}}</p> 
-                    <p><strong>Materias:</strong> {{carrera.carMaterias}}</p> 
-                    <br>
-                    <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
-                    <a class="boton" href={%url 'modificarCarrera' carrera.id%}>Actualizar</a>
-                    <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
-                </li>
-            {% endfor %}
+            <li>
+                <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
+                <p><strong>Duración:</strong> {{carrera.carDuracion}}</p> 
+                <p><strong>Materias:</strong> 
+                    {% for materia in carrera.carMaterias.all %}
+                        {{materia}}
+                    {% endfor %}
+                </p>
+                <br>
+                <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
+                <a class="boton" href={%url 'modificarCarrera' carrera.id%}>Actualizar</a>
+                <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
+            </li>
         </ul>
     </div>
 {%endblock%}

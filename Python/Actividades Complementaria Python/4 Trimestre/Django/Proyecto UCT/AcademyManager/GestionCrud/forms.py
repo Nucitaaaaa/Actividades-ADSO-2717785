@@ -318,9 +318,6 @@ class FormMateria(forms.Form):
     class Meta:
         model = Materia
         fields = ['nombre', 'descripcion', 'creditos', 'profesor', 'carrera']
-        widgets = {
-            'matCarrera': forms.Select(attrs={'class': 'form-control'}),
-        }
 
 class FormActualizarMateria(forms.ModelForm):
     class Meta:

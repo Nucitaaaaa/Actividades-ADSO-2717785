@@ -12,7 +12,11 @@
             <p><strong>Nombre:</strong> {{materia.matNombre}}</p>
             <p><strong>Descripcion:</strong> {{materia.matDescripcion}}</p>
             <p><strong>Creditos:</strong> {{materia.matCreditos}}</p>
-            <p><strong>Carrera:</strong> {{materia.matCarrera}}</p>
+            <p><strong>Carrera:</strong>
+                {% for carrera in materia.matCarrera.all %}
+                    {{carrera}}
+                {% endfor %}
+            </p>
             <p><strong>Profesor:</strong> {{materia.matProfesores}}</p>
             <br>
             <a class="boton" href={%url 'mostrarMaterias'%}>Volver</a>
