@@ -1,4 +1,17 @@
 
+/*?Reglas Generales*/
+
+:root {
+    /*Colores*/
+    --gris: #222831;
+    --grisClaro: #494f5c;
+    --azulClaro: #94d6da;
+    --blanco: #EEEEEE;
+    --negro: #13161b;
+    --verde: #93d332;
+    --rojo: #d33232;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +21,7 @@
 }
 
 body {
-    background-color: #3b404b;
-}
-
-header {
-    height: 170px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #222831;
-    margin: 0 auto;
-    border: 1px solid #13161b;
-    padding-bottom: 20px;
-
+    background-color: var(--blanco);
 }
 
 li {
@@ -32,75 +33,83 @@ p {
     text-align: center;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 700px;
-    height: 100px;
-    margin: 0 auto;
-    padding-top: 10px;
-}
-
-.logo h1 {
-    display: block;
-    letter-spacing: 2px;
-    margin: 23px 35px 0 0;
-    color: #ECE3CE;
-} 
-
-.logo p {
-    color: #ECE3CE;
-    text-align: start;
-}
-
-.logo div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.logo img {
-    display: block;
-    width: 200px;
-    float: left;
-    margin: 20px 0 0 0;
-}
-
-#content ul li {
-    list-style: none;
-    list-style-type: none;
-}
-
 hr {
-    border: 2px solid #3b404b;
-}
-
-
-h1 {
-    font-size: 36px;
-    display: block;
-    letter-spacing: 2px;
-    color: #EEEEEE;
-    text-align: center;
-    padding-top: 10px;
+    border: 2px solid var(--grisClaro);
 }
 
 h3 {
-    color: #13161b;
+    color: var(--negro);
     padding: 5px;
     text-align: center;
     font-size: 25px;
 }
 
+
+/**Header*/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    background-color: var(--gris);
+    border: 1px solid var(--negro);
+    padding-bottom: 20px;
+}
+
+header img {
+    display: block;
+    width: 125px;
+    float: left;
+    margin: 20px 0 0 0;
+}
+
+header h1 {
+    font-size: 32px;
+    text-align: left;
+    letter-spacing: 2px;
+    margin: 23px 20px 0 0;
+    color: var(--blanco);
+}
+
+header p {
+    color: var(--blanco);
+    text-align: start;
+    font-size: 16px;
+}
+
+header div {
+    margin: 20px;
+}
+
+.headerImg {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.headerLogo {
+    display: flex;
+    align-items: center;
+}
+
+.headerInfo {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+/**Nav*/
+
 .nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #222831;
-    border: 1px solid #13161b;
+    background-color: var(--gris);
+    border: 1px solid var(--negro);
     margin: 0 auto;
-    box-shadow: 0px 6px 14px #76ABAE;
+    box-shadow: 0px 6px 14px var(--azulClaro);
 }
 
 .nav a{
@@ -108,15 +117,15 @@ h3 {
     padding: 0 20px 0 20px;
     line-height: 40px;
     float: left;
-    color: #EEEEEE;
+    color: var(--blanco);
     font-weight: bold;
 }
 
 .nav a:hover{
-    background-color: #494f5c;
+    background-color: var(--grisClaro);
     border-radius: 5px;
     box-shadow: 0px 0px 5px #31363F inset;
-    color: #94d6da;
+    color: var(--azulClaro);
     transition: all 600ms;
 }
 
@@ -131,13 +140,12 @@ h3 {
 }
 
 #content .box {
-    background-color: #EEEEEE;
+    background-color: var(--blanco);
     width: 95%;
     min-height: 600px;
     padding: 20px ;
     padding-bottom: 70px;
     padding-top: 50px;
-    border: 1px solid #76ABAE;
     margin: 0 auto;
     border-radius: 5px;
 }
@@ -146,7 +154,7 @@ h3 {
     margin-top: 50px;
     margin-bottom: 20px;
     text-align: center;
-    color:  #13161b;
+    color:  var(--negro);
     font-size: 40px;
 }
 
@@ -158,27 +166,27 @@ h3 {
 }
 
 .boton { 
-    border: 1px solid #222831;
-    background-color: #3b404b;
-    color: #EEEEEE;
+    border: 1px solid var(--grisClaro);
+    background-color: var(--gris);
+    color: var(--blanco);
     padding: 5px;
     border-radius: 5px;
 }
 
 .boton:hover {
-    background-color: #0f1114;
-    box-shadow: 0px 0px 5px #31363F inset;
+    background-color: var(--negro);
+    box-shadow: 0px 0px 5px var(--gris) inset;
     color: #99dde0;
     transition: all 600ms;
 }
 
 footer {
-    background-color: #222831;
-    border: 1px solid #222831;
-    color: #EEEEEE;
+    background-color: var(--gris);
+    border: 1px solid var(--gris);
+    color: var(--blanco);
     text-align: center;
     padding: 10px 0 10px 0;
-    box-shadow: 0 0 20px #76ABAE;
+    box-shadow: 0 0 20px var(--azulClaro);
     margin: 0 auto;
 }
 
@@ -186,9 +194,9 @@ form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #222831;
+    background-color: var(--gris);
     border-radius: 5px;
-    box-shadow: 0 0 10px #76ABAE;
+    box-shadow: 0 0 10px var(--azulClaro);
     margin-top: 20px;
 }
 
@@ -196,7 +204,7 @@ form input {
     width: 100%;
     padding: 10px;
     margin: 15px 0px;
-    border: 1px solid #ccc;
+    border: 1px solid gray;
     border-radius: 4px;
     box-sizing: border-box; 
 }
@@ -206,30 +214,30 @@ form input::placeholder {
 }
 
 form input:focus {
-    background-color: #94d6da;
-    color: #FFFFFF;
+    background-color: var(--azulClaro);
+    color: var(--blanco);
     transition: all 600ms;
     outline: none;
 }
 
 input:focus::placeholder {
-    color: #FFFFFF;
+    color: var(--blanco);
     transition: all 600ms;
 }
 
 input[type="file"] {
     width: 100%;
-    border: 1px solid #222831;
-    background-color: #3b404b;
-    color: #EEEEEE;
+    border: 1px solid var(--grisClaro);
+    background-color: var(--gris);
+    color: var(--blanco);
     padding: 10px 10px;
     border-radius: 5px;
     font-weight: bold;
 }
 
 input[type="file"]::-webkit-file-upload-button {
-    background-color: #222831;
-    color: #EEEEEE;
+    background-color: var(--gris);
+    color: var(--blanco);
     padding: 10px 20px;
     margin-left: 10px;
     margin-right: 10px;
@@ -239,9 +247,9 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 input[type="file"]::-webkit-file-upload-button:hover {
-    background-color: rgb(25, 27, 31);
-    box-shadow: 0px 0px 5px #94d6da;
-    color: #94d6da;
+    background-color: var(--negro);
+    box-shadow: 0px 0px 5px var(--azulClaro);
+    color: var(--azulClaro);
     transition: all 600ms; 
 }
 
@@ -252,15 +260,15 @@ input[type="file"]::-webkit-file-upload-button:hover {
     padding: 10px;
     margin: 10px 0;
     font-size: 16px; 
-    border: 1px solid #ccc; 
+    border: 1px solid gray; 
     border-radius: 5px; 
     resize: none; 
 }
 
 .formMatDesc:focus {
-    border-color: #94d6da; 
+    border-color: var(--azulClaro);
     outline: none; 
-    background-color: #94d6da;
+    background-color: var(--azulClaro);
     transition: all 600ms;
 }
 
@@ -270,18 +278,18 @@ input[type="file"]::-webkit-file-upload-button:hover {
 }
 
 .formMatDesc:focus::placeholder {
-    color: #FFFFFF;
+    color: var(--blanco);
     transition: all 600ms;
 }
 
 .errorlist li {
     padding: 10px 0px;
-    color: rgb(211, 50, 50);
+    color: var(--rojo);
     font-weight: bold;
 }
 
 form label {
-    color: #EEEEEE;
+    color: var(--blanco);
     font-weight: bold;
 }
 
@@ -293,9 +301,9 @@ form .divEnviar {
 
 form .enviar {
     width: 50%;
-    border: 1px solid #222831;
+    border: 1px solid var(--gris);
     background-color: #3b404b;
-    color: #EEEEEE;
+    color: var(--blanco);
     padding: 10px 3px;
     border-radius: 5px;
     font-weight: bold;
@@ -303,8 +311,8 @@ form .enviar {
 
 form .enviar:hover {
     background-color: rgb(25, 27, 31);;
-    box-shadow: 0px 0px 5px #94d6da inset;
-    color: #94d6da;
+    box-shadow: 0px 0px 5px var(--azulClaro) inset;
+    color: var(--azulClaro);
     transition: all 600ms;
 }
 
@@ -337,14 +345,14 @@ form .enviar:hover {
 
 .message {
     text-align: center;
-    background-color: #93d332;
+    background-color: var(--verde);
     padding: 10px;
     font-weight: bold;
     width: fit-content;
     margin: 0 auto;
     margin-bottom: 40px;
     border-radius: 8px;
-    color: #FFFFFFFF;
+    color: var(--blanco);
 }
 
 @keyframes cambioColor {
@@ -355,7 +363,7 @@ form .enviar:hover {
         border-color: #94d6da; 
     }
     50% {
-        border-color: #76ABAE; 
+        border-color: var(--azulClaro); 
     }
     100% {
         border-color: #6a989b; 
@@ -407,9 +415,9 @@ form .enviar:hover {
     width: 50%;
     height: 15px;
     text-align: center;
-    border: 1px solid #222831;
+    border: 1px solid var(--gris);
     background-color: #3b404b;
-    color: #EEEEEE;
+    color: var(--blanco);
     padding: 10px 3px;
     border-radius: 5px;
     font-weight: bold;
@@ -418,8 +426,8 @@ form .enviar:hover {
 
 .volver:hover {
     background-color: rgb(25, 27, 31);;
-    box-shadow: 0px 0px 5px #94d6da inset;
-    color: #94d6da;
+    box-shadow: 0px 0px 5px var(--azulClaro) inset;
+    color: var(--azulClaro);
     transition: all 600ms;
 }
 
@@ -519,14 +527,14 @@ form .enviar:hover {
 }
 
 .contactos textarea:focus {
-    border-color: #94d6da; 
+    border-color: var(--azulClaro);
     outline: none; 
-    background-color: #94d6da;
+    background-color: var(--azulClaro);
     transition: all 600ms;
 }
 
 .contactos textarea:focus::placeholder {
-    color: #FFFFFF;
+    color: var(--blanco);
 }
 
 .contactos .botonEnviar {
