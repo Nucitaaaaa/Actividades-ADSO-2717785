@@ -5,7 +5,7 @@
     /*Colores*/
     --gris: #222831;
     --grisClaro: #494f5c;
-    --azulClaro: #94d6da;
+    --azulClaro: #44a0a5;
     --blanco: #EEEEEE;
     --negro: #13161b;
     --verde: #93d332;
@@ -20,7 +20,12 @@
     text-decoration: none;
 }
 
+html {
+    width: 100%;
+}
+
 body {
+    width: 100%;
     background-color: var(--blanco);
 }
 
@@ -53,7 +58,6 @@ header {
     justify-content: space-between;
     height: 75px;
     background-color: var(--gris);
-    border: 1px solid var(--negro);
     padding-bottom: 20px;
 }
 
@@ -106,17 +110,14 @@ header div {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--gris);
-    border: 1px solid var(--negro);
+    background-color: var(--azulClaro);
     margin: 0 auto;
-    box-shadow: 0px 6px 14px var(--azulClaro);
 }
 
 .nav a{
-    display: block;
+    font-size: 15px;
     padding: 0 20px 0 20px;
     line-height: 40px;
-    float: left;
     color: var(--blanco);
     font-weight: bold;
 }
@@ -130,8 +131,18 @@ header div {
 }
 
 #content {
-    width: 1300px;
-    margin: 40px auto 30px auto;
+    width: 100%;
+}
+
+.estudiantesInicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.estudiantesInicio img {
+    width: 60%;
+    height: 550px;
 }
 
 .formEstFeNa, .formProfFeNa{
@@ -141,12 +152,8 @@ header div {
 
 #content .box {
     background-color: var(--blanco);
-    width: 95%;
+    width: 100%;
     min-height: 600px;
-    padding: 20px ;
-    padding-bottom: 70px;
-    padding-top: 50px;
-    margin: 0 auto;
     border-radius: 5px;
 }
 
@@ -542,14 +549,4 @@ form .enviar:hover {
     justify-content: center;
 }
 
-.estudiantesInicio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.estudiantesInicio img{
-    width: 1200px;
-    border-radius: 5px;
-}
 
