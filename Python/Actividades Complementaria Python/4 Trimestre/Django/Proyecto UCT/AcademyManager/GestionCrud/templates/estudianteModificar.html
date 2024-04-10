@@ -5,7 +5,7 @@
 {% block content %}
     <section class="modificarDatos">
         <div class="Btnvolver">
-            <a class="boton"   href={%url 'mostrarEstudiante' estudiante.id%}>Volver</a>
+            <a href={%url 'mostrarEstudiante' estudiante.id%}><img src="{% static 'img/volver.png' %}" alt="Volver"></a>
         </div>
         <h2>Modificar Datos</h2>
         <br>

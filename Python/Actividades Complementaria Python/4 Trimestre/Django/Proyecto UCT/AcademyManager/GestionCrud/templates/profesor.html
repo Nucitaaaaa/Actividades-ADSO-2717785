@@ -5,12 +5,12 @@
 {%block content%}
     <section>
         <div class="Btnvolver">
-            <a class="boton" href={%url 'academicManager'%}>Volver</a>
+            <a href={%url 'academicManager'%}><img src="{% static 'img/volver.png' %}" alt="Volver"></a>
         </div>
         <h2 class="h2">Profesores</h2>
         <br>
         <div class="divAñadir">
-            <a class="boton" href={%url 'añadirProfesor'%}>Añadir Profesor</a>
+            <a href={%url 'añadirProfesor'%}>Añadir Profesor</a>
         </div>
         {% if messages %}
             {% for message in messages %}

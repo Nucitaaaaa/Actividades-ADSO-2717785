@@ -43,16 +43,9 @@
     </header>
     
     <nav class="nav">
-        {% if user.email %}
-            <a href={%url 'index'%}>Inicio</a>
-            <a href={%url 'quienesSomos'%}>Quienes Somos</a>
-            <a href={%url 'contactos'%}>Contactanos</a>
-            <a href={%url 'academicManager'%}>Academic Manager</a>
-        {% else %}
-            <a href={%url 'index'%}>Inicio</a>
-            <a href={%url 'quienesSomos'%}>Quienes Somos</a>
-            <a href={%url 'contactos'%}>Contactanos</a>
-        {% endif %}
+        <a href={%url 'index'%}>Inicio</a>
+        <a href={%url 'quienesSomos'%}>Quienes Somos</a>
+        <a href={%url 'contactos'%}>Contactanos</a>
     </nav>
 
     <section id="content">  

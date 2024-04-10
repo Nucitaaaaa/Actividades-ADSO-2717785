@@ -204,7 +204,8 @@ footer {
     border: 1px solid var(--grisClaro);
     color: var(--blanco);
     text-align: center;
-    padding: 10px 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
     margin: 0 auto;
     margin-top: 50px;
 }
@@ -550,9 +551,14 @@ input[type="file"]::-webkit-file-upload-button:hover {
     font-size: 15px;
 }
 
-.Btnvolver {
-    margin: 20px;
-    margin-top: 30px;
+.Btnvolver a img{
+    margin: 10px;
+    width: 50px;
+}
+
+.Btnvolver a img:hover{
+    width: 55px;
+    transition: all 600ms;
 }
 
 .divAñadir {
@@ -653,7 +659,9 @@ form label, .register form label {
     margin: 50px 0;
 }
 
-
+.añadirDatos {
+    margin-top: 10px;
+}
 
 @keyframes cambioColor {
     0% {
