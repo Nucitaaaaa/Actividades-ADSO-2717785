@@ -187,7 +187,7 @@ header div {
     background-color: var(--blanco);
     width: 100%;
     border-radius: 5px;
-    min-height: 450px;
+    min-height: 370px;
 }
 
 .box h2{
@@ -206,6 +206,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     margin: 0 auto;
+    margin-top: 50px;
 }
 
 footer p {
@@ -246,9 +247,8 @@ footer p {
 .estudiantesInicioP a{
     width: 200px;
     text-align: center; 
-    background-color: var(--azulClaro);
+    background-color: var(--grisClaro);
     color: var(--blanco);
-    border: 1px solid;
     border-radius: 5px;
     padding: 5px;
     font-weight: bold;
@@ -463,11 +463,68 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 input[type="file"]::-webkit-file-upload-button:hover {
-    background-color: var(--negro);
+    background-color: var(--azulClaro);
     box-shadow: 0px 0px 5px var(--azulClaro);
-    color: var(--azulClaro);
+    color: var(--gris);
     transition: all 600ms; 
 }
+
+.formEstCar, .formMatProf, #id_matProfesores {
+    width: 100%; 
+    margin: 10px 0px;
+    padding: 5px 10px;
+    font-size: 15px; 
+    border: 1px solid var(--grisClaro); 
+    border-radius: 5px; 
+    background-color: #fff; 
+    color:  var(--grisClaro); 
+    }
+
+.formEstCar::-webkit-select, .formMatProf::-webkit-select{
+    appearance: none; 
+}
+
+.formEstCar:focus, .formMatProf:focus, #id_matProfesores:focus {
+    border-color: var(--azulClaro);
+    background-color: var(--azulClaro);
+    transition: all 600ms;
+    color: var(--blanco);
+}
+
+.formProfMaterias[multiple], 
+.formCarMat[multiple],
+.formMatCar[multiple],
+#id_profMaterias,
+#id_carMaterias,
+#id_matCarrera {
+    width: 100%; 
+    padding: 5px 10px;
+    margin: 10px 0px;
+    font-size: 15px; 
+    border: 1px solid var(--grisClaro); 
+    border-radius: 5px; 
+    background-color: #fff; 
+    color:  var(--grisClaro); 
+}
+
+.formProfMaterias[multiple]::-webkit-select-list-button, 
+.formCarMat[multiple]::-webkit-select-list-button,
+.formMatCar[multiple]::-webkit-select-list-button
+{
+    display: none;
+}
+
+.formProfMaterias[multiple]:focus, 
+.formCarMat[multiple]:focus,
+.formMatCar[multiple]:focus,
+#id_profMaterias:focus,
+#id_carMaterias:focus,
+#id_matCarrera:focus {
+    border-color: var(--azulClaro);
+    background-color: var(--azulClaro);
+    color: var(--blanco);
+}
+
 
 .formMatDesc {
     font-size: 15px;
@@ -614,15 +671,26 @@ form label, .register form label {
 }
 
 .detallesTexto {
-    margin-top: 40px;
     padding: 10px;
     width: 50%;
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    text-align: center; /* Centra el contenido dentro del contenedor horizontalmente */
+    margin: 0 auto;
+    margin-top: 10px;
     gap: 10px;
     border: 2px solid;
     animation: cambioColor 3s infinite alternate;
     border-radius: 5px; 
+    overflow: auto; 
+    word-wrap: break-word; 
+}
+
+.detallesTexto p {
+    margin: 5px;
+}
+
+.detallesBotones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .detalles {

@@ -148,12 +148,16 @@ def añadirProfesor(request):
                 profTelefono = profTelefono,
                 profFechaNacimiento = profFechaNacimiento,
                 profFoto = profFoto,
-                profMaterias = profMaterias
             )
 
             profesor.save()
 
+            if profMaterias:
+                profesor.profMaterias.set(profMaterias)
+
             messages.success(request, f'El profesor "{profesor.profNombre} {profesor.profApellido}" se ha añadido con exito')
+            profesor.save()
+            
             return redirect('mostrarProfesores')
             
         else:
@@ -225,8 +229,12 @@ def añadirCarrera(request):
             carrera = Carrera( 
                 carNombre = carNombre,
                 carDuracion = carDuracion,
-                carMaterias = carMaterias,
             )
+
+            carrera.save()
+
+            if carMaterias:
+                carrera.carMaterias.set(carMaterias)
 
             messages.success(request, f'La carrera "{carrera.carNombre}" se ha añadido con exito')
             carrera.save()

@@ -3,11 +3,11 @@
 {% load static %}
 
 {%block content%}
-    <section>
+    <section class="sectionCarrera">
         <div class="Btnvolver">
-            <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
+            <a class="boton" href="{%url 'mostrarCarrera' carrera.id%}">Volver</a>
         </div>
-        <h2 class="h2">Carrera</h2>
+        <h2 class="h2">Detalles</h2>
         <br>
         <div class="detallesTexto">
             <ul>
@@ -20,8 +20,10 @@
                         {% endfor %}
                     </p>
                     <br>
-                    <a class="boton" href={%url 'modificarCarrera' carrera.id%}>Actualizar</a>
-                    <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
+                    <div class="detallesBotones">
+                        <a class="boton" href={%url 'modificarCarrera' carrera.id%}>Actualizar</a>
+                        <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
+                    </div>
                 </li>
             </ul>
         </div>
