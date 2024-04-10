@@ -2,20 +2,19 @@
 {%extends 'layout.html'%}
 {%load static%} 
 
-{% block content %} 
-    <h2>Añadir Materia</h2>
-    <br>
-    {% comment %} {% if form.errors %}
-        <strong style:"color: red;">Ha ocurrido un error:
-        {{form.errors}}
-        </strong>
-    {% endif %} {% endcomment %}
-    <form action="{%url 'añadirMateria'%}" method="POST">
-        {% csrf_token %}
-        {{ formulario.as_p }}
-        <div class="divEnviar">
-            <input class='enviar' type="submit" value="Guardar"/>
-            <a class="volver" href={%url 'mostrarMaterias'%}>Volver</a>
+{% block content %}
+    <section class="añadirDatos">
+        <div class="Btnvolver">
+            <a class="boton" href={%url 'mostrarMaterias'%}>Volver</a>
         </div>
-    </form>
+        <h2>Añadir Materia</h2>
+        <br>
+        <form action="{%url 'añadirMateria'%}" method="POST">
+            {% csrf_token %}
+            {{ formulario.as_p }}
+            <div class="divEnviar">
+                <input class='enviar' type="submit" value="Guardar"/>
+            </div>
+        </form>
+    </section>
 {% endblock %}

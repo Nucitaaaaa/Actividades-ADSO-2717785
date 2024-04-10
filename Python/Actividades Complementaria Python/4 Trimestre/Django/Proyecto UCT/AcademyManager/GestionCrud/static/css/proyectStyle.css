@@ -6,6 +6,7 @@
     --gris: #222831;
     --grisClaro: #494f5c;
     --azulClaro: #44a0a5;
+    --azulOscuro: rgba(59, 141, 145, 0.747);
     --blanco: #EEEEEE;
     --negro: #13161b;
     --verde: #93d332;
@@ -112,337 +113,162 @@ header div {
     align-items: center;
     background-color: var(--azulClaro);
     margin: 0 auto;
+    padding: 5px;
+    border: 1px solid var(--azulOscuro);
 }
 
 .nav a{
     font-size: 15px;
-    padding: 0 20px 0 20px;
-    line-height: 40px;
+    padding: 5px 8px;
     color: var(--blanco);
     font-weight: bold;
 }
 
 .nav a:hover{
-    background-color: var(--grisClaro);
+    background-color: var(--azulOscuro);
+    text-decoration: underline;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px #31363F inset;
-    color: var(--azulClaro);
     transition: all 600ms;
 }
+
+.navRegister {
+    margin-top: 35px;
+}
+
+.navRegister a, .logOut{
+    background-color: var(--azulClaro);
+    color: var(--blanco);
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.navRegister a:hover, .logOut:hover{
+    background-color: var(--azulOscuro);
+    transition: all 300ms;
+}
+
+.navDatos {
+    margin-top: 40px;
+    font-size: 16px;
+    text-align: center; 
+}
+
+.navDatos p,
+.navDatos small,
+.navDatos a {
+    text-align: center; 
+}
+
+.navDatos small {
+    color: var(--azulClaro);
+    font-weight: bold;
+}
+
+.navDatos a {
+    padding: 5px; 
+    font-size: 13px;
+}
+
+.navDatos div {
+    margin-top: 8px;
+}
+
+
+/**Content Box*/
 
 #content {
     width: 100%;
 }
 
-.estudiantesInicio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.estudiantesInicio img {
-    width: 60%;
-    height: 550px;
-}
-
-.formEstFeNa, .formProfFeNa{
-    color: gray;
-    font-size: 15px;
-}
-
 #content .box {
     background-color: var(--blanco);
     width: 100%;
-    min-height: 600px;
     border-radius: 5px;
+    min-height: 450px;
 }
 
 .box h2{
-    margin-top: 50px;
-    margin-bottom: 20px;
     text-align: center;
     color:  var(--negro);
     font-size: 40px;
 }
 
-.divAñadir {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0px 10px 60px 10px;
-}
 
-.boton { 
-    border: 1px solid var(--grisClaro);
-    background-color: var(--gris);
-    color: var(--blanco);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.boton:hover {
-    background-color: var(--negro);
-    box-shadow: 0px 0px 5px var(--gris) inset;
-    color: #99dde0;
-    transition: all 600ms;
-}
+/**Footer*/
 
 footer {
     background-color: var(--gris);
-    border: 1px solid var(--gris);
-    color: var(--blanco);
-    text-align: center;
-    padding: 10px 0 10px 0;
-    box-shadow: 0 0 20px var(--azulClaro);
-    margin: 0 auto;
-}
-
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--gris);
-    border-radius: 5px;
-    box-shadow: 0 0 10px var(--azulClaro);
-    margin-top: 20px;
-}
-
-form input {
-    width: 100%;
-    padding: 10px;
-    margin: 15px 0px;
-    border: 1px solid gray;
-    border-radius: 4px;
-    box-sizing: border-box; 
-}
-
-form input::placeholder {
-    font-size: 15px;
-}
-
-form input:focus {
-    background-color: var(--azulClaro);
-    color: var(--blanco);
-    transition: all 600ms;
-    outline: none;
-}
-
-input:focus::placeholder {
-    color: var(--blanco);
-    transition: all 600ms;
-}
-
-input[type="file"] {
-    width: 100%;
     border: 1px solid var(--grisClaro);
-    background-color: var(--gris);
     color: var(--blanco);
-    padding: 10px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-input[type="file"]::-webkit-file-upload-button {
-    background-color: var(--gris);
-    color: var(--blanco);
-    padding: 10px 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-input[type="file"]::-webkit-file-upload-button:hover {
-    background-color: var(--negro);
-    box-shadow: 0px 0px 5px var(--azulClaro);
-    color: var(--azulClaro);
-    transition: all 600ms; 
-}
-
-.formMatDesc {
-    font-size: 15px;
-    width: 95%; 
-    height: 150px; 
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 16px; 
-    border: 1px solid gray; 
-    border-radius: 5px; 
-    resize: none; 
-}
-
-.formMatDesc:focus {
-    border-color: var(--azulClaro);
-    outline: none; 
-    background-color: var(--azulClaro);
-    transition: all 600ms;
-}
-
-.categoriasP {
     text-align: center;
-    margin: 20px 0 40px 0;
-}
-
-.formMatDesc:focus::placeholder {
-    color: var(--blanco);
-    transition: all 600ms;
-}
-
-.errorlist li {
-    padding: 10px 0px;
-    color: var(--rojo);
-    font-weight: bold;
-}
-
-form label {
-    color: var(--blanco);
-    font-weight: bold;
-}
-
-form .divEnviar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-form .enviar {
-    width: 50%;
-    border: 1px solid var(--gris);
-    background-color: #3b404b;
-    color: var(--blanco);
-    padding: 10px 3px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-form .enviar:hover {
-    background-color: rgb(25, 27, 31);;
-    box-shadow: 0px 0px 5px var(--azulClaro) inset;
-    color: var(--azulClaro);
-    transition: all 600ms;
-}
-
-.estudiante, .materia, .profesor, .carrera {
-    list-style: none;
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px; 
-    padding: 10px;
-    margin: 5px;
-} 
-
-.datos {
-    border: 3px solid;
-    animation: cambioColor 3s infinite alternate; 
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    gap: 5px; 
-    margin-top: 10px;
-}
-
-.datos img {
-    width: 250px;
-    height: 270px;
-}
-
-.message {
-    text-align: center;
-    background-color: var(--verde);
-    padding: 10px;
-    font-weight: bold;
-    width: fit-content;
+    padding: 10px 0;
     margin: 0 auto;
-    margin-bottom: 40px;
-    border-radius: 8px;
-    color: var(--blanco);
 }
 
-@keyframes cambioColor {
-    0% {
-        border-color: #9ee0e4; 
-    }
-    25% {
-        border-color: #94d6da; 
-    }
-    50% {
-        border-color: var(--azulClaro); 
-    }
-    100% {
-        border-color: #6a989b; 
-    }
+footer p {
+    font-size: 16px;
 }
 
-.detalles {
-    margin: 0 auto;
+
+/**Pagina 'Index'*/
+
+.estudiantesInicio {
+    display: flex;
+    margin-bottom: 50px;
     margin-top: 40px;
-    padding: 10px;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border: 2px solid;
-    animation: cambioColor 3s infinite alternate;
-    border-radius: 5px; 
 }
 
-.detallesFotoBoton {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+.estudiantesInicioImg {
+    flex: 1;
+    max-width: 50%;
 }
 
-.detallesFotoBoton img {
-    width: 300px;
-    height: 255px;
+.estudiantesInicioImg img {
+    width: 100%;
+    height: auto; 
 }
 
-.detallesFotoBoton div{
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-
-.detallesInfo p{
+.estudiantesInicioP {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5px;
+    padding: 0 20px; 
 }
 
-.volver {
-    width: 50%;
-    height: 15px;
+.estudiantesInicioP h3 {
     text-align: center;
-    border: 1px solid var(--gris);
-    background-color: #3b404b;
+}
+
+.estudiantesInicioP a{
+    width: 200px;
+    text-align: center; 
+    background-color: var(--azulClaro);
     color: var(--blanco);
-    padding: 10px 3px;
+    border: 1px solid;
     border-radius: 5px;
+    padding: 5px;
     font-weight: bold;
-    font-size: 13px;
 }
 
-.volver:hover {
-    background-color: rgb(25, 27, 31);;
-    box-shadow: 0px 0px 5px var(--azulClaro) inset;
-    color: var(--azulClaro);
-    transition: all 600ms;
+.estudiantesInicioP a:hover{
+    background-color: var(--azulOscuro);
+    transition: all 300ms;
 }
 
-.categoriasUrl {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+.estudiantesInicioP div {
+    margin: 0 auto;
+}
+
+
+/**Pagina 'Quienes Somos'*/
+
+.quienesSomos {
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .quienesSomos p {
@@ -508,12 +334,12 @@ form .enviar:hover {
     width: 250px;
 }
 
-.quienesSomosServiciosImg img:hover {
-    width: 270px;
-}
 
-.academicManager {
-    margin: 0 auto;
+/**Pagina 'Contactos'*/
+
+.contactanos {
+    margin: 30px;
+    margin-bottom: 40px;
 }
 
 .contactosP {
@@ -544,9 +370,330 @@ form .enviar:hover {
     color: var(--blanco);
 }
 
-.contactos .botonEnviar {
+.contactos .botonEnviar, .botonEnviar {
     display: flex;
     justify-content: center;
 }
+
+
+/**Pagina 'Academic Manager'*/
+
+.academicManager {
+    margin: 0 auto;
+    margin-top: 130px;
+}
+
+
+form .divEnviar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .enviar {
+    width: 50%;
+    border: 1px solid var(--gris);
+    background-color: #3b404b;
+    color: var(--blanco);
+    padding: 10px 3px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+form .enviar:hover {
+    background-color: var(--azulClaro);
+    box-shadow: 0px 0px 5px var(--azulClaro) inset;
+    color: var(--gris);
+    transition: all 600ms;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--gris);
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--azulOscuro);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+form input::placeholder {
+    font-size: 15px;
+}
+
+form input:focus, .inputLogin:focus {
+    background-color: var(--azulClaro);
+    color: var(--blanco);
+    transition: all 600ms;
+    outline: none;
+}
+
+input:focus::placeholder {
+    color: var(--blanco);
+    transition: all 600ms;
+}
+
+input[type="file"] {
+    width: 100%;
+    border: 1px solid var(--grisClaro);
+    background-color: var(--gris);
+    color: var(--blanco);
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background-color: var(--gris);
+    color: var(--blanco);
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: var(--negro);
+    box-shadow: 0px 0px 5px var(--azulClaro);
+    color: var(--azulClaro);
+    transition: all 600ms; 
+}
+
+.formMatDesc {
+    font-size: 15px;
+    width: 95%; 
+    height: 150px; 
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px; 
+    border: 1px solid gray; 
+    border-radius: 5px; 
+    resize: none; 
+}
+
+.formMatDesc:focus {
+    border-color: var(--azulClaro);
+    outline: none; 
+    background-color: var(--azulClaro);
+    transition: all 600ms;
+}
+
+.formEstFeNa, .formProfFeNa{
+    color: gray;
+    font-size: 15px;
+}
+
+.Btnvolver {
+    margin: 20px;
+    margin-top: 30px;
+}
+
+.divAñadir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px 20px 10px;
+    gap: 10px;
+}
+
+.boton { 
+    font-weight: bold;
+    background-color: var(--grisClaro);
+    color: var(--blanco);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.boton:hover {
+    background-color: var(--azulClaro);
+    box-shadow: 0px 0px 5px var(--azulClaro) inset;
+    color: var(--gris);
+    transition: all 600ms;
+}
+
+
+.categoriasP {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.formMatDesc:focus::placeholder {
+    color: var(--blanco);
+    transition: all 600ms;
+}
+
+.errorlist li {
+    padding: 10px 0px;
+    color: var(--rojo);
+    font-weight: bold;
+}
+
+
+
+form label, .register form label {
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+
+.estudiante, .materia, .profesor, .carrera {
+    list-style: none;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px; 
+    padding: 10px;
+    margin: 5px;
+} 
+
+.datos {
+    border: 3px solid;
+    animation: cambioColor 3s infinite alternate; 
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 5px; 
+    margin-top: 10px;
+}
+
+.datos img {
+    width: 250px;
+    height: 270px;
+}
+
+.message {
+    text-align: center;
+    background-color: var(--verde);
+    padding: 10px;
+    font-weight: bold;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    color: var(--blanco);
+}
+
+.warning {
+    background-color: var(--rojo);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login, .register, .modificarDatos, .añadirDatos {
+    margin: 50px 0;
+}
+
+
+
+@keyframes cambioColor {
+    0% {
+        border-color: #9ee0e4; 
+    }
+    25% {
+        border-color: #94d6da; 
+    }
+    50% {
+        border-color: var(--azulClaro); 
+    }
+    100% {
+        border-color: #6a989b; 
+    }
+}
+
+.detallesTexto {
+    margin-top: 40px;
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    text-align: center; /* Centra el contenido dentro del contenedor horizontalmente */
+    gap: 10px;
+    border: 2px solid;
+    animation: cambioColor 3s infinite alternate;
+    border-radius: 5px; 
+}
+
+.detalles {
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid;
+    animation: cambioColor 3s infinite alternate;
+    border-radius: 5px; 
+}
+
+.detallesFotoBoton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.detallesFotoBoton img {
+    width: 300px;
+    height: 255px;
+}
+
+.detallesFotoBoton div{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.detallesInfo p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+
+.volver {
+    width: 50%;
+    height: 15px;
+    text-align: center;
+    border: 1px solid var(--gris);
+    background-color: #3b404b;
+    color: var(--blanco);
+    padding: 10px 3px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.volver:hover {
+    background-color: var(--azulClaro);
+    box-shadow: 0px 0px 5px var(--azulClaro) inset;
+    color: var(--gris);
+    transition: all 600ms;
+}
+
+.categoriasUrl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
 
 

@@ -1,7 +1,10 @@
 
 from django import forms
 from django.core import validators
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from .models import Estudiante, Profesor, Materia, Carrera
+
 
 class FormEstudiante(forms.Form):
 
@@ -323,3 +326,9 @@ class FormActualizarMateria(forms.ModelForm):
     class Meta:
         model = Materia
         fields = ['matNombre', 'matDescripcion', 'matCreditos', 'matProfesores', 'matCarrera']
+
+
+class FormRegistro(UserCreationForm):
+    class Meta:
+        model = User
+        fields=['username', 'email', 'first_name', 'last_name', 'password1', 'password2']

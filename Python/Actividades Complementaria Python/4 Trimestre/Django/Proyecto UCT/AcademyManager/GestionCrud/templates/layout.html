@@ -25,16 +25,34 @@
             </div>
         </div>
         <div>
-            <button>Login</button>
-            <button>Register</button>
+            {% if user.email %}
+                <div class="navDatos">
+                    <p>Bienvenid@, {{user.username}}.</p>
+                    <small>{{user.email}}</small>
+                    <div>
+                        <a class="logOut" href="{%url 'logout'%}">Cerrar Sesion</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="navRegister">
+                    <a href="{%url 'registrarse'%}">Registrarse</a>
+                    <a href="{%url 'login'%}">Iniciar Sesion</a>
+                </div>
+            {% endif %}
         </div>
     </header>
     
     <nav class="nav">
-        <a href={%url 'index'%}>Inicio</a>
-        <a href={%url 'quienesSomos'%}>Quienes Somos</a>
-        <a href={%url 'academicManager'%}>Academic Manager</a>
-        <a href={%url 'contactos'%}>Contactanos</a>
+        {% if user.email %}
+            <a href={%url 'index'%}>Inicio</a>
+            <a href={%url 'quienesSomos'%}>Quienes Somos</a>
+            <a href={%url 'contactos'%}>Contactanos</a>
+            <a href={%url 'academicManager'%}>Academic Manager</a>
+        {% else %}
+            <a href={%url 'index'%}>Inicio</a>
+            <a href={%url 'quienesSomos'%}>Quienes Somos</a>
+            <a href={%url 'contactos'%}>Contactanos</a>
+        {% endif %}
     </nav>
 
     <section id="content">  
@@ -45,7 +63,7 @@
     </section>
     
     <footer>  
-        <p><strong>&copy; All Rights Reserved | María Paula Buenaventura García</strong></p>
+        <p><strong>&copy; All Rights Reserved | Universidad Ceitocol Tolima</strong></p>
     </footer>
 
 </body>

@@ -5,6 +5,9 @@ import GestionCrud.views
 urlpatterns = [
     #?Rutas generales
     path('', GestionCrud.views.index, name='index'),
+    path('registrarse/', GestionCrud.views.paginaRegistro, name='registrarse'),
+    path('login/', GestionCrud.views.paginaLogin, name='login'),
+    path('logout/', GestionCrud.views.paginaLogout, name='logout'),
     path('quienesSomos/', GestionCrud.views.quienesSomos, name='quienesSomos'),
     path('contactos/', GestionCrud.views.contactos, name='contactos'),
     path('academicManager/', GestionCrud.views.academicManager, name='academicManager'),

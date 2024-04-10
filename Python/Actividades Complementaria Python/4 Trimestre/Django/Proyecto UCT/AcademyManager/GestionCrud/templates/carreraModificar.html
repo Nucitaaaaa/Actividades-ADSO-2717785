@@ -2,20 +2,19 @@
 {%extends 'layout.html'%}
 {%load static%} 
 
-{% block content %} 
-    <h2>Modificar Datos</h2>
-    <br>
-    {% comment %} {% if form.errors %}
-        <strong style:"color: red;">Ha ocurrido un error:
-        {{form.errors}}
-        </strong>
-    {% endif %} {% endcomment %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ formulario.as_p }}
-        <div class="divEnviar">
-            <input class='enviar' type="submit" value="Guardar"/>
-            <a class="volver" href={%url 'mostrarCarreras'%}>Volver</a>
+{% block content %}
+    <section class="modificarDatos">
+        <div class="Btnvolver">
+            <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
         </div>
-    </form>
+        <h2>Modificar Datos</h2>
+        <br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ formulario.as_p }}
+            <div class="divEnviar">
+                <input class='enviar' type="submit" value="Guardar"/>
+            </div>
+        </form>
+    </section>
 {% endblock %}

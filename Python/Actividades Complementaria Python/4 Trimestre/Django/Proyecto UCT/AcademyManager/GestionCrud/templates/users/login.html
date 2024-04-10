@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+{% load static %}
+
+{%block content%}
+    <section class="login">
+        <h2>Iniciar Sesión</h2>
+        <br>
+        {% if messages %}
+        {% for message in messages %}
+            <div class="message warning">
+                {{message}}
+            </div>
+        {% endfor %}
+        {% endif %} 
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Nombre de usuario:</label>
+            <input class="inputLogin" type="text" name="username">
+            <br>
+            <label for="password">Contraseña:</label>
+            <input class="inputLogin" type="password" name="password">
+            <br>
+            <div class="botonEnviar">
+                <input class="enviar" type="submit" value="Ingresar">
+            </div>
+        </form>
+    </section>
+{%endblock%}

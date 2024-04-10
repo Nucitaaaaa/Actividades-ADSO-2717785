@@ -1,0 +1,22 @@
+
+{% extends "layout.html" %}
+{% load static %}
+
+{%block content%}
+    <section class="register">
+        <h2>Registrarse</h2>
+        <br>
+        {{formRegistro.errors}}
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in formRegistro %}
+                <label>{{field.label}}</label>
+                {{field}}
+            {% endfor %}
+            <div class="botonEnviar">
+                <input class="enviar" type="submit" value="Registrarse">
+            </div>
+        </form>
+    </section>
+{%endblock%}

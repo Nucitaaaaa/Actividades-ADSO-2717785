@@ -1,28 +1,30 @@
 
 {% extends "layout.html" %}
 {% load static %}
-{% comment %} {%load filters%} {% endcomment %}
 
-{%block content%} 
-    <h2 class="h2">Carrera</h2>
-    <br>
-    <hr>
-    <div class="detalles">
-        <ul>
-            <li>
-                <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
-                <p><strong>Duración:</strong> {{carrera.carDuracion}}</p> 
-                <p><strong>Materias:</strong> 
-                    {% for materia in carrera.carMaterias.all %}
-                        {{materia}}
-                    {% endfor %}
-                </p>
-                <br>
-                <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
-                <a class="boton" href={%url 'modificarCarrera' carrera.id%}>Actualizar</a>
-                <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
-            </li>
-        </ul>
-    </div>
+{%block content%}
+    <section>
+        <div class="Btnvolver">
+            <a class="boton" href={%url 'mostrarCarreras'%}>Volver</a>
+        </div>
+        <h2 class="h2">Carrera</h2>
+        <br>
+        <div class="detallesTexto">
+            <ul>
+                <li>
+                    <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
+                    <p><strong>Duración:</strong> {{carrera.carDuracion}}</p> 
+                    <p><strong>Materias:</strong> 
+                        {% for materia in carrera.carMaterias.all %}
+                            {{materia}}
+                        {% endfor %}
+                    </p>
+                    <br>
+                    <a class="boton" href={%url 'modificarCarrera' carrera.id%}>Actualizar</a>
+                    <a class="boton" href={%url 'eliminarCarrera' carrera.id%}>Borrar</a>
+                </li>
+            </ul>
+        </div>
+    </section>
 {%endblock%}
 

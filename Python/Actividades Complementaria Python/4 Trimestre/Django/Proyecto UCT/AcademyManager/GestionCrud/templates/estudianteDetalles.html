@@ -2,40 +2,31 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{%block content%} 
+{%block content%}
+    <br>
+    <div class="Btnvolver">
+        <a class="boton"  href={%url 'mostrarEstudiantes'%}>Volver</a>
+    </div>
     <h2 class="h2">Detalles</h2>
-    <br>
-    <div>
-        {% comment %} {% if messages %}
-        {% for message in messages %}
-            <div class="message">
-                {{message}}
+    <section class="detalles">
+        <div class="detallesFotoBoton">
+            <p>
+                {% if estudiante.estFoto != 'null' and estudiante.estFoto.url|length >= 1%}
+                    <img src="{{estudiante.estFoto.url}}">
+                {% endif %} 
+            </p>
+            <div>
+                <a class="boton" href={%url 'modificarEstudiante' estudiante.id%}>Actualizar</a>
+                <a class="boton" href={%url 'eliminarEstudiante' estudiante.id%}>Borrar</a>
             </div>
-        {% endfor %}
-    {% endif %} {% endcomment %}
-    <br>
-    <hr>
-        <li>
-            <div class="detalles">
-                <div class="detallesFotoBoton">
-                    <p>
-                        {% if estudiante.estFoto != 'null' and estudiante.estFoto.url|length >= 1%}
-                            <img src="{{estudiante.estFoto.url}}">
-                        {% endif %} 
-                    </p>
-                    <div>
-                        <a class="boton" href={%url 'mostrarEstudiantes'%}>Volver</a>
-                        <a class="boton" href={%url 'modificarEstudiante' estudiante.id%}>Actualizar</a>
-                        <a class="boton" href={%url 'eliminarEstudiante' estudiante.id%}>Borrar</a>
-                    </div>
-                </div>
-                <div class="detallesInfo">
-                    <p><strong>Nombre:</strong> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
-                    <p> <strong>Email:</strong> {{estudiante.estEmail}} </p>
-                    <p> <strong>Telefono:</strong> {{estudiante.estTelefono}} </p>
-                    <p> <strong>Fecha de nacimiento:</strong> {{estudiante.estFechaNacimiento}} </p>
-                    <p> <strong>Carrera:</strong> {{estudiante.estCarrera}} </p>
-                </div>
-            </div>
-        </li>
+        </div>
+        <div class="detallesInfo">
+            <p><strong>Nombre:</strong> {{estudiante.estNombre}} {{estudiante.estApellido}}</p> 
+            <p> <strong>Email:</strong> {{estudiante.estEmail}} </p>
+            <p> <strong>Telefono:</strong> {{estudiante.estTelefono}} </p>
+            <p> <strong>Fecha de nacimiento:</strong> {{estudiante.estFechaNacimiento}} </p>
+            <p> <strong>Carrera:</strong> {{estudiante.estCarrera}} </p>
+        </div>
+    </section>
+    <br><br>
 {%endblock%}

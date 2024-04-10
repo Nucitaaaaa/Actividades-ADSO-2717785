@@ -3,21 +3,23 @@
 {% load static %}
 
 {%block content%} 
-    <h2>Contactanos</h2>
-    <p class="contactosP">¡Estamos aquí para ayudarte! Completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
+    <section class="contactanos">
+        <h2>Contactanos</h2>
+        <p class="contactosP">¡Estamos aquí para ayudarte! Completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
 
-    <form class="contactos" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        <form class="contactos" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
 
-        <label for="email">Correo electrónico:</label>
-        <input type="text" id="email" name="email" placeholder="Tu correo electrónico" required>
+            <label for="email">Correo electrónico:</label>
+            <input type="text" id="email" name="email" placeholder="Tu correo electrónico" required>
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje.." required></textarea>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje.." required></textarea>
 
-        <div class="botonEnviar">
-            <input class="enviar" type="submit" value="Enviar">
-        </div>
-    </form>
+            <div class="botonEnviar">
+                <input class="enviar" type="submit" value="Enviar">
+            </div>
+        </form>
+    </section>
 {%endblock%}

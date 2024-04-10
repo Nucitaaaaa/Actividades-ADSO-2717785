@@ -25,7 +25,7 @@ admin.site.register(Materia, MateriaAdmin)
 admin.site.register(Carrera)
 
 
-title = "Gestion DB UCT"
+title = "Proyecto UCT"
 admin.site.site_header = title
 admin.site.site_title= title
 admin.site.index_title = "Panel de gestión"

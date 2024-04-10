@@ -1,35 +1,39 @@
 
 {% extends "layout.html" %}
 {% load static %}
-{% comment %} {%load filters%} {% endcomment %}
 
-{%block content%} 
-    <h2 class="h2">Materias</h2>
-    <br>
-    <div class="divAñadir">
-        <a class="boton" href={%url 'añadirMateria'%}>Añadir Materia</a>
-        <a class="boton" href={%url 'academicManager'%}>Volver</a>
-    </div>
-    {% if messages %}
-        {% for message in messages %}
-            <div class="message">
-                {{message}}
-            </div>
-        {% endfor %}
-    {% endif %} 
-    <hr>
-    <h3>Datos</h3>
-    <hr>
-    <div class="materia">
-        {% for materia in materias %}
-                <li>
-                    <div class="datos">
-                        <p>{{materia.matNombre}}</p> 
-                        <a class="boton" href={%url 'mostrarMateria' materia.id%}>Ver mas</a>
-                    </div>
-                </li>
-        {% endfor %}
-    </div>
+
+{%block content%}
+    <section>
+        <div class="Btnvolver">
+            <a class="boton" href={%url 'academicManager'%}>Volver</a>
+        </div>
+        <h2 class="h2">Materias</h2>
+        <br>
+        <div class="divAñadir">
+            <a class="boton" href={%url 'añadirMateria'%}>Añadir Materia</a>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %} 
+        <hr>
+        <h3>Datos</h3>
+        <hr>
+        <div class="materia">
+            {% for materia in materias %}
+                    <li>
+                        <div class="datos">
+                            <p>{{materia.matNombre}}</p> 
+                            <a class="boton" href={%url 'mostrarMateria' materia.id%}>Ver mas</a>
+                        </div>
+                    </li>
+            {% endfor %}
+        </div>
+    </section>
 {%endblock%}
 
 

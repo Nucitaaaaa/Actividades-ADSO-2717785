@@ -2,9 +2,27 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{%block content%} 
-    <div class="estudiantesInicio">
-        <img src="{% static 'img/estudiantesInicio.webp' %}" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quae expedita, odio eveniet dicta officiis reprehenderit ad cupiditate, tempore necessitatibus sunt quisquam in laudantium odit pariatur. Sequi nam amet nisi.</p>
-    </div>
+{%block content%}
+    {% if messages %}
+    {% for message in messages %}
+        <div class="message">
+            {{message}}
+        </div>
+    {% endfor %}
+    {% endif %} 
+    <br>
+    <section class="estudiantesInicio">
+        <div class="estudiantesInicioImg">
+            <img src="{% static 'img/estudiantesInicio.jpg' %}" alt="">
+        </div>
+        <div class="estudiantesInicioP"> 
+            <h3>¡Bienvenidos a la UCT!</h3>
+            <br>
+            <p>Ingresa al portal 'Academic Manager' para gestionar eficientemente datos de alumnos, profesores, carreras y materias, donde podrás actualizar y borrar información según sea necesario.</p>
+            <br>
+            <div>
+                <a href="{%url 'academicManager'%}">Ingresa Aquí</a>
+            </div>
+        </div>
+    </section>
 {%endblock%}

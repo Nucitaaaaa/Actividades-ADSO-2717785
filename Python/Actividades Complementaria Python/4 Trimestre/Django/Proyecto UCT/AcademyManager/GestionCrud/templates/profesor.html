@@ -2,43 +2,47 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{%block content%} 
-    <h2 class="h2">Profesores</h2>
-    <br>
-    <div class="divAñadir">
-        <a class="boton" href={%url 'añadirProfesor'%}>Añadir Profesor</a>
-        <a class="boton" href={%url 'academicManager'%}>Volver</a>
-    </div>
-    {% if messages %}
-        {% for message in messages %}
-            <div class="message">
-                {{message}}
-            </div>
-        {% endfor %}
-    {% endif %} 
-    <hr>
-    <h3>Datos</h3>
-    <hr>
-    <div class="profesor">
-        {% for profesor in profesores %}
-                <li>
-                    <div class="datos">
-                        <p>
-                            {% if profesor.profFoto != 'null' and profesor.profFoto.url|length >= 1%}
-                                <img src="{{profesor.profFoto.url}}">
-                            {% endif %} 
-                        </p>
-                        <strong>{{profesor.profNombre}} {{profesor.profApellido}}</strong> 
-                        <p>
-                            {% for materia in profesor.profMaterias.all %}
-                                {{materia}}
-                            {% endfor %}
-                        </p>
-                        <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
-                    </div>
-                </li>
-        {% endfor %}
-    </div>
+{%block content%}
+    <section>
+        <div class="Btnvolver">
+            <a class="boton" href={%url 'academicManager'%}>Volver</a>
+        </div>
+        <h2 class="h2">Profesores</h2>
+        <br>
+        <div class="divAñadir">
+            <a class="boton" href={%url 'añadirProfesor'%}>Añadir Profesor</a>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %} 
+        <hr>
+        <h3>Datos</h3>
+        <hr>
+        <div class="profesor">
+            {% for profesor in profesores %}
+                    <li>
+                        <div class="datos">
+                            <p>
+                                {% if profesor.profFoto != 'null' and profesor.profFoto.url|length >= 1%}
+                                    <img src="{{profesor.profFoto.url}}">
+                                {% endif %} 
+                            </p>
+                            <strong>{{profesor.profNombre}} {{profesor.profApellido}}</strong> 
+                            <p>
+                                {% for materia in profesor.profMaterias.all %}
+                                    {{materia}}
+                                {% endfor %}
+                            </p>
+                            <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
+                        </div>
+                    </li>
+            {% endfor %}
+        </div>
+    </section>
 {%endblock%}
 
 

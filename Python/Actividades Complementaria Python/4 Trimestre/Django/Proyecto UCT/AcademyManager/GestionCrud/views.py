@@ -2,10 +2,11 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.db import connection
 from GestionCrud.models import Estudiante, Profesor, Materia, Carrera
-from GestionCrud.forms import FormEstudiante, FormProfesor, FormCarrera, FormMateria, FormActualizarEstudiante, FormActualizarProfesor, FormActualizarCarrera, FormActualizarMateria
+from GestionCrud.forms import FormEstudiante, FormProfesor, FormCarrera, FormMateria, FormActualizarEstudiante, FormActualizarProfesor, FormActualizarCarrera, FormActualizarMateria, FormRegistro
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
-
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, "inicio.html")
@@ -18,7 +19,7 @@ def quienesSomos(request):
 def contactos(request):
     return render(request, "contactos.html")
 
-
+@login_required(login_url="login")
 def academicManager(request):
     return render(request, "academicManager.html")
 
@@ -348,3 +349,48 @@ def eliminarMateria(request, id):
     
     return redirect('mostrarMaterias')
 
+
+def paginaRegistro(request):
+    if request.user.is_authenticated:
+        return redirect('index')
+    
+    else:
+        formRegistro = FormRegistro()
+        
+        if request.method == 'POST':
+            formRegistro = FormRegistro(request.POST)
+
+            if formRegistro.is_valid():
+                formRegistro.save()
+                messages.success(request, f'El usuario se ha registrado con exito')
+                return redirect('index')
+            
+    return render(request, 'users/registro.html', {
+        'formRegistro' : formRegistro
+        })
+
+
+def paginaLogin(request):
+    if request.user.is_authenticated:
+        return redirect('index')
+    
+    else:
+        if request.method == "POST":
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect("index")
+            
+            else:
+                messages.warning(request, "El Usuario o Contraseña son incorrectas")
+
+    return render(request, 'users/login.html')
+
+
+def paginaLogout(request):
+    logout(request)
+    return redirect('index')
