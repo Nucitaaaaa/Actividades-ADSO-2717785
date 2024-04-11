@@ -264,7 +264,7 @@ class FormMateria(forms.Form):
                 'placeholder':'Ingrese el nombre de la materia'
             }
         ),validators= [
-            validators.RegexValidator('^[a-zA-Z0-9 ]*$', 'Error(Nombre): solo se permiten letras, numeros y espacios.')
+            validators.RegexValidator('^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ]*$', 'Error(Nombre): solo se permiten letras, numeros y espacios.')
         ]
     )
 

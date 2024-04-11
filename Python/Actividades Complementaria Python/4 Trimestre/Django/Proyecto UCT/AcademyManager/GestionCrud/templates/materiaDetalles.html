@@ -14,9 +14,9 @@
                 <p><strong>Nombre:</strong> {{materia.matNombre}}</p>
                 <p><strong>Descripcion:</strong> {{materia.matDescripcion}}</p>
                 <p><strong>Creditos:</strong> {{materia.matCreditos}}</p>
-                <p><strong>Carrera:</strong>
+                <p><strong>Carrera:</strong><br>
                     {% for carrera in materia.matCarrera.all %}
-                        {{carrera}}
+                        - {{carrera}}<br>
                     {% endfor %}
                 </p>
                 <p><strong>Profesor:</strong> {{materia.matProfesores}}</p>

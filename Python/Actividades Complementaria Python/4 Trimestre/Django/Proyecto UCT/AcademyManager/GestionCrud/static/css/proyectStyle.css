@@ -1,4 +1,5 @@
 
+
 /*?Reglas Generales*/
 
 :root {
@@ -21,6 +22,12 @@
     text-decoration: none;
 }
 
+a {
+    color: var(--azulClaro);
+    margin: 2px;
+    padding-bottom: 2px;
+}
+
 html {
     width: 100%;
 }
@@ -37,6 +44,7 @@ li {
 p {
     font-size: 18px;
     text-align: center;
+
 }
 
 hr {
@@ -384,6 +392,10 @@ footer p {
     margin-top: 130px;
 }
 
+form p {
+    color: var(--blanco);
+    width: 100%;
+}
 
 form .divEnviar {
     display: flex;
@@ -466,11 +478,10 @@ input[type="file"]::-webkit-file-upload-button {
 input[type="file"]::-webkit-file-upload-button:hover {
     background-color: var(--azulClaro);
     box-shadow: 0px 0px 5px var(--azulClaro);
-    color: var(--gris);
     transition: all 600ms; 
 }
 
-.formEstCar, .formMatProf, #id_matProfesores {
+.formEstCar, .formMatProf, #id_matProfesores, #id_estCarrera {
     width: 100%; 
     margin: 10px 0px;
     padding: 5px 10px;
@@ -485,7 +496,11 @@ input[type="file"]::-webkit-file-upload-button:hover {
     appearance: none; 
 }
 
-.formEstCar:focus, .formMatProf:focus, #id_matProfesores:focus {
+label[for="id_estFoto"], label[for="id_profFoto"] {
+    padding: 125px;
+}
+
+.formEstCar:focus, .formMatProf:focus, #id_matProfesores:focus, #id_estCarrera:focus {
     border-color: var(--azulClaro);
     background-color: var(--azulClaro);
     transition: all 600ms;
@@ -565,7 +580,8 @@ input[type="file"]::-webkit-file-upload-button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 10px 20px 10px;
+    margin: 20px;
+    margin-top: 10px;
     gap: 10px;
 }
 
@@ -613,7 +629,7 @@ form label, .register form label {
     list-style: none;
     list-style-type: none;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 5px; 
     padding: 10px;
     margin: 5px;
@@ -659,7 +675,7 @@ form label, .register form label {
     margin: 50px 0;
 }
 
-.añadirDatos {
+.añadirDatos, .modificarDatos {
     margin-top: 10px;
 }
 

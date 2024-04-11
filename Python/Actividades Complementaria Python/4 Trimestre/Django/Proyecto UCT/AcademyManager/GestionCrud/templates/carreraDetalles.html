@@ -14,9 +14,9 @@
                 <li>
                     <p><strong>Nombre:</strong> {{carrera.carNombre}}</p> 
                     <p><strong>Duración:</strong> {{carrera.carDuracion}}</p> 
-                    <p><strong>Materias:</strong> 
+                    <p><strong>Materias:</strong><br>
                         {% for materia in carrera.carMaterias.all %}
-                            {{materia}}
+                            - {{materia}}<br>
                         {% endfor %}
                     </p>
                     <br>

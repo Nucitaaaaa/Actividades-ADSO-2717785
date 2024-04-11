@@ -5,7 +5,7 @@
 {%block content%}
     <section>
         <div class="Btnvolver">
-            <a href={%url 'mostrarProfesor' profesor.id%}><img src="{% static 'img/volver.png' %}" alt="Volver"></a>
+            <a href={%url 'mostrarProfesores'%}><img src="{% static 'img/volver.png' %}" alt="Volver"></a>
             <h2 class="h2">Detalles</h2>
         <br>
         <div>
@@ -26,7 +26,7 @@
                         <p><strong>Nombre:</strong> {{profesor.profNombre}} {{profesor.profApellido}}</p>
                         <p><strong>Materia:</strong>
                             {% for materia in profesor.profMaterias.all %}
-                                {{materia}}
+                                - {{materia}}<br>
                             {% endfor %}
                         </p>
                         <p><strong>Email:</strong> {{profesor.profEmail}} </p>

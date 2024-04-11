@@ -10,7 +10,7 @@
         <h2 class="h2">Profesores</h2>
         <br>
         <div class="divAñadir">
-            <a href={%url 'añadirProfesor'%}>Añadir Profesor</a>
+            <a class="boton" href={%url 'añadirProfesor'%}>Añadir Profesor</a>
         </div>
         {% if messages %}
             {% for message in messages %}
@@ -20,7 +20,7 @@
             {% endfor %}
         {% endif %} 
         <hr>
-        <h3>Datos</h3>
+        <h3>Profesores Registrados</h3>
         <hr>
         <div class="profesor">
             {% for profesor in profesores %}
@@ -33,9 +33,13 @@
                             </p>
                             <strong>{{profesor.profNombre}} {{profesor.profApellido}}</strong> 
                             <p>
-                                {% for materia in profesor.profMaterias.all %}
-                                    {{materia}}
-                                {% endfor %}
+                                <p><strong>Materia:</strong>
+                                    {% if profesor.profMaterias.exists %}
+                                        {{ profesor.profMaterias.first }}
+                                        {% if profesor.profMaterias.count > 1 %}, ...{% endif %}
+                                    {% endif %}
+                                </p>
+                                
                             </p>
                             <a class="boton" href={%url 'mostrarProfesor' profesor.id%}>Mas información</a>
                         </div>

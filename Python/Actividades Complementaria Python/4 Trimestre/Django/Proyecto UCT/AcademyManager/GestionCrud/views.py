@@ -19,6 +19,53 @@ def quienesSomos(request):
 def contactos(request):
     return render(request, "contactos.html")
 
+
+def paginaRegistro(request):
+    if request.user.is_authenticated:
+        return redirect('index')
+    
+    else:
+        formRegistro = FormRegistro()
+        
+        if request.method == 'POST':
+            formRegistro = FormRegistro(request.POST)
+
+            if formRegistro.is_valid():
+                formRegistro.save()
+                messages.success(request, f'El usuario se ha registrado con exito')
+                return redirect('index')
+            
+    return render(request, 'users/registro.html', {
+        'formRegistro' : formRegistro
+        })
+
+
+def paginaLogin(request):
+    if request.user.is_authenticated:
+        return redirect('index')
+    
+    else:
+        if request.method == "POST":
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect("index")
+            
+            else:
+                messages.warning(request, "El Usuario o Contraseña son incorrectas")
+
+    return render(request, 'users/login.html')
+
+
+def paginaLogout(request):
+    logout(request)
+    return redirect('index')
+
+
 @login_required(login_url="login")
 def academicManager(request):
     return render(request, "academicManager.html")
@@ -35,7 +82,6 @@ def mostrarEstudiantes(request):
 
 
 def mostrarEstudiante(request, id):
-    # estudiantes = Estudiante.objects.raw("SELECT * FROM GestionCrud_estudiante WHERE id = %s", [id])
     estudiante = Estudiante.objects.get(pk = id)
 
     return render(request, 'estudianteDetalles.html', {
@@ -194,6 +240,7 @@ def eliminarProfesor(request, id):
     
     return redirect('mostrarProfesores')
 
+
 #?Vistas clase Carrera
 
 def mostrarCarreras(request):
@@ -273,6 +320,7 @@ def eliminarCarrera(request, id):
     messages.success(request, f'La carrera "{carrera.carNombre}" se ha eliminado con éxito')
     
     return redirect('mostrarCarreras')
+
 
 
 #?Vistas clase Materia
@@ -358,47 +406,3 @@ def eliminarMateria(request, id):
     return redirect('mostrarMaterias')
 
 
-def paginaRegistro(request):
-    if request.user.is_authenticated:
-        return redirect('index')
-    
-    else:
-        formRegistro = FormRegistro()
-        
-        if request.method == 'POST':
-            formRegistro = FormRegistro(request.POST)
-
-            if formRegistro.is_valid():
-                formRegistro.save()
-                messages.success(request, f'El usuario se ha registrado con exito')
-                return redirect('index')
-            
-    return render(request, 'users/registro.html', {
-        'formRegistro' : formRegistro
-        })
-
-
-def paginaLogin(request):
-    if request.user.is_authenticated:
-        return redirect('index')
-    
-    else:
-        if request.method == "POST":
-            username = request.POST.get("username")
-            password = request.POST.get("password")
-
-            user = authenticate(request, username=username, password=password)
-
-            if user is not None:
-                login(request, user)
-                return redirect("index")
-            
-            else:
-                messages.warning(request, "El Usuario o Contraseña son incorrectas")
-
-    return render(request, 'users/login.html')
-
-
-def paginaLogout(request):
-    logout(request)
-    return redirect('index')

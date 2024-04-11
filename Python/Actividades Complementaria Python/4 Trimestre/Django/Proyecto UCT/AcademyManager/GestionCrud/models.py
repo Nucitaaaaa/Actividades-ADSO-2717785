@@ -24,7 +24,7 @@ class Estudiante(models.Model):
     estFoto = models.ImageField(default='null', verbose_name='Foto', upload_to="estFotos")
     estFechaCreacion = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
     estFechaActualizacion = models.DateTimeField(auto_now=True, verbose_name='Fecha de actualización')
-    estCarrera = models.ForeignKey(Carrera, verbose_name='Carrera', on_delete=models.CASCADE,  blank=True, null=True)
+    estCarrera = models.ForeignKey(Carrera, verbose_name='Carrera', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name="Estudiante"
@@ -59,10 +59,10 @@ class Profesor(models.Model):
     profEmail = models.EmailField(verbose_name='Email')
     profTelefono = models.IntegerField(verbose_name='Telefono')
     profFechaNacimiento = models.DateField(verbose_name='Fecha de nacimiento')
-    profFoto = models.ImageField(default='null', upload_to="profFotos",  verbose_name='Foto')
+    profFoto = models.ImageField(upload_to="profFotos",  verbose_name='Foto')
     profFechaCreacion = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
     profFechaActualizacion = models.DateTimeField(auto_now=True, verbose_name='Fecha de actualización')
-    profMaterias = models.ManyToManyField(Materia, verbose_name='Materias', blank=True)
+    profMaterias = models.ManyToManyField(Materia, verbose_name='Materias')
 
     class Meta:
         verbose_name="Profesor"
