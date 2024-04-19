@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="pi">
+
+    </section>
+    <br>
+    <section class="iva">
+        <h2>Calcular IVA</h2>
+        <form>
+            <label for="price">Precio</label>
+            <input id="price" type="number" placeholder="Precio del producto">
+            <br>
+            <label for="iva">Iva</label>
+            <input id="iva" type="number" placeholder="Valor del IVA (ej: 19)">
+            <br>
+            <input type="button" value="Calcular" onclick="calculateIva()">
+            <br>
+            <div id="totalIva">
+                <!--? valor total del producto aqui -->
+            </div>
+        </form>
+    </section>
+    <br>
+    <section class="reverseText">
+        <h2>Revertir Palabras</h2>
+        <form>
+            <label for="word"></label>
+            <input id="word" type="text">
+            <br>
+            <input type="button" value="Revertir" onclick="reverseWord()">
+            <br>
+            <div id="reversedWord">
+                <!--? palabra al revés aquí -->
+            </div>
+        </form>
+    </section>
+
+<script src="app.js"></script>    
+</body>
+</html>
