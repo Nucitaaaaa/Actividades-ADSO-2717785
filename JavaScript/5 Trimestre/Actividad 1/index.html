@@ -9,14 +9,19 @@
 </head>
 <body>
     <section class="pi">
-
+        <h2>Redondear PI</h2>
+        <button id="buttonPi" onclick="pi()">Mostrar</button>
+        <br><br>
+        <div id="pi">
+            <!--? pi redondeado o no redondeado aquí -->
+        </div>
     </section>
     <br>
     <section class="iva">
         <h2>Calcular IVA</h2>
         <form>
             <label for="price">Precio</label>
-            <input id="price" type="number" placeholder="Precio del producto">
+            <input id="price" type="number" placeholder="Precio del producto" required>
             <br>
             <label for="iva">Iva</label>
             <input id="iva" type="number" placeholder="Valor del IVA (ej: 19)">
@@ -30,10 +35,10 @@
     </section>
     <br>
     <section class="reverseText">
-        <h2>Revertir Palabras</h2>
+        <h2>Invertir Palabras</h2>
         <form>
             <label for="word"></label>
-            <input id="word" type="text">
+            <input id="word" type="text" placeholder="Palabra a invertir" required>
             <br>
             <input type="button" value="Revertir" onclick="reverseWord()">
             <br>
@@ -41,6 +46,32 @@
                 <!--? palabra al revés aquí -->
             </div>
         </form>
+    </section>
+    <br>
+    <section class="randomNum1">
+        <h2>Numeros Aleatorios 1</h2>
+        <form>
+            <label for=min" type="number">Numero Minimo</label>
+            <input id="min" type="number" placeholder="" required>
+            <br>
+            <label for="max">Numero maximo</label>
+            <input id="max" type="number" placeholder="" required>
+            <br>
+            <input type="button" value="Calcular" onclick="randomNum1()">
+            <br>
+        </form>
+        <div id="randomNum1">
+            <!--? valor total del producto aqui -->
+        </div>
+    </section>
+    <br>
+    <section class="randomNum2">
+        <h2>Numeros Aleatorios 2</h2>
+        <button onclick="randomNum2()">Generar Numeros</button>
+        <br><br>
+        <div id="randomNum2">
+            <!--? valor total del producto aqui -->
+        </div>
     </section>
 
 <script src="app.js"></script>    
