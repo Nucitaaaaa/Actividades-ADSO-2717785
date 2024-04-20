@@ -17,6 +17,7 @@ hr {
 }
 
 button {
+    width: 25%;
     padding: 8px 16px;
     background-color: #ed9455af;
     border: none;
@@ -87,9 +88,17 @@ input[type="button"]:hover {
     border-radius: 30px;
 }
 
+.boton {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #pi, #totalIva, #reversedWord, #randomNum1,
 #randomNum2 {
-    padding-bottom: 20px;
+    text-decoration: underline;
+    padding: 20px;
     text-align: center;
     font-size: 18px;
     margin-top: 10px;

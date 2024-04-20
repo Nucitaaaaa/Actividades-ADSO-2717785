@@ -35,7 +35,13 @@ function calculateIva(price, iva){
         total = price + (price * defIva);
     }
 
-    divTotal.innerText = `$${total}`;
+    else if(!price){
+        divTotal.innerText = `El campo "precio" no puede estar vacio`;
+    }
+
+    else {
+        divTotal.innerText = `El total con IVA incluido es de $${total}`;
+    }
 }
 
 
@@ -54,8 +60,14 @@ function reverseWord(word) {
         newWord += letter;
     }
     
-    divWord.innerText = `${newWord}`;
+    if (!word) {
+        divWord.innerText = `El campo "palabra" no puede estar vacio`;
+    }
 
+    else {
+        divWord.innerText = `${newWord}`;
+    }
+    
 }
 
 

@@ -13,7 +13,6 @@
         <section class="pi">
             <h2>Redondear PI</h2>
             <button id="buttonPi" onclick="pi()">Mostrar</button>
-            <br>
             <div id="pi">
                 <!--? pi redondeado o no redondeado aquí -->
             </div>
@@ -24,16 +23,15 @@
             <form>
                 <label for="price">Precio</label>
                 <input id="price" type="number" placeholder="Precio del producto" required>
-                <br>
                 <label for="iva">Iva</label>
                 <input id="iva" type="number" placeholder="Valor del IVA (ej: 19)" value="19">
-                <br>
-                <input type="button" value="Calcular" onclick="calculateIva()">
-                <br>
-                <div id="totalIva">
-                    <!--? valor total del producto aqui -->
+                <div class="boton">
+                    <input type="button" value="Calcular" onclick="calculateIva()">
                 </div>
             </form>
+            <div id="totalIva">
+                <!--? valor total del producto aqui -->
+            </div>
         </section>
         <br>
         <section class="reverseText">
@@ -41,13 +39,14 @@
             <form>
                 <label for="word"></label>
                 <input id="word" type="text" placeholder="Palabra a invertir" required>
-                <br>
-                <input type="button" value="Revertir" onclick="reverseWord()">
-                <br>
-                <div id="reversedWord">
-                    <!--? palabra al revés aquí -->
+                <div class="boton">
+                    <input type="button" value="Revertir" onclick="reverseWord()">
                 </div>
+                <br>
             </form>
+            <div id="reversedWord">
+                <!--? palabra al revés aquí -->
+            </div>
         </section>
         <br>
         <section class="randomNum1">
@@ -55,12 +54,11 @@
             <form>
                 <label for=min" type="number">Numero Minimo</label>
                 <input id="min" type="number" placeholder="" value="1" required>
-                <br>
                 <label for="max">Numero Maximo</label>
                 <input id="max" type="number" placeholder="" value="100" required>
-                <br>
-                <input type="button" value="Generar" onclick="randomNum1()">
-                <br>
+                <div class="boton">
+                    <input type="button" value="Generar" onclick="randomNum1()">
+                </div>
             </form>
             <div id="randomNum1">
                 <!--? valor total del producto aqui -->
