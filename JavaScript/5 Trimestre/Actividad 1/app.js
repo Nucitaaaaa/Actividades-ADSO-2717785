@@ -35,7 +35,7 @@ function calculateIva(price, iva){
         total = price + (price * defIva);
     }
 
-    divTotal.innerText = `${total}`;
+    divTotal.innerText = `$${total}`;
 }
 
 
@@ -77,7 +77,10 @@ function randomNum1(min, max) {
 
 //*Ejercicio 5
 function randomNum2() {
-    let divNum2 = document.getElementById("randomNum2");
+    var randomNum2Val = document.getElementById("randomNum2Val");
+    var randomNum2Container = document.getElementById("randomNum2");
+    var contentWidth = randomNum2Val.scrollWidth;
+    randomNum2Container.style.width = (contentWidth + 10) + "px";
 
     let min = 1;
     let max = 1000;
@@ -98,5 +101,5 @@ function randomNum2() {
     }
     
     console.log(randomNums)
-    divNum2.innerText = `${finalNums}.`;
+    randomNum2Val.innerText = `${finalNums}.`;
 }

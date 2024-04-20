@@ -1,0 +1,106 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin-bottom: 30px;
+    padding: 0;
+    background-color: #FFEC9E;
+}
+
+h1 {
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+hr {
+    border: 1px solid black;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #ed9455af;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ED9455;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    border-color: transparent !important;
+    border-width: 0;
+    color: rgb(31, 31, 31);
+    background-color: #ED9455;
+    border-width: 0;
+    width: 100%;
+    margin-top: 2px;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.699);
+}
+
+input[type="number"],
+input[type="text"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+input[type="button"] {
+    width: 50%;
+    font-weight: bold;
+    padding: 8px 16px;
+    color: black;
+    background-color: #ed9455af;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="button"]:hover {
+    background-color: #ED9455;
+}
+
+.container section {
+    width: 500px;
+    padding: 10px;
+    margin: auto;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFBB70;
+    border-radius: 30px;
+}
+
+#pi, #totalIva, #reversedWord, #randomNum1,
+#randomNum2 {
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#randomNum2 {
+    width: 300px;
+    overflow: hidden;
+}
+
+#randomNum2Val {
+    overflow: hidden;
+    word-wrap: break-word; 
+}
