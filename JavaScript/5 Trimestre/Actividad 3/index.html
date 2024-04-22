@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Generador De Contraseñas</h1>
+    <div class="contenedor">
+        <div class="contraseñaDiv">
+            <p id="contraseña"></p>
+            <form>
+                <label for="longitud">Cantidad de Caracteres</label>
+                <input id="longitud" type="number" min="7" placeholder="minimo 7 caracteres">
+                <br>
+                <label>Caracteres Permitidos:</label>
+                <br>
+                <input type="checkbox" name="" id="letras" checked>
+                <label for="letras">Letras</label>
+                <br>
+                <input type="checkbox" name="" id="numeros">
+                <label for="numeros">Numeros</label>
+                <br>
+                <input type="checkbox" name="" id="carEsp">
+                <label for="carEsp">Caracteres Especiales</label>
+                <br>
+                <button onclick="generarContrasena()">Generar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
