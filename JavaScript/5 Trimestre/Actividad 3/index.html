@@ -9,26 +9,28 @@
 </head>
 <body>
     <h1>Generador De Contraseñas</h1>
+    <div class="divContraseña">
+        <p>Su contraseña es:</p>
+        <p id="contraseña"></p>
+    </div>
+    <br>
     <div class="contenedor">
         <div class="contraseñaDiv">
-            <p id="contraseña"></p>
-            <form>
-                <label for="longitud">Cantidad de Caracteres</label>
-                <input id="longitud" type="number" min="7" placeholder="minimo 7 caracteres">
-                <br>
-                <label>Caracteres Permitidos:</label>
-                <br>
-                <input type="checkbox" name="" id="letras" checked>
-                <label for="letras">Letras</label>
-                <br>
-                <input type="checkbox" name="" id="numeros">
-                <label for="numeros">Numeros</label>
-                <br>
-                <input type="checkbox" name="" id="carEsp">
-                <label for="carEsp">Caracteres Especiales</label>
-                <br>
-                <button onclick="generarContrasena()">Generar</button>
-            </form>
+            <label for="longitud">Cantidad de Caracteres</label>
+            <input id="longitud" type="number" value="8" min="8">
+            <br>
+            <label>Caracteres Permitidos:</label>
+            <br>
+            <input type="checkbox" name="" id="letras" checked>
+            <label for="letras">Letras</label>
+            <br>
+            <input type="checkbox" name="" id="numeros">
+            <label for="numeros">Numeros</label>
+            <br>
+            <input type="checkbox" name="" id="carEsp">
+            <label for="carEsp">Caracteres Especiales</label>
+            <br>
+            <button onclick="generarContrasena()">Generar</button>
         </div>
     </div>
 
