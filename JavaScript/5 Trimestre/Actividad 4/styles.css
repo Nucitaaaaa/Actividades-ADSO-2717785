@@ -1,0 +1,67 @@
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFCDEA;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #86469C;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.formAgregar {
+    background-color: #FB9AD1;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.formAgregar label {
+    font-weight: bold;
+    color: #86469C;
+}
+
+.formAgregar input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #BC7FCD;
+    border-radius: 5px;
+    color: #86469C;
+}
+
+.formAgregar input[type="button"] {
+    background-color: #BC7FCD;
+    margin: 5px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formAgregar input[type="button"]:hover {
+    background-color: #86469C;
+    transition: all 500ms;
+}
+
+.mostrarTareas ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mostrarTareas li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
