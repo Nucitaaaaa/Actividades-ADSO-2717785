@@ -1,0 +1,57 @@
+
+/*?Index & Generales*/
+
+span {
+    color: transparent;
+}
+
+/*?Calculadora*/
+
+.calculadora {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#operacion {
+    font-size: 24px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+input[type="button"] {
+    width: 55px; /* Ajusta el ancho de los botones */
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #e0e0e0;
+}
+
+span {
+    width: calc(25% - 5px); /* Ajusta el ancho del span */
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+/*?Reloj*/
+
+
+/*?Formulario*/
