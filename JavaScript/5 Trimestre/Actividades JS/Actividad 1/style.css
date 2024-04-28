@@ -1,0 +1,109 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    padding-top: 20px;
+    text-align: center;
+    color: #333;
+}
+
+hr {
+    border: 1px solid #666;
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #666;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+input[type="button"] {
+    width: 150px;
+    font-weight: bold;
+    padding: 10px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+.container section {
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boton {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#roundedPi, #totalWithIva, #reversedWord, #randomNumResult, #randomNums {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+}
+
+#randomNums {
+    width: 300px;
+    overflow: hidden;
+}
+
+#randomNumsVal {
+    overflow: hidden;
+    word-wrap: break-word; 
+}

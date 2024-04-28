@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Actividad 1</h1>
+        
+        <section class="rounded-pi">
+            <h2>Redondear PI</h2>
+            <div>
+                <button id="roundButton" onclick="pi()">Mostrar PI</button>
+                <p id="roundedPi"></p>
+            </div>
+        </section>
+        
+        <section class="calculated-iva">
+            <h2>Calcular IVA</h2>
+            <form>
+                <label for="productPrice">Precio</label>
+                <input id="productPrice" type="number" placeholder="Precio" required>
+                
+                <label for="vat">IVA</label>
+                <input id="vat" type="number" placeholder="IVA" value="19">
+                
+                <div class="btn">
+                    <input type="button" value="Calcular" onclick="calculateIva()">
+                </div>
+            </form>
+            <p id="totalWithIva"></p>
+        </section>
+        
+        <section class="reversed-word">
+            <h2>Palabra al revés</h2>
+            <form>
+                <label for="inputWord">Palabra a invertir</label>
+                <input id="inputWord" type="text" required>
+                
+                <div class="btn">
+                    <input type="button" value="invertir" onclick="reverseWord()">
+                </div>
+            </form>
+            <p id="reversedWord"></p>
+        </section>
+        
+        <section class="random-num-1">
+            <h2>Números Aleatorios</h2>
+            <form>
+                <label for="minNum">Número Mínimo</label>
+                <input id="minNum" type="number" placeholder="" value="1" required>
+                
+                <label for="maxNum">Número Máximo</label>
+                <input id="maxNum" type="number" placeholder="" value="100" required>
+                
+                <div class="btn">
+                    <input type="button" value="Generar" onclick="randomNum1()">
+                </div>
+            </form>
+            <p id="randomNumResult"></p>
+        </section>
+        
+        <section class="random-num-2">
+            <h2>Números Aleatorios 1 - 1000</h2>
+            <div>
+                <button onclick="randomNum2()">Generar</button>
+                <p id="randomNums"></p>
+            </div>
+        </section>
+    </div>
+<script src="app.js"></script>    
+</body>
+</html>

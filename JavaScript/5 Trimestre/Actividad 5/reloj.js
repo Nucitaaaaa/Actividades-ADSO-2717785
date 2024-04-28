@@ -8,7 +8,6 @@ function mostrarHora() {
 
     hora = hora % 12 || 12; //convertir de 24 a 12 h
 
-    hora < 10 ? hora = '0' + hora : hora = hora
     minutos < 10 ? minutos = '0' + minutos : minutos = minutos
     segundos < 10 ? segundos = '0' + segundos : segundos = segundos
 
@@ -27,3 +26,5 @@ function cronometro() {
 function temporizador() {
 
 }
+
+// performance.

@@ -1,0 +1,83 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.formAgregar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.formAgregar:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.formAgregar label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.formAgregar input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    color: #333;
+    font-size: 16px;
+    transition: border-bottom 0.3s ease-in-out;
+}
+
+.formAgregar input[type="text"]:focus {
+    outline: none;
+    border-bottom: 2px solid #ff6f61;
+}
+
+.formAgregar input[type="button"] {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.formAgregar input[type="button"]:hover {
+    background-color: #ff4f42;
+}
+
+.mostrarTareas ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mostrarTareas li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
