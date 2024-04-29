@@ -12,6 +12,10 @@ function calcular(){
     operacion = operacion.replace(/÷/g, '/'); 
     operacion = operacion.replace(/×/g, '*'); 
     
+    // if(){
+
+    // }
+    
     try{
         let resultado = eval(operacion);
         operacionContenedor.textContent = `${resultado}`

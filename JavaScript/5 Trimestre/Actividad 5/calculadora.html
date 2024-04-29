@@ -13,41 +13,42 @@
             <h1>Actividad 5</h1>
         </header>
         <nav>
-            <a href="index.html">Inicio</a>
             <a href="calculadora.html">Calculadora</a>
             <a href="reloj.html">Reloj</a>
             <a href="formulario.html">Formulario</a>
         </nav>
         <section class="calculadoraSection">
             <div class="calculadora">
-                <p id="operacion"></p>
+                <div class="operacionDiv">
+                    <p id="operacion"></p>
+                </div>
                 <div class="botones">
                     <input type="button" value="7" onclick="agregarValor(7)"></input>
                     <input type="button" value="8" onclick="agregarValor(8)"></input>
                     <input type="button" value="9" onclick="agregarValor(9)"></input>
-                    <input type="button" value="&#247;" onclick="agregarValor('&#247;')"></input>
-                    <input type="button" value="⌫" onclick="borrar()" ondblclick="borrarTodo()"></input>
+                    <input type="button" value="&#247;" onclick="agregarValor('&#247;')" class="signos"></input>
+                    <input type="button" value="DEL" onclick="borrar()" class="borrar"></input>
                 </div>
                 <div class="botones">
                     <input type="button" value="4" onclick="agregarValor(4)"></input>
                     <input type="button" value="5" onclick="agregarValor(5)"></input>
                     <input type="button" value="6" onclick="agregarValor(6)"></input>
-                    <input type="button" value="&#215;" onclick="agregarValor('&#215;')"></input>
-                    <span>----</span>
+                    <input type="button" value="&#215;" onclick="agregarValor('&#215;')" class="signos"></input>
+                    <input type="button" value="C" onclick="borrarTodo()" class="borrar"></input>
                 </div>
                 <div class="botones">
                     <input type="button" value="1" onclick="agregarValor(1)"></input>
                     <input type="button" value="2" onclick="agregarValor(2)"></input>
                     <input type="button" value="3" onclick="agregarValor(3)"></input>
-                    <input type="button" value="&#8722;" onclick="agregarValor('-')"></input>
-                    <span>----</span>
+                    <input type="button" value="&#8722;" onclick="agregarValor('-')" class="signos"></input>
+                    <input type="button" value="." onclick="agregarValor('.')" class="signos"></input>
                 </div>
                 <div class="botones">
                     <input type="button" value="0" onclick="agregarValor(0)"></input>
-                    <input type="button" value="." onclick="agregarValor('.')"></input>
-                    <input type="button" value="&#43;" onclick="agregarValor('&#43;')"></input>
-                    <input type="button" value="&#61;" onclick="calcular()"></input>
-                    <span>----</span>
+                    <input type="button" value="&#43;" onclick="agregarValor('&#43;')" class="signos"></input>
+                    <input type="button" value="&#40;" onclick="agregarValor('&#40;')" class="signos"></input>
+                    <input type="button" value="&#41;" onclick="agregarValor('&#41;')" class="signos"></input>
+                    <input type="button" value="&#61;" onclick="calcular()" class="igual"></input>
                 </div>
             </div>
         </section>
