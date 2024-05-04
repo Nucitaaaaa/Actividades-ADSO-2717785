@@ -49,11 +49,12 @@ nav a:hover {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #10ad8e;
+    background-color: #108dad;
     border: 1px solid;
 }
 
 #operacion {
+    font-family: "Kode Mono", monospace;
     font-size: 24px;
     padding: 10px;
     margin-bottom: 30px; 
@@ -119,11 +120,70 @@ input[type="button"]:hover {
 
 /*?Reloj*/
 
-#reloj {
-    margin: 0 auto;
-
+.relojSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
 
+.bordeArriba {
+    display: flex;
+    position: absolute;
+    right: 460px;
+    top: 213px;
+}
+
+.bordeArriba1, .bordeArriba3 {
+    background-color: grey;
+    width: 40px;
+    height: 40px;
+}
+
+.bordeArriba2 {
+    background-color: rgba(0, 0, 0, 0.747);
+    width: 20px;
+    height: 40px;
+}
+
+.relojBorde {
+    background-color:  #108dad;
+    border-radius: 50px;
+    padding: 40px;
+}
+
+.relojFondo {
+    background-color: lightblue;
+    border-radius: 30px;
+    padding: 25px 80px;
+}
+
+#reloj {
+    font-family: "Kode Mono", monospace;
+    font-style: normal;
+    margin: 0 auto;
+    padding: 30px 5px 30px 5px;
+    width: 300px;
+    text-align: center;
+    background-color: white;
+    font-size: 100px;
+    border-radius: 5px;
+}
+
+.relojBordeAbajo {
+    background-color: grey;
+    width: 400px;
+    height: 16px;
+    margin: 0;
+}
+
+.relojBordeAbajo2 {
+    background-color: rgba(0, 0, 0, 0.747);
+    width: 400px;
+    height: 16px;
+    margin: 0;
+}
 
 /*?Formulario*/
 
