@@ -21,32 +21,38 @@
             <a href="formulario.html">Formulario</a>
         </nav>
         <section class="relojSection">
-                <h3>Reloj</h3>
-                <div class="relojBorde">
-                    <div class="relojFondo">
-                        <div id="reloj"></div>
+            <div class="relojBorde">
+                <div class="relojFondo">
+                    <div id="reloj"></div>
+                </div>
+            </div>
+            <div class="relojBordeAbajo"></div>
+            <div class="relojBordeAbajo2"></div>
+            <div class="tempYcronometro">
+                <section class="cronometro">
+                    <h3>Cronometro</h3>
+                    <div id="cronometro">00:00:00</div>
+                    <div class="botones">
+                        <button id="inicio">Iniciar</button>
+                        <button id="parar">Parar</button>
+                        <button id="reiniciar">Reiniciar</button>
                     </div>
-                </div>
-                <div class="relojBordeAbajo"></div>
-                <div class="relojBordeAbajo2"></div>
-                <div class="tempYcronometro">
-                    <section class="cronometro">
-                        <h3>Cronometro</h3>
-                        <div id="cronometro">00:00:00</div>
-                        <button id="inicio">Iniciar</button>
-                        <button id="parar">Parar</button>
-                        <button id="reiniciar">Reiniciar</button>
-                    </section>
-                    <section class="temporizador">
-                        <h3>Temporizador</h3>
-                        <div id="cronometro">00:00:00</div>
-                        <button id="inicio">Iniciar</button>
-                        <button id="parar">Parar</button>
-                        <button id="reiniciar">Reiniciar</button>
-                    </section>
-                </div>
+                </section>
+                <section class="temporizador">
+                    <h3>Temporizador</h3>
+                    <div id="temporizador">00:00:00</div>
+                    <input type="number" id="inputTiempo" placeholder="Tiempo en segundos">
+                    <br>
+                    <button id="iniciarTemp">Iniciar</button>
+                    <div class="botones">
+                        <button id="pausarTemp">Parar</button>
+                        <button id="seguirTemp">Seguir</button>
+                        <button id="reiniciarTemp">Reiniciar</button>
+                    </div>
+                </section>
+                <br>
+            </div>
         </section>
-        <br>
     </div>
     <script src="reloj.js"></script>
 </body>

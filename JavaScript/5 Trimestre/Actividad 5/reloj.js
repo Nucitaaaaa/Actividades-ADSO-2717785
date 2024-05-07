@@ -1,11 +1,13 @@
 
+
+//? Reloj
+
 function mostrarHora() {
     const dia = new Date();
     let hora = dia.getHours();
     let minutos = dia.getMinutes();
-    // let horario = hora >= 12 ? 'P.M' : 'A.M';
 
-    hora = hora % 12 || 12; //convertir de 24 a 12 h
+    hora = hora % 12 || 12; 
 
     minutos < 10 ? minutos = '0' + minutos : minutos = minutos
 
@@ -16,6 +18,10 @@ function mostrarHora() {
 
 setInterval(mostrarHora, 1000);
 mostrarHora();
+
+
+//? Cronometro
+
 
 function cronometro() {
     let tiempoInicio = 0;
@@ -36,6 +42,9 @@ function cronometro() {
     }
 
     function iniciarCronometro() {
+        document.getElementById("parar").style.display = 'block'
+        document.getElementById("reiniciar").style.display = 'block'
+        document.getElementById("inicio").style.display = 'none'
         if (!corriendo) {
             tiempoInicio = Date.now();
             intervalo = setInterval(actualizarCronometro, 1000);
@@ -50,6 +59,10 @@ function cronometro() {
 
     function reiniciarCronometro() {
         pararCronometro();
+        document.getElementById("inicio").style.display = 'block'
+        document.getElementById("parar").style.display = 'none'
+        document.getElementById("reiniciar").style.display = 'none'
+        
         document.getElementById("cronometro").textContent = "00:00:00";
     }
 
@@ -61,11 +74,100 @@ function cronometro() {
     document.getElementById("parar").addEventListener("click", pararCronometro);
     document.getElementById("reiniciar").addEventListener("click", reiniciarCronometro);
 
+} cronometro()
+
+
+//?Temporizador 
+
+
+let temporizador;
+let tiempoRestante;
+let temporizadorCorriendo = false;
+
+const temporizadorDisplay = document.getElementById('temporizador');
+const iniciarTemp = document.getElementById('iniciarTemp');
+const seguirTemp = document.getElementById('seguirTemp');
+const pausarTemp = document.getElementById('pausarTemp');
+const reiniciarTemp = document.getElementById('reiniciarTemp');
+const inputTiempo = document.getElementById('inputTiempo');
+
+function iniciarTemporizador() {
+    iniciarTemp.style.display = 'none'
+    pausarTemp.style.display = 'block'
+    reiniciarTemp.style.display = 'block'
+    let tiempoInicial = inputTiempo.value;
+    tiempoRestante = tiempoInicial;
+    temporizadorCorriendo = true;
+
+    temporizador = setInterval(actualizarTemporizador, 1000);
 }
 
-cronometro()
+function actualizarTemporizador() {
+    const horas = Math.floor(tiempoRestante / 3600);
+    const minutos = Math.floor((tiempoRestante % 3600) / 60);
+    const segundos = tiempoRestante % 60;
 
-function temporizador() {
+    temporizadorDisplay.textContent = `${formatoTiempo(horas)}:${formatoTiempo(minutos)}:${formatoTiempo(segundos)}`;
 
+    if (tiempoRestante === 0) {
+    detenerTemporizador();
+    } else {
+    tiempoRestante--;
+    }
 }
+
+function formatoTiempo(tiempo) {
+    return tiempo < 10 ? `0${tiempo}` : tiempo;
+}
+
+function detenerTemporizador() {
+    clearInterval(temporizador);
+    iniciarTemp.style.display = 'none'
+    seguirTemp.style.display = 'block'
+    temporizadorCorriendo = false;
+}
+
+function seguirTemporizador() {
+    seguirTemp.style.display = 'none'
+    tiempoRestante = tiempoRestante;
+    temporizadorCorriendo = true;
+
+    temporizador = setInterval(actualizarTemporizador, 1000);
+}
+
+function reiniciarTemporizador() {
+    detenerTemporizador();
+
+    iniciarTemp.style.display = 'block'
+    seguirTemp.style.display = 'none'
+    pausarTemp.style.display = 'none'
+    reiniciarTemp.style.display = 'none'
+
+    temporizadorDisplay.textContent = '00:00:00';
+    inputTiempo.value = '';
+}
+
+iniciarTemp.addEventListener('click', () => {
+    if (!temporizadorCorriendo && inputTiempo.value !== '') {
+    iniciarTemporizador();
+    }
+});
+
+seguirTemp.addEventListener('click', () => {
+    if (!temporizadorCorriendo && inputTiempo.value !== '') {
+    seguirTemporizador();
+    }
+});
+
+pausarTemp.addEventListener('click', () => {
+    if (temporizadorCorriendo) {
+    detenerTemporizador();
+    }
+});
+
+reiniciarTemp.addEventListener('click', () => {
+    reiniciarTemporizador();
+});
+
+    
 

@@ -12,10 +12,13 @@ function calcular(){
     operacion = operacion.replace(/÷/g, '/'); 
     operacion = operacion.replace(/×/g, '*'); 
     
-    // if(){
+    let expression = operacion;
 
-    // }
-    
+    if (/[\+\-\*\/]{2,}/.test(expression)) {
+        operacionContenedor.textContent = `Syntax ERROR`
+        return;
+    }
+
     try{
         let resultado = eval(operacion);
         operacionContenedor.textContent = `${resultado}`

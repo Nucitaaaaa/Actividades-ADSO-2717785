@@ -142,7 +142,6 @@ input[type="button"]:hover {
     display: flex;
     flex-direction: column;
     align-items: center; 
-    height: 100vh; 
     margin: 50px;
 }
 
@@ -184,14 +183,72 @@ input[type="button"]:hover {
     margin: 0;
 }
 
-.tempYcronometro {
-    margin: 60px;
-    padding: 30px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
+
+
+#parar, #reiniciar, #seguirTemp, #reiniciarTemp, #pausarTemp {
+    display: none;
 }
+
+.tempYcronometro {
+    width: 1000px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cronometro,
+.temporizador {
+    text-align: center;
+    margin: 20px;
+    border: 1px solid #108dadb9;
+    border-radius: 5px;
+    padding: 20px;
+    width: 45%;
+}
+
+h3 {
+    color: #333;
+}
+
+#cronometro,
+#temporizador {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #108dadb9;
+    border-radius: 5px;
+}
+
+.cronometro button, .temporizador button {
+    background-color: #108dadb9;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #108dad;
+}
+
 
 /*?Formulario*/
 
