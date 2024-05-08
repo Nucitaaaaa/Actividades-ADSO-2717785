@@ -14,6 +14,8 @@ class Empleado {
     }
 }
 
+var empleado = new Empleado("jose", "asesor")
+empleado.agregarEmpleado(empleado)
 
 //Traer datos del DOM
 var nombreEmpleado = document.getElementById("nombre")
@@ -27,7 +29,7 @@ function mostrarEmpleados() {
 
     listaEmpleados.forEach((empleado,index) => {
         const li = document.createElement("li");
-        li.textContent = `${empleado.nombre} - ${empleado.cargo}`;
+        li.innerHTML = `<strong>Nombre:</strong> ${empleado.nombre} <br> <strong>Cargo:</strong> ${empleado.cargo} <br>`;
 
         const eliminar = document.createElement("button");
         eliminar.textContent = "Eliminar";

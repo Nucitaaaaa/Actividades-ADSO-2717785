@@ -1,0 +1,105 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFBDA;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+} 
+
+form {
+    margin-bottom: 20px;
+}
+
+#formulario-agregar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form#formulario-agregar label {
+    text-align: left !important;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+form input[type="text"] {
+    width: 50%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #FFBB70;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #FFBB70;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+form button:hover {
+    background-color: #ED9455;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 20px 50px;
+    margin-bottom: 10px;
+    border: 1px solid #FFBB70;
+    border-radius: 5px;
+}
+
+li button {
+    margin-left: auto;
+}
+
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+button { 
+    padding: 10px 20px;
+    background-color: #FFBB70;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #ED9455;
+} 
+
+#listaEmpleados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
