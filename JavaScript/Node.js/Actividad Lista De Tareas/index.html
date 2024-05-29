@@ -10,9 +10,17 @@
 <body>
     <h1>Lista de tareas</h1>
     <h3>Crear Tareas</h3>
-    <form action="" method="post">
-
-    </form>
+        <form id="formulario-tarea">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div>
+                <label for="contenido">Contenido:</label>
+                <textarea id="contenido" name="contenido" required></textarea>
+            </div>
+            <button type="submit">Agregar Tarea</button>
+        </form>
     <br>
     <hr>
     <br>
