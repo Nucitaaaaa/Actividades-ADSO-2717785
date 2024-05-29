@@ -8,7 +8,8 @@ app.use(cors()) //*se llama a la libreria cors
 
 const estudiantes = [
     { id: 1, nombre: "Miguel", apellido: "Perdomo", edad: 19, semestre: 2, estudia: true },
-    { id: 2, nombre: "Juan", apellido: "Figueroa", edad: 29, semestre: 10, estudia: false }
+    { id: 2, nombre: "Juan", apellido: "Figueroa", edad: 29, semestre: 10, estudia: false },
+    { id: 3, nombre: "Juanito", apellido: "Perez", edad: 39, semestre: 7, estudia: true }
 ];
 
 app.get("/", (req, res) => {
