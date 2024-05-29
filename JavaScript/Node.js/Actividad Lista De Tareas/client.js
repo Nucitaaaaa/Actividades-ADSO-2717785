@@ -29,19 +29,19 @@ function agregarTarea() {
 
 function agregarTareaALista(tarea) {
     const tareasElement = document.getElementById("tareas"); 
-    
+
     let div = document.createElement("div");
                 
-    let nombre = document.createElement("h4");
-    let nombreContent = document.createTextNode(`- ${tarea.nombre}`);
+    let nombre = document.createElement("h3");
+    let nombreContent = document.createTextNode(`${tarea.nombre}`);
     nombre.appendChild(nombreContent);  
     
     let contenido = document.createElement("p");
-    let contenidoContent = document.createTextNode(`Descripcion: ${tarea.contenido}`);
+    let contenidoContent = document.createTextNode(`${tarea.contenido}`);
     contenido.appendChild(contenidoContent);
 
     const eliminar = document.createElement("button");
-    eliminar.textContent = "Eliminar";
+    eliminar.textContent = "Borrar";
     eliminar.addEventListener("click", () => {
         eliminarTarea(tarea.id);
         div.remove();
@@ -79,16 +79,16 @@ function lista() {
             data.forEach(function(tarea) {
                 let div = document.createElement("div");
                 
-                let nombre = document.createElement("h4");
-                let nombreContent = document.createTextNode(`- ${tarea.nombre}`);
+                let nombre = document.createElement("h3");
+                let nombreContent = document.createTextNode(`${tarea.nombre}`);
                 nombre.appendChild(nombreContent);  
                 
                 let contenido = document.createElement("p");
-                let contenidoContent = document.createTextNode(`Descripcion: ${tarea.contenido}`);
+                let contenidoContent = document.createTextNode(`${tarea.contenido}`);
                 contenido.appendChild(contenidoContent);
 
                 const eliminar = document.createElement("button");
-                eliminar.textContent = "Eliminar";
+                eliminar.textContent = "Borrar";
                 eliminar.addEventListener("click", () => {
                     eliminarTarea(tarea.id);
                     div.remove();

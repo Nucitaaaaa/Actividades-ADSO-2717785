@@ -14,9 +14,15 @@ h1 {
     margin-bottom: 20px;
 }
 
-h3 {
-    color: #555;
-    margin-bottom: 15px;
+h3, p {
+    text-align: center;
+    padding: 5px;
+}
+
+div {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
 }
 
 form {
@@ -32,6 +38,7 @@ form {
 
 form div {
     margin-bottom: 15px;
+    background-color: transparent;
 }
 
 label {
@@ -54,7 +61,7 @@ textarea {
     height: 100px;
 }
 
-button {
+form button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -65,8 +72,24 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+form button:hover {
     background-color: #45a049;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #af4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #a83131;
 }
 
 hr {
