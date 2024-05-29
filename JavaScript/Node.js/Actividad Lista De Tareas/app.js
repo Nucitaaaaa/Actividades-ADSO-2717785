@@ -12,10 +12,7 @@ app.use(cors())
 const port = process.env.port || 3030;
 
 //TODO - Almacenar Tareas (Temporal)
-const tareas = [
-    { id: 1, nombre: "Hacer aseo", contenido:"En la casa :D"},
-    { id: 2, nombre: "Tarea PHP", contenido:"No quiero hacerla xd"},
-];
+const tareas = [];
 
 
 //?Rutas
@@ -46,19 +43,6 @@ app.post("/tareas", (req, res) => {
     res.send(tarea);
 });
 
-app.put("/tareas/tarea/:id", (req, res) => {
-    const tarea = tareas.find((task) => task.id === parseInt(req.params.id));
-
-    if (!tarea) return res.status(404).send("No se encontró la tarea");
-
-    else {
-        tarea.id = req.body.id,
-        tarea.nombre = req.body.nombre,
-        tarea.contenido = req.body.contenido,
-        
-        res.send(tarea)
-    }
-})
 
 app.delete("/tareas/tarea/:id", (req, res) => {
     const tarea = tareas.find((task) => task.id === parseInt(req.params.id))
@@ -74,3 +58,18 @@ app.delete("/tareas/tarea/:id", (req, res) => {
 
 //*Conexión al puerto
 app.listen(port, () => console.log(`Escuchando al puerto ${port}....`));
+
+
+// app.put("/tareas/tarea/:id", (req, res) => {
+//     const tarea = tareas.find((task) => task.id === parseInt(req.params.id));
+
+//     if (!tarea) return res.status(404).send("No se encontró la tarea");
+
+//     else {
+//         tarea.id = req.body.id,
+//         tarea.nombre = req.body.nombre,
+//         tarea.contenido = req.body.contenido,
+        
+//         res.send(tarea)
+//     }
+// })
