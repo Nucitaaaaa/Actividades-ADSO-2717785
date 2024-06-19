@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Biblioteca</h1>
+  
+  <!-- Registro de Usuario -->
+  <section>
+    <h2>Registro de Usuario</h2>
+    <form id="registerForm">
+      <input type="text" id="registerName" placeholder="Nombre" required>
+      <input type="email" id="registerEmail" placeholder="Correo" required>
+      <input type="password" id="registerPassword" placeholder="Contraseña" required>
+      <button type="submit">Registrar</button>
+    </form>
+    <div id="registerMessage"></div>
+  </section>
+
+  <!-- Inicio de Sesión -->
+  <section>
+    <h2>Inicio de Sesión</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Correo" required>
+      <input type="password" id="loginPassword" placeholder="Contraseña" required>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="loginMessage"></div>
+  </section>
+
+  <!-- Búsqueda de Libros -->
+  <section>
+    <h2>Búsqueda de Libros</h2>
+    <form id="searchForm">
+      <input type="text" id="searchTitle" placeholder="Título">
+      <input type="text" id="searchAuthor" placeholder="Autor">
+      <input type="text" id="searchGenre" placeholder="Género">
+      <button type="submit">Buscar</button>
+    </form>
+    <div id="searchResults"></div>
+  </section>
+
+  <!-- Préstamo de Libros -->
+  <section>
+    <h2>Préstamo de Libros</h2>
+    <form id="borrowForm">
+      <input type="number" id="borrowUserId" placeholder="ID de Usuario" required>
+      <input type="number" id="borrowBookId" placeholder="ID de Libro" required>
+      <button type="submit">Solicitar Préstamo</button>
+    </form>
+    <div id="borrowMessage"></div>
+  </section>
+
+  <!-- Renovación de Préstamos -->
+  <section>
+    <h2>Renovación de Préstamos</h2>
+    <form id="renewForm">
+      <input type="number" id="renewLoanId" placeholder="ID de Préstamo" required>
+      <button type="submit">Renovar Préstamo</button>
+    </form>
+    <div id="renewMessage"></div>
+  </section>
+
+  <!-- Devolución de Libros -->
+  <section>
+    <h2>Devolución de Libros</h2>
+    <form id="returnForm">
+      <input type="number" id="returnLoanId" placeholder="ID de Préstamo" required>
+      <input type="number" id="returnBookId" placeholder="ID de Libro" required>
+      <button type="submit">Devolver Libro</button>
+    </form>
+    <div id="returnMessage"></div>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

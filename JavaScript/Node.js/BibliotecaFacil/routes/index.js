@@ -1,10 +1,10 @@
+
 const express = require('express');
 const router = express.Router();
 const path = require('path');
 const db = require('../db'); // Asegúrate de que la ruta sea correcta
 
 // Definir las rutas
-
 
 // Ruta para la página de inicio (login)
 router.get('/', (req, res) => {
@@ -20,6 +20,17 @@ router.get('/gestor', (req, res) => {
 router.get('/user', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/user.html'));
 });
+
+// Ruta para la vista de los libros disponibles 
+router.get('/libros', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/libros.html'));
+});
+
+// Ruta para la vista de los libros rentados
+router.get('/librosRentados', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/librosRentados.html'));
+});
+
 
 router.post('/register', (req, res) => {
   const { name, email, password } = req.body;
@@ -49,7 +60,7 @@ router.post('/login', (req, res) => {
       return res.status(500).json({ error: err.message });
     }
     if (row) {
-      res.redirect('/user'); //lo que no dejaba funcionar el login era el res.send xd
+      res.redirect('/user');
     } else {
       res.redirect('/');
     }
@@ -135,7 +146,7 @@ router.post('/books', (req, res) => {
   });
 });
 
-router.get('/books', (req, res) => {
+router.get('/booksSearch', (req, res) => {
   const sql = 'SELECT * FROM books';
   db.all(sql, [], (err, rows) => {
     if (err) {
@@ -177,4 +188,16 @@ router.delete('/books/:id', (req, res) => {
     }
     res.json({ message: 'Libro eliminado con éxito' });
   });
+});
+
+// Esta ruta devolverá la información del usuario actual
+router.get('/current-user', (req, res) => {
+  // Supongamos que ya tienes la información del usuario en req.user
+  // Si no, puedes almacenar esta información en la sesión y obtenerla de allí
+  const user = req.session.user || null;
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(401).json({ message: 'No hay usuario autenticado' });
+  }
 });

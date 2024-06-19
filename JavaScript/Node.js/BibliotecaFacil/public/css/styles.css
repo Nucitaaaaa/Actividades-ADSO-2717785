@@ -78,6 +78,8 @@ nav {
 nav .logo {
   font-size: 1.5em;
   font-weight: bold;
+  text-decoration: none;
+  color: #fff;
 }
 
 nav .logout a {
@@ -130,3 +132,5 @@ footer {
   padding: 10px;
   color: #ffffff;
 }
+
+

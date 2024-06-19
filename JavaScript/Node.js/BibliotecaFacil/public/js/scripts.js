@@ -42,6 +42,32 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     .catch(error => console.error('Error:', error));
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('/books')
+      .then(response => response.json())
+      .then(data => {
+        const resultsDiv = document.getElementById('searchResult');
+        resultsDiv.innerHTML = ''; // Limpiar resultados anteriores
+  
+        if (data.books && data.books.length > 0) {
+          data.books.forEach(book => {
+            const bookDiv = document.createElement('div');
+            bookDiv.innerText = `Título: ${book.title}, Autor: ${book.author}, Género: ${book.genre}`;
+            resultsDiv.appendChild(bookDiv);
+          });
+        } else {
+          resultsDiv.innerText = 'No se encontraron libros';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        const resultsDiv = document.getElementById('searchResult');
+        resultsDiv.innerText = 'Ocurrió un error al buscar los libros';
+      });
+  });
+  
+  
+
   document.getElementById('searchForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const title = document.getElementById('searchTitle').value;
@@ -116,3 +142,27 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     });
   });
   
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const userInfoDiv = document.getElementById('user-info');
+
+// Obtener y mostrar la información del usuario
+function fetchCurrentUser() {
+  fetch('/current-user')
+    .then(response => response.json())
+    .then(user => {
+      if (user && user.id) {
+        userInfoDiv.innerHTML = `<p>ID: ${user.id}</p><p>// Usuario: ${user.name}</p>`;
+      } else {
+        userInfoDiv.innerHTML = '<p>No hay usuario autenticado</p>';
+      }
+    })
+    .catch(error => {
+      userInfoDiv.innerHTML = '<p>Error al obtener la información del usuario</p>';
+    });
+}
+
+fetchCurrentUser();
+
+
+});
