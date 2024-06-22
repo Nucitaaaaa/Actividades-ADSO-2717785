@@ -31,6 +31,31 @@ router.get('/librosRentados', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/librosRentados.html'));
 });
 
+// Ruta para la vista de rentar libros
+router.get('/rentar', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/rentar.html'));
+});
+
+// Ruta para la vista de renovar renta
+router.get('/renovar', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/renovar.html'));
+});
+
+// Ruta para la vista de agregar libros
+router.get('/agregarLibros', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/agregarLibros.html'));
+});
+
+// Ruta para la vista de actualizar libros
+router.get('/actualizarLibros', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/actualizarLibros.html'));
+});
+
+// Ruta para la vista de elimnar libros
+router.get('/eliminarLibros', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/eliminarLibros.html'));
+});
+
 
 router.post('/register', (req, res) => {
   const { name, email, password } = req.body;
