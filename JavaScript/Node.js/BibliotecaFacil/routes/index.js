@@ -4,34 +4,29 @@ const router = express.Router();
 const path = require('path');
 const db = require('../db'); // Asegúrate de que la ruta sea correcta
 
-// Definir las rutas
+//?Rutas Usuario
 
-// Ruta para la página de inicio (login)
+//*Ruta para la página de inicio (login)
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-// Ruta para la vista del administrador
-router.get('/gestor', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/gestor.html'));
-});
-
-// Ruta para la vista del usuario
+//*Ruta para la vista del usuario
 router.get('/user', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/user.html'));
 });
 
-// Ruta para la vista de los libros disponibles 
+//*Ruta para la vista de los libros disponibles 
 router.get('/libros', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/libros.html'));
 });
 
-// Ruta para la vista de los libros rentados
+//*Ruta para la vista de los libros rentados
 router.get('/librosRentados', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/librosRentados.html'));
 });
 
-// Ruta para la vista de rentar libros
+//*Ruta para rentar un libro
 router.get('/rentar', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/rentar.html'));
 });
@@ -43,17 +38,24 @@ router.get('/renovar', (req, res) => {
 
 // Ruta para la vista de agregar libros
 router.get('/agregarLibros', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/agregarLibros.html'));
+  res.sendFile(path.join(__dirname, '../public/agregarLibro.html'));
 });
 
 // Ruta para la vista de actualizar libros
 router.get('/actualizarLibros', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/actualizarLibros.html'));
+  res.sendFile(path.join(__dirname, '../public/actualizarLibro.html'));
 });
 
 // Ruta para la vista de elimnar libros
 router.get('/eliminarLibros', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/eliminarLibros.html'));
+  res.sendFile(path.join(__dirname, '../public/eliminarLibro.html'));
+});
+
+
+//?Rutas Gestor 
+
+router.get('/gestor', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/gestor.html'));
 });
 
 
@@ -92,7 +94,7 @@ router.post('/login', (req, res) => {
   });
 });
 
-router.get('/books', (req, res) => {
+router.get('/booksSearch', (req, res) => {
   const { title, author, genre } = req.query;
   let sql = 'SELECT * FROM books WHERE 1=1';
   const params = [];
@@ -171,7 +173,7 @@ router.post('/books', (req, res) => {
   });
 });
 
-router.get('/booksSearch', (req, res) => {
+router.get('/books', (req, res) => {
   const sql = 'SELECT * FROM books';
   db.all(sql, [], (err, rows) => {
     if (err) {

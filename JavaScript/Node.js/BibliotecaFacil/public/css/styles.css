@@ -27,6 +27,10 @@ h1 {
   color: #4B2138;
 }
 
+h2 {
+  text-align: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -133,4 +137,39 @@ footer {
   color: #ffffff;
 }
 
+#searchResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+table {
+  width: 80%;
+  border-collapse: collapse; 
+  margin: 20px 0;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  border: 1px solid #2d222f;
+  text-align: center;
+}
+
+thead tr {
+  background-color: #2d222f;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-align: center;
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #2d222f; /* Aplicar borde a las celdas */
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}

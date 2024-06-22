@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,18 +19,28 @@
                 <li><a href="/libros">Libros Disponibles</a></li>
                 <li><a href="/librosRentados">Libros Rentados</a></li>
                 <li><a href="/rentar">Rentar Libro</a></li>
-                <li><a href="/renovar">Renovar Renta</a></li>
-
+                <li><a href="/renovarRenta">Renovar Renta</a></li>
             </ul>
         </aside>
         <section class="content">
             <h2>LIBROS DISPONIBLES</h2>
-            <div id="searchResult"></div>
+            <div id="searchResult">
+                <table id="booksTable">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>Género</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </section>
     </div>
     <footer>
         <p>STGA Y MPBG</p>
     </footer>
-    <script src="/js/scripts.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
