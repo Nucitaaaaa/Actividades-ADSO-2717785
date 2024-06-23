@@ -22,23 +22,23 @@
             </ul>
         </aside>
         <section class="content">
-            <h2>AGREGAR LIBROS</h2>
-            <h1>Agregar Nuevo Libro</h1>
-            <form id="addBookForm">
-                <label for="title">Título:</label>
+            <h2>ACTUALIZAR LIBROS</h2>
+            <form id="updateBookForm">
+                <label for="bookId">ID del Libro:</label>
+                <input type="number" id="bookId" name="bookId" required><br><br>
+                <label for="title">Nuevo Título:</label>
                 <input type="text" id="title" name="title" required><br><br>
-                <label for="author">Autor:</label>
+                <label for="author">Nuevo Autor:</label>
                 <input type="text" id="author" name="author" required><br><br>
-                <label for="genre">Género:</label>
+                <label for="genre">Nuevo Género:</label>
                 <input type="text" id="genre" name="genre" required><br><br>
-                <button type="submit">Agregar Libro</button>
+                <button type="submit">Actualizar Libro</button>
             </form>
-            <p id="message"></p>
         </section>
     </div>
     <footer>
         <p>STGA Y MPBG</p>
     </footer>
-    <script src="js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
 </body>
 </html>

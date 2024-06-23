@@ -18,18 +18,24 @@
                 <li><a href="/libros">Libros Disponibles</a></li>
                 <li><a href="/librosRentados">Libros Rentados</a></li>
                 <li><a href="/rentar">Rentar Libro</a></li>
-                <li><a href="/renovarRenta">Renovar Renta</a></li>
+                <li><a href="/renovar">Renovar Renta</a></li>
 
             </ul>
         </aside>
         <section class="content">
             <h2>RENOVAR RENTA</h2>
-            <div></div>
+            <section>
+                <form id="renewForm">
+                    <input type="number" id="renewLoanId" placeholder="ID de Préstamo" required>
+                    <button type="submit">Renovar Préstamo</button>
+                </form>
+                <div id="renewMessage"></div>
+            </section>
         </section>
     </div>
     <footer>
         <p>STGA Y MPBG</p>
     </footer>
-    <script src="/js/scripts.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

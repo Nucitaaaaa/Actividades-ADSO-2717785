@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const db = require('../db'); // Asegúrate de que la ruta sea correcta
+const db = require('../db'); 
 
 //?Rutas Usuario
 
@@ -21,6 +21,11 @@ router.get('/libros', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/libros.html'));
 });
 
+//*Ruta para la vista de todos libros 
+router.get('/biblioteca', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/librosA.html'));
+});
+
 //*Ruta para la vista de los libros rentados
 router.get('/librosRentados', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/librosRentados.html'));
@@ -31,23 +36,23 @@ router.get('/rentar', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/rentar.html'));
 });
 
-// Ruta para la vista de renovar renta
+//*Ruta para la vista de renovar renta
 router.get('/renovar', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/renovar.html'));
 });
 
-// Ruta para la vista de agregar libros
-router.get('/agregarLibros', (req, res) => {
+//*Ruta para la vista de agregar libros
+router.get('/agregarLibro', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/agregarLibro.html'));
 });
 
-// Ruta para la vista de actualizar libros
-router.get('/actualizarLibros', (req, res) => {
+//*Ruta para la vista de actualizar libros
+router.get('/actualizarLibro', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/actualizarLibro.html'));
 });
 
-// Ruta para la vista de elimnar libros
-router.get('/eliminarLibros', (req, res) => {
+//*Ruta para la vista de elimnar libros
+router.get('/eliminarLibro', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/eliminarLibro.html'));
 });
 
@@ -62,7 +67,7 @@ router.get('/gestor', (req, res) => {
 router.post('/register', (req, res) => {
   const { name, email, password } = req.body;
   
-  // Lógica para registrar al usuario en la base de datos
+  //*Lógica para registrar al usuario en la base de datos
   const query = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
   db.run(query, [name, email, password], (err) => {
       if (err) {
@@ -123,7 +128,7 @@ router.get('/booksSearch', (req, res) => {
 router.post('/borrow', (req, res) => {
   const { user_id, book_id } = req.body;
   const due_date = new Date();
-  due_date.setDate(due_date.getDate() + 14); // Fecha de vencimiento a 2 semanas
+  due_date.setDate(due_date.getDate() + 14); //*Fecha de vencimiento a 2 semanas
 
   const sql = 'INSERT INTO loans (user_id, book_id, due_date) VALUES (?, ?, ?)';
   db.run(sql, [user_id, book_id, due_date.toISOString()], function(err) {
@@ -173,8 +178,28 @@ router.post('/books', (req, res) => {
   });
 });
 
-router.get('/books', (req, res) => {
+router.get('/book', (req, res) => {
   const sql = 'SELECT * FROM books';
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json({ books: rows });
+  });
+});
+
+router.get('/bookR', (req, res) => {
+  const sql = 'SELECT * FROM BOOKS b WHERE EXISTS (SELECT * FROM LOANS l WHERE l.book_id = b.id);';
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json({ books: rows });
+  });
+});
+
+router.get('/bookD', (req, res) => {
+  const sql = 'SELECT b.id, b.title, b.author, b.genre FROM BOOKS b LEFT JOIN LOANS l ON b.id = l.book_id WHERE l.id IS NULL;';
   db.all(sql, [], (err, rows) => {
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -215,16 +240,4 @@ router.delete('/books/:id', (req, res) => {
     }
     res.json({ message: 'Libro eliminado con éxito' });
   });
-});
-
-// Esta ruta devolverá la información del usuario actual
-router.get('/current-user', (req, res) => {
-  // Supongamos que ya tienes la información del usuario en req.user
-  // Si no, puedes almacenar esta información en la sesión y obtenerla de allí
-  const user = req.session.user || null;
-  if (user) {
-    res.json(user);
-  } else {
-    res.status(401).json({ message: 'No hay usuario autenticado' });
-  }
 });

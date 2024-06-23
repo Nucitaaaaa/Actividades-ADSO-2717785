@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const email = document.getElementById('registerEmail').value;
     const password = document.getElementById('registerPassword').value;
 
+    //?Register 
+
     fetch('/register', {
       method: 'POST',
       headers: {
@@ -19,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+//?Login
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -46,20 +51,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+//?Libros (libros.html)
+
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('/books')
+  fetch('/book')
     .then(response => response.json())
     .then(data => {
-      const resultsTable = document.getElementById('booksTable').getElementsByTagName('tbody')[0];
+      const resultsTable = document.getElementById('books').getElementsByTagName('tbody')[0];
       resultsTable.innerHTML = ''; // Limpiar resultados anteriores
 
       if (data.books && data.books.length > 0) {
         data.books.forEach(book => {
           const row = resultsTable.insertRow();
-          const titleCell = row.insertCell(0);
-          const authorCell = row.insertCell(1);
-          const genreCell = row.insertCell(2);
+          const idCell = row.insertCell(0);
+          const titleCell = row.insertCell(1);
+          const authorCell = row.insertCell(2);
+          const genreCell = row.insertCell(3);
 
+
+          idCell.innerText = book.id
           titleCell.innerText = book.title;
           authorCell.innerText = book.author;
           genreCell.innerText = book.genre;
@@ -76,6 +87,77 @@ document.addEventListener('DOMContentLoaded', function() {
       resultsTable.innerHTML = '<tr><td>Ocurrió un error al buscar los libros</td></tr>';
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('/bookR')
+    .then(response => response.json())
+    .then(data => {
+      const resultsTable = document.getElementById('booksBorrow').getElementsByTagName('tbody')[0];
+      resultsTable.innerHTML = ''; // Limpiar resultados anteriores
+
+      if (data.books && data.books.length > 0) {
+        data.books.forEach(book => {
+          const row = resultsTable.insertRow();
+          const idCell = row.insertCell(0);
+          const titleCell = row.insertCell(1);
+          const authorCell = row.insertCell(2);
+          const genreCell = row.insertCell(3);
+
+
+          idCell.innerText = book.id
+          titleCell.innerText = book.title;
+          authorCell.innerText = book.author;
+          genreCell.innerText = book.genre;
+        });
+      } else {
+        const row = resultsTable.insertRow();
+        const cell = row.insertCell(0);
+        cell.innerText = 'No se encontraron libros';
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      const resultsTable = document.getElementById('booksTable').getElementsByTagName('tbody')[0];
+      resultsTable.innerHTML = '<tr><td>Ocurrió un error al buscar los libros</td></tr>';
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('/bookD')
+    .then(response => response.json())
+    .then(data => {
+      const resultsTable = document.getElementById('booksFree').getElementsByTagName('tbody')[0];
+      resultsTable.innerHTML = ''; // Limpiar resultados anteriores
+
+      if (data.books && data.books.length > 0) {
+        data.books.forEach(book => {
+          const row = resultsTable.insertRow();
+          const idCell = row.insertCell(0);
+          const titleCell = row.insertCell(1);
+          const authorCell = row.insertCell(2);
+          const genreCell = row.insertCell(3);
+
+
+          idCell.innerText = book.id
+          titleCell.innerText = book.title;
+          authorCell.innerText = book.author;
+          genreCell.innerText = book.genre;
+        });
+      } else {
+        const row = resultsTable.insertRow();
+        const cell = row.insertCell(0);
+        cell.innerText = 'No se encontraron libros';
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      const resultsTable = document.getElementById('booksTable').getElementsByTagName('tbody')[0];
+      resultsTable.innerHTML = '<tr><td>Ocurrió un error al buscar los libros</td></tr>';
+    });
+});
+
+//*Buscar libros (libros.html)
 
 document.getElementById('searchForm').addEventListener('submit', function(event) {
   event.preventDefault();
@@ -97,6 +179,41 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
     });
   });
 });
+
+
+//?Cliente para ver los libros rentados (rentar.html)
+
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('/books')
+    .then(response => response.json())
+    .then(data => {
+      const resultsTable = document.getElementById('librosRentados').getElementsByTagName('tbody')[0];
+      resultsTable.innerHTML = ''; // Limpiar resultados anteriores
+
+      if (data.books && data.books.length > 0) {
+        data.books.forEach(book => {
+          const row = resultsTable.insertRow();
+          const idCell = row.insertCell(0);
+          const titleCell = row.insertCell(1);
+
+          idCell.innerText = book.id; // Asegúrate de que el objeto libro tenga una propiedad id
+          titleCell.innerText = book.title;
+        });
+      } else {
+        const row = resultsTable.insertRow();
+        const cell = row.insertCell(0);
+        cell.innerText = 'No se encontraron libros';
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      const resultsTable = document.getElementById('librosRentados').getElementsByTagName('tbody')[0];
+      resultsTable.innerHTML = '<tr><td>Ocurrió un error al buscar los libros</td></tr>';
+    });
+});
+
+
+// //!rentar libro (libros.html) ?
   
 document.getElementById('borrowForm').addEventListener('submit', function(event) {
   event.preventDefault();
@@ -116,6 +233,8 @@ document.getElementById('borrowForm').addEventListener('submit', function(event)
   });
 });
 
+//* Renovar prestamo (librosRentados.html)
+
 document.getElementById('renewForm').addEventListener('submit', function(event) {
   event.preventDefault();
   const loan_id = document.getElementById('renewLoanId').value;
@@ -132,6 +251,8 @@ document.getElementById('renewForm').addEventListener('submit', function(event) 
     document.getElementById('renewMessage').innerText = data.message ? 'Préstamo renovado con éxito' : 'Error en la renovación';
   });
 });
+
+//* Devolver libro (librosRentados.html)
 
 document.getElementById('returnForm').addEventListener('submit', function(event) {
   event.preventDefault();
@@ -151,25 +272,35 @@ document.getElementById('returnForm').addEventListener('submit', function(event)
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const userInfoDiv = document.getElementById('user-info');
 
-// Obtener y mostrar la información del usuario
-function fetchCurrentUser() {
-  fetch('/current-user')
+//? Agregar libro 
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('addBookForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const genre = document.getElementById('genre').value;
+
+    fetch('/books', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ title, author, genre })
+    })
     .then(response => response.json())
-    .then(user => {
-      if (user && user.id) {
-        userInfoDiv.innerHTML = `<p>ID: ${user.id}</p><p>// Usuario: ${user.name}</p>`;
+    .then(data => {
+      const messageElement = document.getElementById('message');
+      if (data.bookId) {
+        messageElement.innerText = 'Libro agregado exitosamente. ID: ' + data.bookId;
       } else {
-        userInfoDiv.innerHTML = '<p>No hay usuario autenticado</p>';
+        messageElement.innerText = 'Error al agregar el libro';
       }
     })
     .catch(error => {
-      userInfoDiv.innerHTML = '<p>Error al obtener la información del usuario</p>';
+      console.error('Error:', error);
+      document.getElementById('message').innerText = 'Error al agregar el libro';
     });
-}
-
-fetchCurrentUser();
-
+  });
 });
+

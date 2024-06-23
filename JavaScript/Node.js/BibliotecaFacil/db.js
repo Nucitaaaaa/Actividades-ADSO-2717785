@@ -27,6 +27,7 @@ db.serialize(() => {
       title TEXT NOT NULL,
       author TEXT NOT NULL,
       genre TEXT NOT NULL
+      
     )
   `);
 

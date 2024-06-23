@@ -21,14 +21,36 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  border: 2px solid #4B2138;
+  width: 400px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
 
 h1 {
   color: #4B2138;
+  margin-top: -15px;
 }
 
 h2 {
   text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.imgDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgDiv img {
+  width: 500px;
 }
 
 form {
@@ -45,6 +67,7 @@ input {
   padding: 10px;
   border: 1px solid #765D67;
   border-radius: 4px;
+  font-size: 18px;
 }
 
 button {
@@ -54,6 +77,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 18px;
 }
 
 button:hover {
