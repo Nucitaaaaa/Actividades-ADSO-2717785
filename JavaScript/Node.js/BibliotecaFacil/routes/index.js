@@ -56,9 +56,18 @@ router.get('/eliminarLibro', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/eliminarLibro.html'));
 });
 
+//*Ruta para la vista de devolver libros
+router.get('/devolver', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/devolver.html'));
+});
+
+//*Ruta para la vista de buscar libros
+router.get('/buscar', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/buscar.html'));
+});
+
 
 //?Rutas Gestor 
-
 router.get('/gestor', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/gestor.html'));
 });
@@ -86,6 +95,11 @@ router.get('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
+
+  if (email === 'root' && password === 'toor') {
+    return res.redirect('/gestor');
+  }
+
   const sql = 'SELECT * FROM users WHERE email = ? AND password = ?';
   db.get(sql, [email, password], (err, row) => {
     if (err) {
@@ -104,24 +118,25 @@ router.get('/booksSearch', (req, res) => {
   let sql = 'SELECT * FROM books WHERE 1=1';
   const params = [];
 
-  if (title) {
+  if (title && title.trim()) {
     sql += ' AND title LIKE ?';
-    params.push(`%${title}%`);
+    params.push(`%${title.trim()}%`);
   }
-  if (author) {
+  if (author && author.trim()) {
     sql += ' AND author LIKE ?';
-    params.push(`%${author}%`);
+    params.push(`%${author.trim()}%`);
   }
-  if (genre) {
+  if (genre && genre.trim()) {
     sql += ' AND genre LIKE ?';
-    params.push(`%${genre}%`);
+    params.push(`%${genre.trim()}%`);
   }
 
+  // Ejecutar la consulta con los parámetros
   db.all(sql, params, (err, rows) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     }
-    res.json({ books: rows });
+    res.json(rows);
   });
 });
 

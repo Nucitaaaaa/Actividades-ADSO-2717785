@@ -24,14 +24,19 @@
             </ul>
         </aside>
         <section class="content">
-            <h2>RENOVAR RENTA</h2>
-            <section>
-                <form id="renewForm">
-                    <input type="number" id="renewLoanId" placeholder="ID de Préstamo" required>
-                    <button type="submit">Renovar Préstamo</button>
-                </form>
-                <div id="renewMessage"></div>
-            </section>
+            <h2>Buscar Libros</h2>
+            <form id="searchForm">
+                <label for="searchTitle">Título:</label>
+                <input type="text" id="searchTitle" name="searchTitle">
+                <label for="searchAuthor">Autor:</label>
+                <input type="text" id="searchAuthor" name="searchAuthor">
+                <label for="searchGenre">Género:</label>
+                <input type="text" id="searchGenre" name="searchGenre">
+                <button type="submit">Buscar</button>
+            </form>
+            <table id="search">
+                <!-- Los resultados de la búsqueda se insertarán aquí -->
+            </table>
         </section>
     </div>
     <footer>

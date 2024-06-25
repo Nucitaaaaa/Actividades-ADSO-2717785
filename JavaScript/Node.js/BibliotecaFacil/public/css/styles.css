@@ -67,7 +67,7 @@ input {
   padding: 10px;
   border: 1px solid #765D67;
   border-radius: 4px;
-  font-size: 18px;
+  font-size: 10px;
 }
 
 button {
@@ -147,6 +147,10 @@ aside ul li a {
 
 aside ul li a:hover {
   text-decoration: underline;
+}
+
+#result {
+  display: none;
 }
 
 .content {

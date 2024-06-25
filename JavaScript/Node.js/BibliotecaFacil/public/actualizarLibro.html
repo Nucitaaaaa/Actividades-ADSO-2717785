@@ -8,8 +8,8 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Biblioteca Fácil</div>
-        <div id="user-info"> 3 // Dowru</div>
+        <div><a class="logo" href="/gestor">Biblioteca Fácil</a></div>
+        <div id="user-info"> 0 // ADMIN </div>
         <div class="logout"><a  href="index.html">Cerrar Sesión</a></div>
     </nav>
     <div class="main-container">
@@ -25,16 +25,17 @@
             <h2>ACTUALIZAR LIBROS</h2>
             <form id="updateBookForm">
                 <label for="bookId">ID del Libro:</label>
-                <input type="number" id="bookId" name="bookId" required><br><br>
+                <input type="number" id="bookId" name="bookId" required>
                 <label for="title">Nuevo Título:</label>
-                <input type="text" id="title" name="title" required><br><br>
+                <input type="text" id="title" name="title" required>
                 <label for="author">Nuevo Autor:</label>
-                <input type="text" id="author" name="author" required><br><br>
+                <input type="text" id="author" name="author" required>
                 <label for="genre">Nuevo Género:</label>
-                <input type="text" id="genre" name="genre" required><br><br>
+                <input type="text" id="genre" name="genre" required>
                 <button type="submit">Actualizar Libro</button>
             </form>
-        </section>
+            <p id="message"></p> <!-- Agregado para mostrar mensajes -->
+        </section>        
     </div>
     <footer>
         <p>STGA Y MPBG</p>
